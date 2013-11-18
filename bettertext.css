@@ -1,0 +1,227 @@
+/* BetterText.css v0.1 */
+/* 
+/* Typography */
+
+/* headers and paragraphs */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+h1 {
+    margin-top: 2.5em;
+    font-size: 2.5em;
+    margin-bottom: 0.4em;
+}
+h2 {
+    margin-top: 2em;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+h3 {
+    margin-top: 2em;
+    font-size: 1.75em;
+    margin-bottom: 0.57143em;
+}
+h4 {
+    font-size: 1.5em;
+    margin-bottom: 0.66666em;
+}
+h5 {
+    font-size: 1.25em;
+    margin-bottom: 0.8em;
+}
+h6 {
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+/* double headers */
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+    margin-top: 1.5em;
+}
+
+
+p {
+    margin-top: 0;
+}
+
+p + p {
+    margin-top: 1em;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/‎ */
+p:before,
+article ol:before,
+article ul:before {
+    content: '';
+    display: block;
+    width: 10em;
+    overflow: hidden;
+}
+
+p code {
+    font-size: 1.1em;
+    line-height: 0.8;
+}
+sup,
+sub {
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.5em;
+}
+
+/* lists without classes */
+article ul:not([class]),
+article ol:not([class]) {
+    list-style-type: none;
+    padding-left: 0;
+}
+article ul:not([class]) li,
+article ol:not([class]) li {
+    overflow: hidden;
+    position: relative;
+    padding-left: 2.5em;
+}
+article ul:not([class]) > li:before {
+    content: '\2013'; /* mdash */
+    position: absolute;
+    width: 1em;
+    margin-left: -1.3em;
+}
+article ol:not([class]) {
+    counter-reset: olist;
+}
+article ol:not([class]) li:before {
+    direction: rtl;
+    content: "." counter(olist); 
+    counter-increment: olist;
+    position: absolute;
+    left: 2em;
+    width: 0;
+    text-align: right;
+}
+/* nested lists */
+article ul:not([class]) ul,
+article ol:not([class]) ol {
+    margin-top: 0.5em;
+}
+article ul:not([class]) li li,
+article ol:not([class]) li li {
+    overflow: visible;
+}
+article ul:not([class]) li li:before {
+    content: '\2212'; /* minus */
+}
+article ul:not([class]) li li li:before {
+    content: '\22C5'; /* sdot */
+}
+article ol:not([class]) ol {
+    counter-reset: olist2;
+}
+article ol:not([class]) ol > li:before {
+    content: "." counter(olist) "." counter(olist2); 
+    counter-increment: olist2;
+}
+article ol:not([class]) ol ol {
+    counter-reset: olist3;
+}
+article ol:not([class]) ol ol > li:before {
+    content: "." counter(olist) "." counter(olist2) "." counter(olist3); 
+    counter-increment: olist3;
+}
+
+
+nav ol,
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+nav ol:not([class]) > li,
+nav ul:not([class]) > li {
+    padding-left: 0;
+}
+nav ol:not([class]) > li:before,
+nav ul:not([class]) > li:before {
+    display: none;
+}
+
+/* images */
+img {
+    width: inherit; /* for IE8 */
+    max-width:100%;
+    height:auto;
+    -ms-interpolation-mode: bicubic; /* for IE7 */
+}
+figure {
+    margin: 2em auto;
+}
+figcaption {
+    font-size: 0.8em;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+}
+
+/* blockquotes */
+blockquote {
+    margin-left: 2.5em;
+    margin-right: 2.5em;
+}
+blockquote > cite {
+    display: block;
+    text-align: right;
+}
+
+/* definitions */
+dt {
+    display: run-in;
+    margin-left: -2.5em;
+    font-weight: bold;
+}
+dt:after {
+    content: ' ';
+}
+dd {
+    margin-left: 2.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* tables */
+table:not([class]) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-collapse: collapse;
+}
+table:not([class]) caption {
+    text-align: right;
+    font-size: 0.8em;
+    margin-bottom: 0.625em;
+}
+table:not([class]) tr {
+    border-style: solid;
+    border-color: rgba(0,0,0,0.1);
+    border-width: 0 0 1px;
+}
+table:not([class]) th,
+table:not([class]) td {
+    padding: 0.5em 1em;
+    text-align: left;
+    vertical-align: top;
+}
+table:not([class]) thead th,
+table:not([class]) thead td {
+    vertical-align: bottom;
+    border-bottom-width: 2px;
+}
