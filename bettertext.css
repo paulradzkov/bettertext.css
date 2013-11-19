@@ -1,5 +1,5 @@
 /* BetterText.css v0.1 */
-/* 
+
 /* Typography */
 
 /* headers and paragraphs */
@@ -43,6 +43,15 @@ h5 + h6 {
     margin-top: 1.5em;
 }
 
+/* first headers */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-top: 0;
+}
 
 p {
     margin-top: 0;
@@ -80,6 +89,13 @@ sup {
 }
 sub {
     bottom: -0.5em;
+}
+
+hr {
+    border:0;
+    border-bottom:1px dotted;
+    margin:2em auto;
+    width:60%;
 }
 
 /* lists without classes */
@@ -167,6 +183,7 @@ img {
 figure {
     margin: 2em auto;
 }
+figure > p,
 figcaption {
     font-size: 0.8em;
     margin-top: 0.625em;
@@ -181,6 +198,7 @@ blockquote {
 blockquote > cite {
     display: block;
     text-align: right;
+    padding-right: 1em;
 }
 
 /* definitions */
