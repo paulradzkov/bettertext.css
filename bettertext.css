@@ -97,6 +97,10 @@ hr {
     margin:2em auto;
     width:60%;
 }
+abbr {
+    letter-spacing: .05em;
+    margin-right: -.05em;
+}
 
 /* lists without classes */
 article ul:not([class]),
