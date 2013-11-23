@@ -111,13 +111,12 @@ article ol:not([class]) {
 article ul:not([class]) li,
 article ol:not([class]) li {
     overflow: hidden;
-    position: relative;
     padding-left: 2.5em;
 }
 article ul:not([class]) > li:before {
     content: '\2013'; /* mdash */
-    position: absolute;
-    width: 1em;
+    display: inline-block;
+    width: 1.3em;
     margin-left: -1.3em;
 }
 article ol:not([class]) {
@@ -127,9 +126,10 @@ article ol:not([class]) li:before {
     direction: rtl;
     content: "." counter(olist); 
     counter-increment: olist;
-    position: absolute;
-    left: 2em;
+    display: inline-block;
     width: 0;
+    margin-left: -0.5em;
+    margin-right: 0.5em;
     text-align: right;
 }
 /* nested lists */
