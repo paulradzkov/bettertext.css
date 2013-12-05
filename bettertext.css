@@ -62,7 +62,7 @@ p + p {
 }
 
 p:last-child {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/‎ */
@@ -73,6 +73,9 @@ article ul:before {
     display: block;
     width: 10em;
     overflow: hidden;
+}
+li p:before {
+    content: none;
 }
 
 p code {
@@ -116,6 +119,7 @@ article ol:not([class]) li {
 article ul:not([class]) > li:before {
     content: '\2013'; /* mdash */
     display: inline-block;
+    float: left;
     width: 1.3em;
     margin-left: -1.3em;
 }
@@ -127,6 +131,7 @@ article ol:not([class]) li:before {
     content: "." counter(olist); 
     counter-increment: olist;
     display: inline-block;
+    float: left;
     width: 0;
     margin-left: -0.5em;
     margin-right: 0.5em;
@@ -174,7 +179,7 @@ nav ul:not([class]) > li {
 }
 nav ol:not([class]) > li:before,
 nav ul:not([class]) > li:before {
-    display: none;
+    content: none;
 }
 
 /* images */
