@@ -104,7 +104,12 @@ abbr {
     letter-spacing: .05em;
     margin-right: -.05em;
 }
-
+strong, b, dt {
+    font-weight: inherit;
+}
+strong, b, dt {
+    font-weight: bolder;
+}
 /* lists without classes */
 article ul:not([class]),
 article ol:not([class]) {
