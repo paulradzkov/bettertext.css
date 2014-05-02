@@ -64,6 +64,9 @@ p + p {
 p:last-child {
     margin-bottom: 0;
 }
+li p:last-child {
+    margin-bottom: 1em;
+}
 
 /* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/‎ */
 p:before,
