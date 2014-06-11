@@ -205,6 +205,11 @@ figcaption {
     font-size: 0.8em;
     margin-top: 0.625em;
     margin-bottom: 0.625em;
+    text-align: center;
+}
+figcaption > p:only-child {
+    display: inline-block;
+    text-align: left;
 }
 
 /* blockquotes */
