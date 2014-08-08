@@ -114,27 +114,27 @@ strong, b, dt {
     font-weight: bolder;
 }
 /* lists without classes */
-article ul:not([class]),
-article ol:not([class]) {
+ul:not([class]),
+ol:not([class]) {
     list-style-type: none;
     padding-left: 0;
 }
-article ul:not([class]) li,
-article ol:not([class]) li {
+ul:not([class]) li,
+ol:not([class]) li {
     overflow: hidden;
     padding-left: 2.5em;
 }
-article ul:not([class]) > li:before {
+ul:not([class]) > li:before {
     content: '\2013'; /* mdash */
     display: inline-block;
     float: left;
     width: 1.3em;
     margin-left: -1.3em;
 }
-article ol:not([class]) {
+ol:not([class]) {
     counter-reset: olist;
 }
-article ol:not([class]) li:before {
+ol:not([class]) li:before {
     direction: rtl;
     content: "." counter(olist); 
     counter-increment: olist;
@@ -146,31 +146,31 @@ article ol:not([class]) li:before {
     text-align: right;
 }
 /* nested lists */
-article ul:not([class]) ul,
-article ol:not([class]) ol {
+ul:not([class]) ul:not([class]),
+ol:not([class]) ol:not([class]) {
     margin-top: 0.5em;
 }
-article ul:not([class]) li li,
-article ol:not([class]) li li {
+ul:not([class]) li li,
+ol:not([class]) li li {
     overflow: visible;
 }
-article ul:not([class]) li li:before {
+ul:not([class]) li li:before {
     content: '\2212'; /* minus */
 }
-article ul:not([class]) li li li:before {
+ul:not([class]) li li li:before {
     content: '\22C5'; /* sdot */
 }
-article ol:not([class]) ol {
+ol:not([class]) ol:not([class]) {
     counter-reset: olist2;
 }
-article ol:not([class]) ol > li:before {
+ol:not([class]) ol:not([class]) > li:before {
     content: "." counter(olist) "." counter(olist2); 
     counter-increment: olist2;
 }
-article ol:not([class]) ol ol {
+ol:not([class]) ol:not([class]) ol:not([class]) {
     counter-reset: olist3;
 }
-article ol:not([class]) ol ol > li:before {
+ol:not([class]) ol:not([class]) ol:not([class]) > li:before {
     content: "." counter(olist) "." counter(olist2) "." counter(olist3); 
     counter-increment: olist3;
 }
@@ -217,25 +217,11 @@ blockquote {
     margin-left: 2.5em;
     margin-right: 2.5em;
 }
+blockquote > footer,
 blockquote > cite {
     display: block;
     text-align: right;
     padding-right: 1em;
-}
-
-/* definitions */
-dt {
-    display: run-in;
-    margin-left: -2.5em;
-    font-weight: bold;
-}
-dt:after {
-    content: ' ';
-}
-dd {
-    margin-left: 2.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 /* tables */
