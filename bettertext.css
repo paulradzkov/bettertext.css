@@ -54,21 +54,10 @@ h6:first-child {
 }
 
 p {
-    margin-top: 0;
+    margin: 0 0 1em;
 }
 
-p + p {
-    margin-top: 1em;
-}
-
-p:last-child {
-    margin-bottom: 0;
-}
-li p:last-child {
-    margin-bottom: 1em;
-}
-
-/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/‎ */
+/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
 p:before,
 article ol:before,
 article ul:before {
@@ -136,7 +125,7 @@ ol:not([class]) {
 }
 ol:not([class]) li:before {
     direction: rtl;
-    content: "." counter(olist); 
+    content: "." counter(olist);
     counter-increment: olist;
     display: inline-block;
     float: left;
@@ -164,14 +153,14 @@ ol:not([class]) ol:not([class]) {
     counter-reset: olist2;
 }
 ol:not([class]) ol:not([class]) > li:before {
-    content: "." counter(olist) "." counter(olist2); 
+    content: "." counter(olist) "." counter(olist2);
     counter-increment: olist2;
 }
 ol:not([class]) ol:not([class]) ol:not([class]) {
     counter-reset: olist3;
 }
 ol:not([class]) ol:not([class]) ol:not([class]) > li:before {
-    content: "." counter(olist) "." counter(olist2) "." counter(olist3); 
+    content: "." counter(olist) "." counter(olist2) "." counter(olist3);
     counter-increment: olist3;
 }
 
