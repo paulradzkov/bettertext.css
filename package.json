@@ -1,7 +1,7 @@
 {
-  "name": "no-skeleton.docpad",
+  "name": "bettertext.css",
   "version": "0.1.0",
-  "description": "New DocPad project without using a skeleton",
+  "description": "Typography for naked HTML",
   "dependencies": {
     "docpad": "~6.78.1",
     "docpad-plugin-cleanurls": "^2.8.1",
