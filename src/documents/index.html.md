@@ -167,16 +167,12 @@ less:
 
 Получим:
 
----
-
-# Header 1
-## Header 2
-### Header 3
-#### Header 4
-
-Paragraph text
-
----
+> # Header 1
+> ## Header 2
+> ### Header 3
+> #### Header 4
+>
+> Paragraph text
 
 ## 4. Заголовки. Межстрочное расстояние
 
@@ -303,23 +299,19 @@ h6 {
 }
 ```
 
----
-
-# Съешь ещё этих мягких французских булок да выпей чаю
-
-## Съешь ещё этих мягких французских булок да выпей чаю
-
-### Съешь ещё этих мягких французских булок да выпей чаю
-
-#### Съешь ещё этих мягких французских булок да выпей чаю
-
-##### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
-
-###### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
-
-Параграф текста.
-
----
+> # Съешь ещё этих мягких французских булок да выпей чаю
+>
+> ## Съешь ещё этих мягких французских булок да выпей чаю
+>
+> ### Съешь ещё этих мягких французских булок да выпей чаю
+>
+> #### Съешь ещё этих мягких французских булок да выпей чаю
+>
+> ##### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
+>
+> ###### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
+>
+> Параграф текста.
 
 ## 5. Списки
 
@@ -421,7 +413,101 @@ ol:not([class]) {
 
 ## 7. Таблицы
 
+Пример простой таблицы:
+
+<table>
+    <caption>Optional table caption.</caption>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+    </tbody>
+</table>
+
+Пример таблицы, сгенерированной из Маркдауна:
+
+
+|                                    | Express*| Personal PLUS | Personal MAX |  Family  |
+|------------------------------------|--------:|--------------:|-------------:|---------:|
+| **Main Features**                  |         |               |              |          |
+| Annual Load Limit                  |   £ 300 |       £ 1,900 |     £ 12,000 | £ 12,000 |
+| Maximum card balance               |   £ 300 |       £ 1,900 |      £ 5,000 |  £ 5,000 |
+| Reloadable                         |         |             ✔ |            ✔ |        ✔ |
+| Available at Store                 |       ✔ |             ✔ |            ✔ |        ✔ |
+| Available online                   |       ✘ |             ✔ |            ✔ |        ✔ |
+| UK ATM Access                      |       ✘ |             ✔ |            ✔ |        ✔ |
+| International ATM Access           |       ✘ |             ✘ |            ✔ |        ✔ |
+| Money share                        |       ✘ |             ✘ |            ✔ |        ✔ |
+| Shop anywhere                      |       ✔ |             ✔ |            ✔ |        ✔ |
+| Receive free International minutes |       ✘ |             ✔ |            ✔ |        ✔ |
+| Direct UK bank account loads       |       ✘ |             ✔ |            ✔ |        ✔ |
+| **Pricing**                        |         |               |              |          |
+| NO transaction fee                 |       ✔ |             ✔ |            ✔ |        ✔ |
+| Additional card                    |     n/a |           n/a |       £ 5.00 |   £ 5.00 |
+| Card to card transfer              |     n/a |           n/a |       £ 1.00 |     FREE |
+| International ATM access           |     n/a |           n/a |       £ 1.50 |     FREE |
+| Foreign Exchange Charge            |  £ 1.95 |        £ 1.95 |       £ 1.95 |     FREE |
+| In-Store Card Purchase fee         |  £ 6.95 |        £ 6.95 |       £ 6.95 |   £ 6.95 |
+| Monthly Cost                       |  £ 3.95 |        £ 3.95 |       £ 3.95 |   £ 7.95 |
+| Card to card transfer              |     n/a |           n/a |       £ 1.00 |     FREE |
+| International ATM access           |     n/a |           n/a |       £ 1.50 |     FREE |
+| Foreign Exchange Charge            |  £ 1.95 |        £ 1.95 |       £ 1.95 |     FREE |
+| In-Store Card Purchase fee         |  £ 6.95 |        £ 6.95 |       £ 6.95 |   £ 6.95 |
+| Monthly Cost                       |  £ 3.95 |        £ 3.95 |       £ 3.95 |   £ 7.95 |
+
+
+
 ## 8. Цитаты
+
+Помните, что даже если цитируется одно предложение, то оно должно быть внутри абзаца. Поэтому самый простой случай цитирования должен быть сверстан так:
+
+```html
+<blockquote>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+```
+
+Так как у цитат есть собственный `padding`, то последнему абзацу обнулим нижний отступ. Это сделает цитату симметричной по вертикали.
+
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
+
+Цитата может быть большой, содержать внутри собственную логическую структуру, сопровождаться источником цитирования. Крупная цитата с форматированием внутри:
+
+<blockquote>
+  <h3>Header inside blockquote</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo magnam natus saepe, maxime nam sed sunt veritatis atque repellendus.</p>
+  <ul>
+    <li>Nemo magnam natus saepe</li>
+    <li>maxime nam sed sunt</li>
+    <li>Veritatis atque repellendus</li>
+    <li>Voluptates eius in beatae!</li>
+  </ul>
+  <p>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
 
 ## 9. Код
 

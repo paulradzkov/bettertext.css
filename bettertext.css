@@ -107,76 +107,11 @@ ul:not([class]),
 ol:not([class]) {
     list-style-type: none;
     padding-left: 0;
+    padding-right: 2.5em;
 }
 ul:not([class]) li,
 ol:not([class]) li {
-    overflow: hidden;
-    padding-left: 2.5em;
-}
-ul:not([class]) > li:before {
-    content: '\2013'; /* mdash */
-    display: inline-block;
-    float: left;
-    width: 1.3em;
-    margin-left: -1.3em;
-}
-ol:not([class]) {
-    counter-reset: olist;
-}
-ol:not([class]) li:before {
-    direction: rtl;
-    content: "." counter(olist);
-    counter-increment: olist;
-    display: inline-block;
-    float: left;
-    width: 0;
-    margin-left: -0.5em;
-    margin-right: 0.5em;
-    text-align: right;
-}
-/* nested lists */
-ul:not([class]) ul:not([class]),
-ol:not([class]) ol:not([class]) {
-    margin-top: 0.5em;
-}
-ul:not([class]) li li,
-ol:not([class]) li li {
-    overflow: visible;
-}
-ul:not([class]) li li:before {
-    content: '\2212'; /* minus */
-}
-ul:not([class]) li li li:before {
-    content: '\22C5'; /* sdot */
-}
-ol:not([class]) ol:not([class]) {
-    counter-reset: olist2;
-}
-ol:not([class]) ol:not([class]) > li:before {
-    content: "." counter(olist) "." counter(olist2);
-    counter-increment: olist2;
-}
-ol:not([class]) ol:not([class]) ol:not([class]) {
-    counter-reset: olist3;
-}
-ol:not([class]) ol:not([class]) ol:not([class]) > li:before {
-    content: "." counter(olist) "." counter(olist2) "." counter(olist3);
-    counter-increment: olist3;
-}
-
-
-nav ol,
-nav ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-nav ol:not([class]) > li,
-nav ul:not([class]) > li {
-    padding-left: 0;
-}
-nav ol:not([class]) > li:before,
-nav ul:not([class]) > li:before {
-    content: none;
+    transform: translateX(2.5em);
 }
 
 /* images */

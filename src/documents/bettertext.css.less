@@ -4,13 +4,14 @@
     @fz: 16px;
     @rythm: 24px;
     @linel: 40em;
-    @font1: "Open Sans", Arial, serif;
-    @font2: "Open Sans", Arial, serif;
+    @font1: sans-serif;
+    @font2: sans-serif;
     @scale1: 1.125;
     @scale2: 1.250;
 
     //calculations
     @lh: unit(@rythm / @fz);
+    @m-default: unit(@lh, em);
 
     //headers size calculations for small screens
     @h1-fz: round( @fz * pow(@scale1, 4) );
@@ -66,7 +67,6 @@
 
 body {
   padding: 50px;
-  background-size: 100% 24px;
   font-family: @font1;
   font-size: @fz;
   line-height: @lh;
@@ -74,7 +74,7 @@ body {
 }
 
 p {
-  margin: 0 0 unit(@lh, em);
+  margin: 0 0 @m-default;
   max-width: @linel;
   .bettertext-settings();
 }
@@ -204,7 +204,7 @@ h5 + h6 {
 /* lists without classes */
 ul:not([class]),
 ol:not([class]) {
-    margin: 0 0 unit(@lh, em);
+    margin: 0 0 @m-default;
     max-width: calc(@linel - 2.5em);
     padding-left: 0;
     padding-right: 2.5em;
@@ -224,6 +224,85 @@ ol:not([class]) {
 /* images */
 img {
     max-width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 2em auto;
+}
+
+figure > p,
+figcaption {
+    font-size: 0.8em;
+    margin-top: 0.625em;
+    margin-bottom: 0.625em;
+    text-align: center;
+}
+
+figcaption > p:only-child {
+    display: inline-block;
+    text-align: left;
+}
+
+/* blockquotes */
+blockquote {
+    max-width: calc(@linel - 5em - 2px);
+    margin: (@m-default) 0;
+    padding: (@m-default) 2.5em;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .05);
+
+    & > p:last-child {
+        margin-bottom: 0;
+    }
+
+    & > footer,
+    & > cite {
+        display: block;
+        text-align: right;
+        font-size: 0.8em;
+    }
+
+    .bettertext-settings();
+}
+
+/* code */
+
+pre {
+    margin: (@m-default) 0;
+    .bettertext-settings();
+}
+
+/* tables */
+table:not([class]) {
+    margin-top: (@m-default * 2);
+    margin-bottom: (@m-default * 2);
+    border-collapse: separate;
+    border-spacing: 0;
+
+    caption {
+        text-align: left;
+        font-size: 0.8em;
+        margin-bottom: 0.625em;
+    }
+
+    td, th {
+        padding: 0.5em 1em;
+        text-align: left;
+        vertical-align: top;
+        border-style: solid;
+        border-color: rgba(0,0,0,0.1);
+        border-width: 0 0 1px;
+    }
+
+    thead {
+        td, th {
+            vertical-align: bottom;
+            border-bottom-width: 2px;
+        }
+    }
+
+    .bettertext-settings();
 }
 
 /* other tags */
