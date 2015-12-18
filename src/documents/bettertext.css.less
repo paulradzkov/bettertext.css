@@ -2,8 +2,9 @@
 
     //settings
     @fz: 16px;
+    @fz-small: 0.8em;
     @rythm: 24px;
-    @linel: 40em;
+    @linel: 50em;
     @font1: sans-serif;
     @font2: sans-serif;
     @scale1: 1.125;
@@ -66,11 +67,19 @@
 @bettertext-breakpoint: ~"(min-width: 768px)";
 
 body {
-  padding: 50px;
   font-family: @font1;
   font-size: @fz;
   line-height: @lh;
   .bettertext-settings();
+}
+
+article:not([class]) {
+    padding: 50px 5%;
+
+    & section:not([class]) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
 }
 
 p {
@@ -225,29 +234,37 @@ ol:not([class]) {
 img {
     max-width: 100%;
     height: auto;
+    vertical-align: bottom;
 }
 
-figure {
-    margin: 2em auto;
+figure:not([class]) {
+    margin: (@m-default * 2) 0;
+
+    & > p {
+        max-width: (@linel * 0.75);
+        font-size: @fz-small;
+        margin: 0.5em 0 0;
+    }
+
+    .bettertext-settings();
 }
 
-figure > p,
 figcaption {
-    font-size: 0.8em;
-    margin-top: 0.625em;
-    margin-bottom: 0.625em;
-    text-align: center;
-}
+    max-width: (@linel * 0.75);
+    font-size: @fz-small;
+    margin: 0.5em 0 (@m-default * 2);
 
-figcaption > p:only-child {
-    display: inline-block;
-    text-align: left;
+    & > p {
+        margin: 0.5em 0 0;
+    }
+
+    .bettertext-settings();
 }
 
 /* blockquotes */
 blockquote {
     max-width: calc(@linel - 5em - 2px);
-    margin: (@m-default) 0;
+    margin: 0 0 (@m-default);
     padding: (@m-default) 2.5em;
     border-left: 2px solid rgba(0, 0, 0, .1);
     background-color: rgba(0, 0, 0, .05);
@@ -259,8 +276,7 @@ blockquote {
     & > footer,
     & > cite {
         display: block;
-        text-align: right;
-        font-size: 0.8em;
+        font-size: @fz-small;
     }
 
     .bettertext-settings();
@@ -282,7 +298,7 @@ table:not([class]) {
 
     caption {
         text-align: left;
-        font-size: 0.8em;
+        font-size: @fz-small;
         margin-bottom: 0.625em;
     }
 
@@ -305,11 +321,28 @@ table:not([class]) {
     .bettertext-settings();
 }
 
+/* definition lists */
+
+dl:not([class]) {
+    max-width: @linel;
+    margin: 0 0 @m-default;
+
+    dt:not([class]) {
+        font-weight: bolder;
+    }
+
+    dd:not([class]) {
+        margin: 0 0 @m-default;
+    }
+
+    .bettertext-settings();
+}
+
 /* other tags */
 hr {
     border: 0;
     border-bottom: 1px dotted;
-    margin: unit(@lh, em) 0;
+    margin: @m-default 0;
     max-width: @linel;
     .bettertext-settings();
 }

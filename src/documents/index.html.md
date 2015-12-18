@@ -127,21 +127,25 @@ li p:before {
 
 Для адаптивной типографики нам понадобится как минимум два набора размеров заголовков. Для больших экранов самый крупный заголовок может быть больше основного текста в 3-4 раза. Для маленьких экранов это соотношение рекомендуется делать не больше 2х. Иначе на маленьких экранах мобильных устройств, где длина строки составляет 30-40 символов, заголовки будут занимать слишком много строк, отъедая ценное вертикальное пространство, могут появиться проблемы с переносами длинных слов.
 
+<figure>
 ![](http://typecast.com/images/uploads/modernscale-one-scale.jpg)
 
-Иллюстрация с  сайта http://typecast.com/blog/a-more-modern-scale-for-web-typography
+<figcaption>Иллюстрация с  сайта http://typecast.com/blog/a-more-modern-scale-for-web-typography</figcaption>
+</figure>
 
 Поэтому для малых экранов выберем соотношение 1.125
 
-![1.125 - Major Second](http://joxi.ru/L21JXNMIxVeBAX.jpg)
-
-1.125 - Major Second
+<figure>
+    ![1.125 - Major Second](http://joxi.ru/L21JXNMIxVeBAX.jpg)
+    <figcaption>1.125 - Major Second</figcaption>
+</figure>
 
 А для экранов больше 768px шириной выберем контраст повыше — 1.250
 
-![1.200 - Major Third](http://joxi.ru/MAjebgWHOZz52e.jpg)
-
-1.250 - Major Third
+<figure>
+    ![1.250 - Major Third](http://joxi.ru/MAjebgWHOZz52e.jpg)
+    <figcaption>1.250 - Major Third</figcaption>
+</figure>
 
 Значение 768px выбрано потому, что с этой ширины экрана начинаются типичные планшеты (iPad в портретной ориентации).
 
@@ -329,7 +333,7 @@ ol:not([class]) {
 
 ![Проблема: если картинка обтекает список, то маркеры списка налазят на картинку](http://paulradzkov.com/2013/lists_and_floats//floated_images_and_lists_problem.png)
 
-Проблема: если картинка обтекает список, то маркеры списка налазят на картинку
+<figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
 
 Чтобы починить это, потребуется внести пару небольших изменений в стили списков: перенести дефолтный отступ в 2.5em с левой границы списка на правую, а сами элементы списка сдвинуть транфсформом вправо на те же 2.5em.
 
@@ -410,6 +414,33 @@ ol:not([class]) {
 
 
 ## 6. Картинки
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+</figure>
+
+Картинки с подписью
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <figcaption>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit. Provident, ex, quam. Fugit non maxime et minima commodi.
+    </figcaption>
+</figure>
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
+    <p>Tenetur molestiae, voluptates eius in beatae!</p>
+</figure>
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <figcaption>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
+        <p>Tenetur molestiae, voluptates eius in beatae!</p>
+    </figcaption>
+</figure>
 
 ## 7. Таблицы
 
@@ -509,6 +540,18 @@ ol:not([class]) {
   <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
 </blockquote>
 
-## 9. Код
+## 9. Списки определений
 
-## 10. Надстрочные и подстрочные символы
+<dl>
+    <dt>Description lists</dt>
+    <dd>A description list is perfect for defining terms.</dd>
+    <dt>Euismod</dt>
+    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+    <dt>Malesuada porta</dt>
+    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+</dl>
+
+## 10. Код
+
+## 11. Надстрочные и подстрочные символы
