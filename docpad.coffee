@@ -14,7 +14,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: ""
+			url: "http://interpaul.github.io/BetterText.css"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -29,7 +29,7 @@ docpadConfig = {
 
 			# The website description (for SEO)
 			description: """
-				Улучшенная типографика для Markdown текста
+				Улучшенная типографика для голого HTML и Markdown
 				"""
 
 			# The website keywords (for SEO) separated by commas
@@ -44,15 +44,15 @@ docpadConfig = {
 			googleAnalyticsDomain: ""
 
 			# The website's styles
-			styles: [
-				''
-			]
+			#styles: [
+			#	''
+			#]
 
 			# The website's production scripts.
 			# See also Environments section below for development scripts
-			scripts: [
-				''
-			]
+			#scripts: [
+			#	''
+			#]
 
 		# -----------------------------
 		# Helper Functions
@@ -130,12 +130,15 @@ docpadConfig = {
 			static: true
 			trailingSlashes: true
 		grunt:
-			writeAfter: ["production"]
+			writeAfter: false
 			writeBefore: false
 			renderBefore: false
 			renderAfter: false
 			generateBefore: false
 			generateAfter: false
+		ghpages:
+			deployRemote: 'deploy'
+			deployBranch: 'gh-pages'
 		prezip:
 			# Files with compression ratios below this value are not kept.
 			ratio: 0.95
@@ -183,8 +186,8 @@ docpadConfig = {
 					url: 'http://localhost:9778'
 
 					# The website's scripts
-					scripts: [
-					]
+					#scripts: [
+					#]
 
 			plugins:
 				grunt:

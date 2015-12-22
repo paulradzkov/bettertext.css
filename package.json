@@ -1,11 +1,13 @@
 {
   "name": "bettertext.css",
   "version": "0.1.0",
-  "description": "Typography for naked HTML",
+  "description": "Typography for naked HTML and Markdown",
   "dependencies": {
     "docpad": "~6.78.4",
     "docpad-plugin-cleanurls": "~2.8.1",
     "docpad-plugin-eco": "~2.1.0",
+    "docpad-plugin-geturl": "^2.1.1",
+    "docpad-plugin-ghpages": "~2.4.4",
     "docpad-plugin-highlightjs": "~2.3.0",
     "docpad-plugin-less": "~2.4.1",
     "docpad-plugin-marked": "~2.3.0"
