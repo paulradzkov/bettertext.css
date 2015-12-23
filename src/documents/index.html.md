@@ -86,11 +86,11 @@ p {
 
 Когда текст обтекает картинки, может случиться ситуация, при которой длинные слова не помещаются в оставшееся для текста простанство и переносятся под картинку, создавая неприятный разрыв.
 
-![](https://css-tricks.com/wp-content/uploads/2012/03/TheProblem.png)
+![](img/TheProblem.png)
 
 Зададим параграфу псевдо-элемент с минимальной шириной. Если оставшееся свободное место меньше этой минимальной ширины, псевдо-элемент вытолкнет абзац под картинку.
 
-![](https://css-tricks.com/wp-content/uploads/2012/03/PseudoElement.png)
+![](img/PseudoElement.png)
 
 Применим этот трюк к абзацам и спискам. Но так как списки могут использоваться в навигации и других местах, выбирать будем только списки, у которых нет класса.
 
@@ -136,14 +136,14 @@ li p:before {
 Поэтому для малых экранов выберем соотношение 1.125
 
 <figure>
-    ![1.125 - Major Second](http://joxi.ru/L21JXNMIxVeBAX.jpg)
+    ![1.125 - Major Second](img/2036bc7e6b.jpg)
     <figcaption>1.125 - Major Second</figcaption>
 </figure>
 
 А для экранов больше 768px шириной выберем контраст повыше — 1.250
 
 <figure>
-    ![1.250 - Major Third](http://joxi.ru/MAjebgWHOZz52e.jpg)
+    ![1.250 - Major Third](img/721979a1ad.jpg)
     <figcaption>1.250 - Major Third</figcaption>
 </figure>
 
@@ -331,7 +331,7 @@ ol:not([class]) {
 
 
 
-![Проблема: если картинка обтекает список, то маркеры списка налазят на картинку](http://paulradzkov.com/2013/lists_and_floats//floated_images_and_lists_problem.png)
+![Проблема: если картинка обтекает список, то маркеры списка налазят на картинку](img/floated_images_and_lists_problem.png)
 
 <figcaption>Проблема: если картинка обтекает список, то маркеры списка налазят на картинку</figcaption>
 
