@@ -1,49 +1,87 @@
-/* BetterText.css v0.1 */
-
-/* Typography */
-
-/* headers and paragraphs */
-h1, h2, h3, h4, h5, h6 {
-    line-height: 1.1;
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+article:not([class]) {
+  padding: 50px 5%;
+}
+article:not([class]) section:not([class]) {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+p {
+  margin: 0 0 1.5em;
+  max-width: 50em;
+}
+/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
+p:before,
+ol:not([class]):before,
+ul:not([class]):before {
+  content: '';
+  display: block;
+  width: 10em;
+  overflow: hidden;
+}
+li p:before {
+  content: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
 }
 h1 {
-    margin-top: 2.5em;
-    font-size: 2.5em;
-    margin-bottom: 0.4em;
+  font-size: 26px;
+  line-height: 1.1;
+  margin: 4em 0 0.92307692em;
 }
 h2 {
-    margin-top: 2em;
-    font-size: 2em;
-    margin-bottom: 0.5em;
+  font-size: 23px;
+  line-height: 1.2;
+  margin: 3.5em 0 1.04347826em;
 }
 h3 {
-    margin-top: 2em;
-    font-size: 1.75em;
-    margin-bottom: 0.57143em;
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 3em 0 1.2em;
 }
 h4 {
-    font-size: 1.5em;
-    margin-bottom: 0.66666em;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 2.5em 0 1.33333333em;
 }
 h5 {
-    font-size: 1.25em;
-    margin-bottom: 0.8em;
+  font-size: 16px;
+  margin: 3em 0 1.5em;
 }
 h6 {
-    font-size: 1em;
-    margin-bottom: 1em;
+  font-size: 13px;
+  margin: 3.69230769em 0 1.84615385em;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
 }
-
-/* double headers */
-h1 + h2,
-h2 + h3,
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-    margin-top: 1.5em;
+@media (min-width: 768px) {
+  h1 {
+    font-size: 39px;
+    margin-bottom: 0.61538462em;
+  }
+  h2 {
+    font-size: 31px;
+    margin-bottom: 0.77419355em;
+  }
+  h3 {
+    font-size: 25px;
+    margin-bottom: 0.96em;
+  }
+  h4 {
+    font-size: 20px;
+    margin-bottom: 1.2em;
+  }
 }
-
-/* first headers */
 h1:first-child,
 h2:first-child,
 h3:first-child,
@@ -52,126 +90,124 @@ h5:first-child,
 h6:first-child {
   margin-top: 0;
 }
-
-p {
-    margin: 0 0 1em;
+/* double headers */
+h1 + h2 {
+  margin-top: 1.2em;
 }
-
-/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
-p:before,
-article ol:before,
-article ul:before {
-    content: '';
-    display: block;
-    width: 10em;
-    overflow: hidden;
+h2 + h3 {
+  margin-top: 1.3em;
 }
-li p:before {
-    content: none;
+h3 + h4 {
+  margin-top: 1.4em;
 }
-
-p code {
-    font-size: 1.1em;
-    line-height: 0.8;
+h4 + h5 {
+  margin-top: 0;
 }
-sup,
-sub {
-    position: relative;
-    vertical-align: baseline;
+h5 + h6 {
+  margin-top: 0;
 }
-sup {
-    top: -0.5em;
-}
-sub {
-    bottom: -0.5em;
-}
-
-hr {
-    border:0;
-    border-bottom:1px dotted;
-    margin:2em auto;
-    width:60%;
-}
-abbr {
-    letter-spacing: .05em;
-    margin-right: -.05em;
-}
-strong, b, dt {
-    font-weight: inherit;
-}
-strong, b, dt {
-    font-weight: bolder;
-}
+/* lists */
 /* lists without classes */
 ul:not([class]),
 ol:not([class]) {
-    list-style-type: none;
-    padding-left: 0;
-    padding-right: 2.5em;
+  margin: 0 0 1.5em;
+  max-width: calc(47.5em);
+  padding-left: 0;
+  padding-right: 2.5em;
+}
+ul:not([class]) ul,
+ol:not([class]) ul,
+ul:not([class]) ol,
+ol:not([class]) ol {
+  margin-bottom: 0;
 }
 ul:not([class]) li,
 ol:not([class]) li {
-    transform: translateX(2.5em);
+  transform: translateX(2.5em);
 }
-
 /* images */
 img {
-    width: inherit; /* for IE8 */
-    max-width:100%;
-    height:auto;
-    -ms-interpolation-mode: bicubic; /* for IE7 */
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
 }
-figure {
-    margin: 2em auto;
+figure:not([class]) {
+  margin: 3em 0;
 }
-figure > p,
+figure:not([class]) > p {
+  max-width: 37.5em;
+  font-size: 0.8em;
+  margin: 0.5em 0 0;
+}
 figcaption {
-    font-size: 0.8em;
-    margin-top: 0.625em;
-    margin-bottom: 0.625em;
-    text-align: center;
+  max-width: 37.5em;
+  font-size: 0.8em;
+  margin: 0.5em 0 3em;
 }
-figcaption > p:only-child {
-    display: inline-block;
-    text-align: left;
+figcaption > p {
+  margin: 0.5em 0 0;
 }
-
 /* blockquotes */
 blockquote {
-    margin-left: 2.5em;
-    margin-right: 2.5em;
+  max-width: calc(43em);
+  margin: 0 0 1.5em;
+  padding: 1.5em 2.5em;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+blockquote > p:last-child {
+  margin-bottom: 0;
 }
 blockquote > footer,
 blockquote > cite {
-    display: block;
-    text-align: right;
-    padding-right: 1em;
+  display: block;
+  font-size: 0.8em;
 }
-
+/* code */
+pre {
+  margin: 1.5em 0;
+}
 /* tables */
 table:not([class]) {
-    margin-top: 1em;
-    margin-bottom: 1em;
-    border-collapse: collapse;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 table:not([class]) caption {
-    text-align: right;
-    font-size: 0.8em;
-    margin-bottom: 0.625em;
+  text-align: left;
+  font-size: 0.8em;
+  margin-bottom: 0.625em;
 }
-table:not([class]) tr {
-    border-style: solid;
-    border-color: rgba(0,0,0,0.1);
-    border-width: 0 0 1px;
+table:not([class]) td,
+table:not([class]) th {
+  padding: 0.5em 1em;
+  text-align: left;
+  vertical-align: top;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+  border-width: 0 0 1px;
 }
-table:not([class]) th,
-table:not([class]) td {
-    padding: 0.5em 1em;
-    text-align: left;
-    vertical-align: top;
+table:not([class]) thead td,
+table:not([class]) thead th {
+  vertical-align: bottom;
+  border-bottom-width: 2px;
 }
-table:not([class]) thead th,
-table:not([class]) thead td {
-    vertical-align: bottom;
-    border-bottom-width: 2px;
+/* definition lists */
+dl:not([class]) {
+  max-width: 50em;
+  margin: 0 0 1.5em;
+}
+dl:not([class]) dt:not([class]) {
+  font-weight: bolder;
+}
+dl:not([class]) dd:not([class]) {
+  margin: 0 0 1.5em;
+}
+/* other tags */
+hr {
+  border: 0;
+  border-bottom: 1px dotted;
+  margin: 1.5em 0;
+  max-width: 50em;
 }

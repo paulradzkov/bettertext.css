@@ -16,15 +16,6 @@ module.exports = (grunt) ->
 
 		# optimize images if possible
 		imagemin:
-			out:
-				options:
-					optimizationLevel: 3,
-				files: [
-					expand: true,
-					cwd: 'out/images/',
-					src: ['**/*.{png,jpg,gif}'],
-					dest: 'out/images/'
-				]
 			src:
 				options:
 					optimizationLevel: 3,
@@ -42,16 +33,32 @@ module.exports = (grunt) ->
 			out: ['<%= docpad.out %>']
 
 		copy:
-			main:
+			bower:
 				files: [
 					'out/vendor/normalize.css/normalize.css':'bower_components/normalize.css/normalize.css',
+				]
+
+		# compile less
+		less:
+			development:
+				options:
+					sourceMap: true
+				files: [
+					"out/bettertext.css": "bettertext.less"
+				]
+			production:
+				files: [
+					"bettertext.css": "bettertext.less"
 				]
 
 	# Build the available Grunt tasks.
 	grunt.loadNpmTasks 'grunt-contrib-clean'
 	grunt.loadNpmTasks 'grunt-contrib-imagemin'
 	grunt.loadNpmTasks 'grunt-contrib-copy'
+	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-newer'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'default',       ['copy']
+	grunt.registerTask 'prod',				 ['less:development', 'less:production']
+	grunt.registerTask 'dev',				 ['less:development']
+	grunt.registerTask 'default',			 ['copy']

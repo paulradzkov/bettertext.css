@@ -122,6 +122,8 @@ docpadConfig = {
 
 	# Plugins configurations
 	plugins:
+		less:
+			compress: false
 		sitemap:
 			cachetime: 600000
 			changefreq: 'weekly'
@@ -130,7 +132,7 @@ docpadConfig = {
 			static: true
 			trailingSlashes: true
 		grunt:
-			writeAfter: false
+			writeAfter: ["prod"]
 			writeBefore: false
 			renderBefore: false
 			renderAfter: false
@@ -191,7 +193,7 @@ docpadConfig = {
 
 			plugins:
 				grunt:
-					writeAfter: false
+					writeAfter: ["dev"]
 					writeBefore: false
 					renderBefore: false
 					renderAfter: false
