@@ -14,7 +14,7 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://interpaul.github.io/BetterText.css"
+			url: "http://interpaul.github.io/bettertext.css"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -22,7 +22,7 @@ docpadConfig = {
 			]
 
 			# The default title of our website
-			title: "BetterText.css"
+			title: "bettertext.css"
 
 			# Author name used in copyrights and meta data
 			author: "Павел Радьков"

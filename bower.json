@@ -1,17 +1,27 @@
 {
-  "name": "BetterText.css",
-  "version": "0.0.0",
-  "homepage": "https://github.com/interpaul/BetterText.css",
+  "name": "bettertext.css",
+  "version": "0.1.0",
+  "homepage": "https://github.com/interpaul/bettertext.css",
   "authors": [
     "Paul Radzkov <radzkov@gmail.com>"
   ],
   "license": "MIT",
+  "main": [
+    "bettertext.css",
+    "bettertext.less"
+  ],
   "ignore": [
     "**/.*",
+    "src",
+    "out",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "component.json",
+    "package.json"
   ],
   "dependencies": {
     "normalize.css": "~3.0.3"
