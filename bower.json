@@ -1,9 +1,20 @@
 {
   "name": "bettertext.css",
-  "version": "0.1.0",
   "homepage": "https://github.com/interpaul/bettertext.css",
+  "description": "Typography for naked HTML and Markdown",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/interpaul/bettertext.css.git"
+  },
+  "keywords": [
+      "typography",
+      "css",
+      "defaults",
+      "text",
+      "content"
+    ],
   "authors": [
-    "Paul Radzkov <radzkov@gmail.com>"
+    "Paul Radzkov <radzkov@gmail.com> (http://paulradzkov.com)"
   ],
   "license": "MIT",
   "main": [
@@ -21,7 +32,9 @@
     "CHANGELOG.md",
     "CONTRIBUTING.md",
     "component.json",
-    "package.json"
+    "package.json",
+    "docpad.coffee",
+    "Gruntfile.coffee"
   ],
   "dependencies": {
     "normalize.css": "~3.0.3"

@@ -6,6 +6,13 @@
     "type": "git",
     "url": "https://github.com/interpaul/bettertext.css.git"
   },
+  "keywords": [
+      "typography",
+      "css",
+      "defaults",
+      "text",
+      "content"
+    ],
   "dependencies": {
     "docpad": "~6.78.4",
     "docpad-plugin-cleanurls": "~2.8.1",

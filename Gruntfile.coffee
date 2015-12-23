@@ -34,15 +34,6 @@ module.exports = (grunt) ->
 					src: ['**/*.{png,jpg,jpeg,gif}'],
 					dest: 'src/files/img/'
 				]
-			logo:
-				options:
-					optimizationLevel: 3,
-				files: [
-					expand: true,
-					cwd: 'src/documents/docs/logo/',
-					src: ['**/*.{svg,png,jpg,jpeg,gif}'],
-					dest: 'src/documents/docs/logo/'
-				]
 
 		# clean out dir
 		clean:

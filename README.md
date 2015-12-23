@@ -1,5 +1,5 @@
-BetterText.css
-==============
+bettertext.css v0.1.0
+=====================
 
 Improved typography styles. Great for naked HTML (without any classnames) and Markdown-generated content.
 
