@@ -84,6 +84,10 @@ module.exports = (grunt) ->
 				options:
 					stdout: true
 				command: 'docpad generate --env static'
+			deploy:
+				options:
+					stdout: true
+				command: 'docpad deploy-ghpages --env static'
 			docpadrun:
 				options:
 					stdout: true
@@ -131,6 +135,7 @@ module.exports = (grunt) ->
 	grunt.registerTask 'prod',				 ['less:development', 'less:production']
 	grunt.registerTask 'dev',				 ['less:development']
 	grunt.registerTask 'devwatch',			 ['concurrent:target1', 'watch:less' ]
+	grunt.registerTask 'deploy',			 ['clean', 'prod', 'shell:deploy' ]
 	grunt.registerTask 'run2',				 ['concurrent', 'connect', 'notify:server', 'watch']
 	grunt.registerTask 'run',				 ['shell:docpadrun']
 	grunt.registerTask 'default',			 ['run']
