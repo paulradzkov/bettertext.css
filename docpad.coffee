@@ -132,7 +132,8 @@ docpadConfig = {
 			static: true
 			trailingSlashes: true
 		grunt:
-			writeAfter: ["prod"]
+			# writeAfter: ["prod"]
+			writeAfter: false
 			writeBefore: false
 			renderBefore: false
 			renderAfter: false
@@ -193,7 +194,8 @@ docpadConfig = {
 
 			plugins:
 				grunt:
-					writeAfter: ["dev"]
+					# writeAfter: ["dev"]
+					writeAfter: false
 					writeBefore: false
 					renderBefore: false
 					renderAfter: false
