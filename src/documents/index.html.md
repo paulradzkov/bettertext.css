@@ -11,13 +11,13 @@ layout: default
 
 На основе размера шрифта и интерлиньяжа вычисляется осовная константа типографики — **шаг вертикального ритма**.
 
-Для основного текста я взял кроссплатформенный Arial размером 16px и line-height: 1.5, чтобы высота строки для удобства расчетов равнялась целому числу пикселей — 24px.
+Для основного текста я взял условный sans-serif размером 16px и line-height: 1.5, чтобы высота строки для удобства расчетов равнялась целому числу пикселей — 24px.
 
 css:
 
 ```css
 body {
-  font-family: "Open Sans", Arial, serif;
+  font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -30,12 +30,13 @@ less:
 ```less
 @fz: 16px;
 @rythm: 24px;
-@font1: "Open Sans", Arial, serif;
+@font1: sans-serif;
+@lh: unit(@rythm / @fz);
 
 body {
   font-family: @font1;
   font-size: @fz;
-  line-height: unit(@rythm / @fz);
+  line-height: @lh;
 }
 ```
 
