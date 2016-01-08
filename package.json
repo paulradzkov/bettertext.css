@@ -42,6 +42,7 @@
     "grunt-newer": "^1.1.1",
     "grunt-notify": "^0.4.3",
     "grunt-shell": "^1.1.2",
+    "grunt-shell-spawn": "^0.3.10",
     "time-grunt": "^1.3.0"
   }
 }

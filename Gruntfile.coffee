@@ -53,11 +53,6 @@ module.exports = (grunt) ->
 
 		# track changes
 		watch:
-			src:
-				files: ['<%= docpad.files %>']
-				tasks: [
-					'concurrent:target2'
-				]
 			out:
 				files: ['<%= docpad.out %>/**/*']
 				options:
@@ -65,7 +60,8 @@ module.exports = (grunt) ->
 			less:
 				files: ['bettertext.less']
 				tasks: [
-					'concurrent:target1'
+					'less:development'
+					'notify:less'
 				]
 
 		# start server
@@ -80,10 +76,6 @@ module.exports = (grunt) ->
 
 		# generate development
 		shell:
-			docpad:
-				options:
-					stdout: true
-				command: 'docpad generate --env static'
 			deploy:
 				options:
 					stdout: true
@@ -91,15 +83,8 @@ module.exports = (grunt) ->
 			docpadrun:
 				options:
 					stdout: true
-				command: [
-						'docpad run'
-						'grunt devwatch'
-					].join('&')
-
-		# parallel tasks
-		concurrent:
-			target1: ['dev', 'notify:less']
-			target2: ['shell:docpad', 'notify:shell']
+					async: true
+				command: 'docpad run'
 
 		# notify
 		notify:
@@ -107,14 +92,6 @@ module.exports = (grunt) ->
 				options:
 					title: 'LESS'
 					message: 'bettertext.css compiled'
-			shell:
-				options:
-					title: 'Docpad'
-					message: 'Docpad regenerated'
-			server:
-				options:
-					title: 'Server is ready'
-					message: 'http://localhost:9778'
 
 	# measures the time each task takes
 	require('time-grunt')(grunt);
@@ -126,16 +103,11 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-connect'
-	grunt.loadNpmTasks 'grunt-shell'
+	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-newer'
 	grunt.loadNpmTasks 'grunt-notify'
-	grunt.loadNpmTasks 'grunt-concurrent'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'prod',				 ['less:development', 'less:production']
-	grunt.registerTask 'dev',				 ['less:development']
-	grunt.registerTask 'devwatch',			 ['concurrent:target1', 'watch:less' ]
-	grunt.registerTask 'deploy',			 ['clean', 'prod', 'shell:deploy' ]
-	grunt.registerTask 'run2',				 ['concurrent', 'connect', 'notify:server', 'watch']
-	grunt.registerTask 'run',				 ['shell:docpadrun']
+	grunt.registerTask 'deploy',			 ['clean', 'less:development', 'less:production', 'shell:deploy' ]
+	grunt.registerTask 'run',				 ['less:development', 'notify:less', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']
