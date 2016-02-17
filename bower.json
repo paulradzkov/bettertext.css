@@ -1,10 +1,10 @@
 {
   "name": "bettertext.css",
-  "homepage": "https://github.com/interpaul/bettertext.css",
+  "homepage": "https://github.com/paulradzkov/bettertext.css",
   "description": "Typography for naked HTML and Markdown",
   "repository": {
     "type": "git",
-    "url": "https://github.com/interpaul/bettertext.css.git"
+    "url": "https://github.com/paulradzkov/bettertext.css.git"
   },
   "keywords": [
       "typography",
