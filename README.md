@@ -1,6 +1,6 @@
 # bettertext.css
 
-Improved typography styles for naked HTML (without any classnames) and Markdown-generated content.
+Improved typography styles for naked HTML (without any classnames) and Markdown-generated content. [Demo page](http://paulradzkov.github.io/bettertext.css/)
 
 ## Usage in HTML
 
