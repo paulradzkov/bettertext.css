@@ -608,3 +608,52 @@ img {
 ```
 
 Чтобы на узких экранах код было легче читать и не приходилось использовать горизонтальную прокрутку, для элемента `pre` установлен перенос по словам при помощи `white-space: pre-wrap;`.
+
+## 11. Структурные теги article и section
+
+В семантичном документе контент может быть разбит на разделы при помощи тегов `section`, и всё это может лежать внутри тега `article`. Создадим для этих тегов отступы со всех сторон равные 5vw. А если `section` внутри `article`, то обнулим эти отступы по бокам, у первой секции сверху и у последней секции снизу.
+
+```less
+@section-pad: 5vw;
+
+section:not([class]) {
+    padding: @section-pad;
+}
+
+article:not([class]) {
+    padding: @section-pad;
+
+    & section:not([class]) {
+        padding-left: 0;
+        padding-right: 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+```
+
+Таким образом, простейший шаблон будет выглядеть так:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="bettertext.css">
+</head>
+<body>
+    <article>
+        <h1>Tenetur molestiae</h1>
+        <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+    </article>
+</body>
+</html>
+```

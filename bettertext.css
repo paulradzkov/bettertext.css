@@ -3,12 +3,21 @@ body {
   font-size: 16px;
   line-height: 1.5;
 }
+section:not([class]) {
+  padding: 5vw;
+}
 article:not([class]) {
-  padding: 50px 5%;
+  padding: 5vw;
 }
 article:not([class]) section:not([class]) {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-left: 0;
+  padding-right: 0;
+}
+article:not([class]) section:not([class]):first-child {
+  padding-top: 0;
+}
+article:not([class]) section:not([class]):last-child {
+  padding-bottom: 0;
 }
 p {
   margin: 0 0 1.5em;
@@ -149,11 +158,9 @@ figcaption > p {
 }
 /* blockquotes */
 blockquote {
-  max-width: calc(43em);
+  max-width: calc(45em);
   margin: 0 0 1.5em;
   padding: 1.5em 2.5em;
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.05);
 }
 blockquote > p:last-child {
   margin-bottom: 0;
@@ -166,6 +173,7 @@ blockquote > cite {
 /* code */
 pre {
   margin: 1.5em 0;
+  white-space: pre-wrap;
 }
 /* tables */
 table:not([class]) {
@@ -205,9 +213,26 @@ dl:not([class]) dd:not([class]) {
   margin: 0 0 1.5em;
 }
 /* other tags */
-hr {
+hr:not([class]) {
   border: 0;
-  border-bottom: 1px dotted;
+  border-bottom: 1px solid;
   margin: 1.5em 0;
   max-width: 50em;
+  opacity: .1;
+}
+abbr {
+  letter-spacing: .05em;
+  margin-right: -0.05em;
+}
+strong,
+b,
+dt {
+  font-weight: bolder;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace;
+  font-size: 1em;
 }
