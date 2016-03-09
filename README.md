@@ -37,13 +37,13 @@ Default settings:
 Running with default parameters:
 
 ```less
-@import (less) "uicomponents/bettertext.less";
+@import (less) "pathto/bettertext.less";
 ```
 
 Setting up basic parameters:
 
 ```less
-@import (less) "uicomponents/bettertext.less";
+@import (less) "pathto/bettertext.less";
 
 .bettertext-settings() {
 
@@ -60,7 +60,7 @@ Setting up basic parameters:
 Deep customization: you able to redefine any formula in calculation section inside `bettertext-settings` mixin.
 
 ```less
-@import (less) "uicomponents/bettertext.less";
+@import (less) "pathto/bettertext.less";
 
 .bettertext-settings() {
 
