@@ -7,8 +7,10 @@
     @linel: 50em;
     @font1: sans-serif;
     @font2: sans-serif;
+    @font3: monospace;
     @scale1: 1.125;
     @scale2: 1.250;
+    @section-pad: 5vw;
 
     @bettertext-breakpoint: ~"(min-width: 768px)";
 
@@ -64,22 +66,39 @@
     @h3h4-mt: unit( @h4-lh ,em);
     @h4h5-mt: 0;
     @h5h6-mt: 0;
+
+    //article and section
+    @section-pt: round(@h2-mt / 2);
+    @section-pb: round(@h2-mt / 2);
 }
 
 
 @bettertext: {
+
     body {
       font-family: @font1;
       font-size: @fz;
       line-height: @lh;
     }
 
+    section:not([class]) {
+        padding: @section-pad;
+    }
+
     article:not([class]) {
-        padding: 50px 5%;
+        padding: @section-pad;
 
         & section:not([class]) {
-            padding-top: 25px;
-            padding-bottom: 25px;
+            padding-left: 0;
+            padding-right: 0;
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
         }
     }
 
@@ -241,11 +260,9 @@
 
     /* blockquotes */
     blockquote {
-        max-width: calc(@linel - 5em - 2px);
+        max-width: calc(@linel - 5em);
         margin: 0 0 (@m-default);
         padding: (@m-default) 2.5em;
-        border-left: 2px solid rgba(0, 0, 0, .1);
-        background-color: rgba(0, 0, 0, .05);
 
         & > p:last-child {
             margin-bottom: 0;
@@ -262,6 +279,7 @@
 
     pre {
         margin: (@m-default) 0;
+        white-space: pre-wrap;
     }
 
     /* tables */
@@ -310,11 +328,29 @@
     }
 
     /* other tags */
-    hr {
+    hr:not([class]) {
         border: 0;
-        border-bottom: 1px dotted;
+        border-bottom: 1px solid;
         margin: @m-default 0;
         max-width: @linel;
+        opacity: .1;
+    }
+
+    abbr {
+        letter-spacing: .05em;
+        margin-right: -.05em;
+    }
+
+    strong, b, dt {
+        font-weight: bolder;
+    }
+
+    code,
+    kbd,
+    pre,
+    samp {
+        font-family: @font3;
+        font-size: 1em;
     }
 
     .bettertext-settings();
