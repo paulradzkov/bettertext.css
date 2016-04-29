@@ -1,30 +1,33 @@
 .bettertext-settings() {
 
     //settings
-    @fz: 16px;          // default font-size
-    @fz-small: 0.8em;   // smaller font-size
-    @rythm: 24px;       // vertical rythm = line-height in pixels
-    @linel: 50em;       // max-width for text
-    @font1: sans-serif; // body
-    @font2: sans-serif; // headers
-    @font3: monospace;  // code
-    @scale1: 1.125;     // header size multiplier for small screens
-    @scale2: 1.250;     // header size multiplier for large screens
-    @section-pad: 5vw;  // paddinf for article and section
+    @fz: 16px;                 // default font-size in px
+    @fz-small: 0.8em;          // smaller font-size (em)
+    @rythm: 24px;              // vertical rythm = line-height in pixels
+    @linel: 50rem;             // max-width for text (em or rem)
+    @font-body: sans-serif;    // body
+    @font-headers: sans-serif; // headers
+    @font-code: monospace;     // code
+    @scale1: 1.125;            // header size multiplier for small screens
+    @scale2: 1.250;            // header size multiplier for large screens
+    @section-pad: 5vw;         // paddinf for article and section
 
     @bettertext-breakpoint: ~"(min-width: 768px)";
 
     //calculations
+    // all calculation performed assuming 1rem = 16px
+    @onerem: 16;
+
     @lh: unit(@rythm / @fz);
     @m-default: unit(@lh, em);
 
     //headers size calculations for small screens
-    @h1-fz: round( @fz * pow(@scale1, 4) );
-    @h2-fz: round( @fz * pow(@scale1, 3) );
-    @h3-fz: round( @fz * pow(@scale1, 2) );
-    @h4-fz: round( @fz * pow(@scale1, 1) );
-    @h5-fz: @fz;
-    @h6-fz: round(@fz * 0.8);
+    @h1-fz: unit( (round( @fz * pow(@scale1, 4) )) / @onerem, em);
+    @h2-fz: unit( (round( @fz * pow(@scale1, 3) )) / @onerem, em);
+    @h3-fz: unit( (round( @fz * pow(@scale1, 2) )) / @onerem, em);
+    @h4-fz: unit( (round( @fz * pow(@scale1, 1) )) / @onerem, em);
+    @h5-fz: unit( (@fz) / @onerem, em);
+    @h6-fz: unit( (round(@fz * 0.8)) / @onerem, em);
 
     //headers lihe-height
     @h1-lh: 1.1;
@@ -37,28 +40,28 @@
     @h2-mt: 3.5em;
     @h3-mt: 3em;
     @h4-mt: 2.5em;
-    @h5-mt: unit( 2 * @lh * @fz / @h5-fz, em);
-    @h6-mt: unit( 2 * @lh * @fz / @h6-fz, em);
+    @h5-mt: unit( 2 * @lh * @fz / @h5-fz / @onerem, em);
+    @h6-mt: unit( 2 * @lh * @fz / @h6-fz / @onerem, em);
 
     //header margin-bottom
-    @h1-mb: unit( @lh * @fz / @h1-fz, em);
-    @h2-mb: unit( @lh * @fz / @h2-fz, em);
-    @h3-mb: unit( @lh * @fz / @h3-fz, em);
-    @h4-mb: unit( @lh * @fz / @h4-fz, em);
-    @h5-mb: unit( @lh * @fz / @h5-fz, em);
-    @h6-mb: unit( @lh * @fz / @h6-fz, em);
+    @h1-mb: unit( @lh * @fz / @h1-fz / @onerem, em);
+    @h2-mb: unit( @lh * @fz / @h2-fz / @onerem, em);
+    @h3-mb: unit( @lh * @fz / @h3-fz / @onerem, em);
+    @h4-mb: unit( @lh * @fz / @h4-fz / @onerem, em);
+    @h5-mb: unit( @lh * @fz / @h5-fz / @onerem, em);
+    @h6-mb: unit( @lh * @fz / @h6-fz / @onerem, em);
 
     //headers size calculations for large screens
-    @h1-l-fz: round( @fz * pow(@scale2, 4) );
-    @h2-l-fz: round( @fz * pow(@scale2, 3) );
-    @h3-l-fz: round( @fz * pow(@scale2, 2) );
-    @h4-l-fz: round( @fz * pow(@scale2, 1) );
+    @h1-l-fz: unit( (round( @fz * pow(@scale2, 4) )) / @onerem, em);
+    @h2-l-fz: unit( (round( @fz * pow(@scale2, 3) )) / @onerem, em);
+    @h3-l-fz: unit( (round( @fz * pow(@scale2, 2) )) / @onerem, em);
+    @h4-l-fz: unit( (round( @fz * pow(@scale2, 1) )) / @onerem, em);
 
     //header margin-bottom for large screens
-    @h1-l-mb: unit( @lh * @fz / @h1-l-fz, em);
-    @h2-l-mb: unit( @lh * @fz / @h2-l-fz, em);
-    @h3-l-mb: unit( @lh * @fz / @h3-l-fz, em);
-    @h4-l-mb: unit( @lh * @fz / @h4-l-fz, em);
+    @h1-l-mb: unit( @lh * @fz / @h1-l-fz / @onerem, em);
+    @h2-l-mb: unit( @lh * @fz / @h2-l-fz / @onerem, em);
+    @h3-l-mb: unit( @lh * @fz / @h3-l-fz / @onerem, em);
+    @h4-l-mb: unit( @lh * @fz / @h4-l-fz / @onerem, em);
 
     //double headers
     @h1h2-mt: unit( @h2-lh ,em);
@@ -76,9 +79,9 @@
 @bettertext: {
 
     body {
-      font-family: @font1;
-      font-size: @fz;
-      line-height: @lh;
+        font-family: @font-body;
+        font-size: @fz;
+        line-height: @lh;
     }
 
     section:not([class]) {
@@ -103,8 +106,8 @@
     }
 
     p {
-      margin: 0 0 @m-default;
-      max-width: @linel;
+        margin: 0 0 @m-default;
+        max-width: @linel;
     }
 
     /* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
@@ -124,65 +127,65 @@
 
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: @font2;
+        font-family: @font-headers;
     }
 
     h1 {
-      font-size: @h1-fz;
-      line-height: @h1-lh;
-      margin: @h1-mt 0 @h1-mb;
+        font-size: @h1-fz;
+        line-height: @h1-lh;
+        margin: @h1-mt 0 @h1-mb;
     }
 
     h2 {
-      font-size: @h2-fz;
-      line-height: @h2-lh;
-      margin: @h2-mt 0 @h2-mb;
+        font-size: @h2-fz;
+        line-height: @h2-lh;
+        margin: @h2-mt 0 @h2-mb;
     }
 
     h3 {
-      font-size: @h3-fz;
-      line-height: @h3-lh;
-      margin: @h3-mt 0 @h3-mb;
+        font-size: @h3-fz;
+        line-height: @h3-lh;
+        margin: @h3-mt 0 @h3-mb;
     }
 
     h4 {
-      font-size: @h4-fz;
-      line-height: @h4-lh;
-      margin: @h4-mt 0 @h4-mb;
+        font-size: @h4-fz;
+        line-height: @h4-lh;
+        margin: @h4-mt 0 @h4-mb;
     }
 
     h5 {
-      font-size: @h5-fz;
-      margin: @h5-mt 0 @h5-mb;
+        font-size: @h5-fz;
+        margin: @h5-mt 0 @h5-mb;
     }
 
     h6 {
-      font-size: @h6-fz;
-      margin: @h6-mt 0 @h6-mb;
-      text-transform: uppercase;
-      letter-spacing: 0.01em;
+        font-size: @h6-fz;
+        margin: @h6-mt 0 @h6-mb;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
     }
 
     @media @bettertext-breakpoint {
 
       h1 {
-        font-size: @h1-l-fz;
-        margin-bottom: @h1-l-mb;
+          font-size: @h1-l-fz;
+          margin-bottom: @h1-l-mb;
       }
 
       h2 {
-        font-size: @h2-l-fz;
-        margin-bottom: @h2-l-mb;
+          font-size: @h2-l-fz;
+          margin-bottom: @h2-l-mb;
       }
 
       h3 {
-        font-size: @h3-l-fz;
-        margin-bottom: @h3-l-mb;
+          font-size: @h3-l-fz;
+          margin-bottom: @h3-l-mb;
       }
 
       h4 {
-        font-size: @h4-l-fz;
-        margin-bottom: @h4-l-mb;
+          font-size: @h4-l-fz;
+          margin-bottom: @h4-l-mb;
       }
     }
 
@@ -192,7 +195,7 @@
     h4:first-child,
     h5:first-child,
     h6:first-child {
-      margin-top: 0;
+        margin-top: 0;
     }
 
     /* double headers */
@@ -349,7 +352,7 @@
     kbd,
     pre,
     samp {
-        font-family: @font3;
+        font-family: @font-code;
         font-size: 1em;
     }
 
