@@ -1,9 +1,9 @@
 ---
-title: BetterText.css
+title: bettertext.css
 layout: default
 ---
 
-# Типографика BetterText.css
+# Типографика bettertext.css
 
 ## 1. Основной текст
 
