@@ -21,7 +21,7 @@ article:not([class]) section:not([class]):last-child {
 }
 p {
   margin: 0 0 1.5em;
-  max-width: 50em;
+  max-width: 50rem;
 }
 /* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
 p:before,
@@ -44,50 +44,50 @@ h6 {
   font-family: sans-serif;
 }
 h1 {
-  font-size: 26px;
+  font-size: 1.625em;
   line-height: 1.1;
   margin: 4em 0 0.92307692em;
 }
 h2 {
-  font-size: 23px;
+  font-size: 1.4375em;
   line-height: 1.2;
   margin: 3.5em 0 1.04347826em;
 }
 h3 {
-  font-size: 20px;
+  font-size: 1.25em;
   line-height: 1.3;
   margin: 3em 0 1.2em;
 }
 h4 {
-  font-size: 18px;
+  font-size: 1.125em;
   line-height: 1.4;
   margin: 2.5em 0 1.33333333em;
 }
 h5 {
-  font-size: 16px;
+  font-size: 1em;
   margin: 3em 0 1.5em;
 }
 h6 {
-  font-size: 13px;
+  font-size: 0.8125em;
   margin: 3.69230769em 0 1.84615385em;
   text-transform: uppercase;
   letter-spacing: 0.01em;
 }
 @media (min-width: 768px) {
   h1 {
-    font-size: 39px;
+    font-size: 2.4375em;
     margin-bottom: 0.61538462em;
   }
   h2 {
-    font-size: 31px;
+    font-size: 1.9375em;
     margin-bottom: 0.77419355em;
   }
   h3 {
-    font-size: 25px;
+    font-size: 1.5625em;
     margin-bottom: 0.96em;
   }
   h4 {
-    font-size: 20px;
+    font-size: 1.25em;
     margin-bottom: 1.2em;
   }
 }
@@ -120,7 +120,7 @@ h5 + h6 {
 ul:not([class]),
 ol:not([class]) {
   margin: 0 0 1.5em;
-  max-width: calc(47.5em);
+  max-width: calc(47.5rem);
   padding-left: 0;
   padding-right: 2.5em;
 }
@@ -144,12 +144,12 @@ figure:not([class]) {
   margin: 3em 0;
 }
 figure:not([class]) > p {
-  max-width: 37.5em;
+  max-width: 37.5rem;
   font-size: 0.8em;
   margin: 0.5em 0 0;
 }
 figcaption {
-  max-width: 37.5em;
+  max-width: 37.5rem;
   font-size: 0.8em;
   margin: 0.5em 0 3em;
 }
@@ -158,7 +158,7 @@ figcaption > p {
 }
 /* blockquotes */
 blockquote {
-  max-width: calc(45em);
+  max-width: calc(45rem);
   margin: 0 0 1.5em;
   padding: 1.5em 2.5em;
 }
@@ -203,7 +203,7 @@ table:not([class]) thead th {
 }
 /* definition lists */
 dl:not([class]) {
-  max-width: 50em;
+  max-width: 50rem;
   margin: 0 0 1.5em;
 }
 dl:not([class]) dt:not([class]) {
@@ -217,7 +217,7 @@ hr:not([class]) {
   border: 0;
   border-bottom: 1px solid;
   margin: 1.5em 0;
-  max-width: 50em;
+  max-width: 50rem;
   opacity: .1;
 }
 abbr {
