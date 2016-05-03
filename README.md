@@ -6,6 +6,10 @@ Improved typography styles for naked HTML (without any classnames) and Markdown-
 
 `npm install bettertext.css`
 
+or
+
+`bower install bettertext.css --save`
+
 ## Usage in HTML
 
 Insert bettertext.css after [normalize.css](https://github.com/necolas/normalize.css) and after your `@font-face` declaration.
