@@ -1,0 +1,8 @@
+node_modules/
+bower_components/
+out/
+src/
+.git
+bower.json
+docpad.coffee
+Gruntfile.coffee
