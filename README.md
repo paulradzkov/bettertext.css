@@ -2,9 +2,15 @@
 
 Improved typography styles for naked HTML (without any classnames) and Markdown-generated content. [Demo page](http://paulradzkov.github.io/bettertext.css/)
 
+## Install
+
+`npm install bettertext.css`
+
 ## Usage in HTML
 
 Insert bettertext.css after [normalize.css](https://github.com/necolas/normalize.css) and after your `@font-face` declaration.
+
+Or include bettertext.less into your project styles.
 
 ## Default values
 
@@ -16,16 +22,18 @@ Default settings:
 .bettertext-settings() {
 
     //settings
-    @fz: 16px;          // default font-size
-    @fz-small: 0.8em;   // smaller font-size
-    @rythm: 24px;       // vertical rythm = line-height in pixels
-    @linel: 50em;       // max-width for text
-    @font1: sans-serif; // body
-    @font2: sans-serif; // headers
-    @scale1: 1.125;     // header size multiplier for small screens
-    @scale2: 1.250;     // header size multiplier for large screens
+    @fz: 16px;                 // default font-size in px
+    @fz-small: 0.8em;          // smaller font-size (em)
+    @rythm: 24px;              // vertical rythm = line-height in pixels
+    @linel: 50rem;             // max-width for text (em or rem)
+    @font-body: sans-serif;    // body
+    @font-headers: sans-serif; // headers
+    @font-code: monospace;     // code
+    @scale1: 1.125;            // header size multiplier for small screens
+    @scale2: 1.250;            // header size multiplier for large screens
+    @section-pad: 5vw;         // paddinf for article and section
 
-    @bettertext-breakpoint: ~"(min-width: 768px)"; // large screens starts from that value
+    @bettertext-breakpoint: ~"(min-width: 768px)";
 
     //calculations
     // ...
@@ -37,20 +45,20 @@ Default settings:
 Running with default parameters:
 
 ```less
-@import (less) "pathto/bettertext.less";
+@import (less) "node_modules/bettertext.css/bettertext.less";
 ```
 
 Setting up basic parameters:
 
 ```less
-@import (less) "pathto/bettertext.less";
+@import (less) "node_modules/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
 
     //settings
-    @fz: 16px;                   // default font-size
-    @font1: 'Arial', sans-serif; // body
-    @font2: 'Georgia', serif;    // headers
+    @fz: 16px;                          // default font-size
+    @font-body: 'Arial', sans-serif;    // body
+    @font-headers: 'Georgia', serif;    // headers
 
     @bettertext-breakpoint: ~"(min-width: 50em)"; // large screens starts from that value
 
@@ -60,14 +68,14 @@ Setting up basic parameters:
 Deep customization: you able to redefine any formula in calculation section inside `bettertext-settings` mixin.
 
 ```less
-@import (less) "pathto/bettertext.less";
+@import (less) "node_modules/bettertext.css/bettertext.less";
 
 .bettertext-settings() {
 
     //settings
-    @fz: 16px;                   // default font-size
-    @font1: 'Arial', sans-serif; // body
-    @font2: 'Georgia', serif;    // headers
+    @fz: 16px;                          // default font-size
+    @font-body: 'Arial', sans-serif;    // body
+    @font-headers: 'Georgia', serif;    // headers
 
     @bettertext-breakpoint: ~"(min-width: 50em)"; // large screens starts from that value
 
