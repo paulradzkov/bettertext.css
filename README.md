@@ -4,7 +4,7 @@ Improved typography styles for naked HTML (without any classnames) and Markdown-
 
 ## Install
 
-`npm install bettertext.css`
+`npm install bettertext.css --save-dev`
 
 or
 
