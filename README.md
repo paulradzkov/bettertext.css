@@ -92,3 +92,7 @@ Deep customization: you able to redefine any formula in calculation section insi
     @h6-mt: unit( 2 * @lh * @fz / @h6-fz, em);
 }
 ```
+
+## Customizing without LESS
+
+If you are not using LESS on your project you can fork and customize bettertext.css on [codepen](http://codepen.io/paulradzkov/pen/Mygdrb): adjust settings with your parameters, test with your HTML or Markdown, press "View Compiled" and grab compiled CSS.
