@@ -109,5 +109,5 @@ module.exports = (grunt) ->
 
 	# Register our Grunt tasks.
 	grunt.registerTask 'deploy',			 ['clean', 'less:development', 'less:production', 'shell:deploy' ]
-	grunt.registerTask 'run',				 ['less:development', 'notify:less', 'shell:docpadrun', 'watch:less']
+	grunt.registerTask 'run',				 ['less:development', 'less:production', 'notify:less', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']
