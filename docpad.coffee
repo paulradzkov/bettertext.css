@@ -14,7 +14,8 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "http://paulradzkov.github.io/bettertext.css"
+			url: "//paulradzkov.github.io/bettertext.css"
+			canonicalUrl: "https://paulradzkov.github.io/bettertext.css"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -26,6 +27,7 @@ docpadConfig = {
 
 			# Author name used in copyrights and meta data
 			author: "Павел Радьков"
+			twittername: "@paul_radzkov"
 
 			# The website description (for SEO)
 			description: """
@@ -39,9 +41,9 @@ docpadConfig = {
 
 			email: "radzkov@gmail.com"
 
-			googleAnalyticsId: ""
+			googleAnalyticsId: "UA-29416794-2"
 
-			googleAnalyticsDomain: ""
+			googleAnalyticsDomain: "auto"
 
 			# The website's styles
 			#styles: [

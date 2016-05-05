@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize.css/normalize.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/bettertext.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/css/github.css') %>">
+    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
+
+    <%- @partial('opengraph') %>
+    <%- @partial('twittercard') %>
+    <%- @partial('googleAnalytics') %>
 </head>
 <body>
     <article>
