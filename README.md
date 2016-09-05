@@ -88,8 +88,8 @@ Deep customization: you able to redefine any formula in calculation section insi
     @h2-mt: 2.5em;
     @h3-mt: 2em;
     @h4-mt: 1.5em;
-    @h5-mt: unit( 2 * @lh * @fz / @h5-fz, em);
-    @h6-mt: unit( 2 * @lh * @fz / @h6-fz, em);
+    @h5-mt: unit((2 * @lh * @fz / @h5-fz), em);
+    @h6-mt: unit((2 * @lh * @fz / @h6-fz), em);
 }
 ```
 
