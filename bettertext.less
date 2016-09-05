@@ -18,16 +18,16 @@
     // all calculation performed assuming 1rem = 16px
     @onerem: 16;
 
-    @lh: unit(@rythm / @fz);
+    @lh: unit((@rythm / @fz));
     @m-default: unit(@lh, em);
 
     //headers size calculations for small screens
-    @h1-fz: unit( (round( @fz * pow(@scale1, 4) )) / @onerem, em);
-    @h2-fz: unit( (round( @fz * pow(@scale1, 3) )) / @onerem, em);
-    @h3-fz: unit( (round( @fz * pow(@scale1, 2) )) / @onerem, em);
-    @h4-fz: unit( (round( @fz * pow(@scale1, 1) )) / @onerem, em);
-    @h5-fz: unit( (@fz) / @onerem, em);
-    @h6-fz: unit( (round(@fz * 0.8)) / @onerem, em);
+    @h1-fz: unit(((round( @fz * pow(@scale1, 4))) / @onerem), em);
+    @h2-fz: unit(((round( @fz * pow(@scale1, 3))) / @onerem), em);
+    @h3-fz: unit(((round( @fz * pow(@scale1, 2))) / @onerem), em);
+    @h4-fz: unit(((round( @fz * pow(@scale1, 1))) / @onerem), em);
+    @h5-fz: unit(((@fz) / @onerem), em);
+    @h6-fz: unit(((round(@fz * 0.8)) / @onerem), em);
 
     //headers lihe-height
     @h1-lh: 1.1;
@@ -40,28 +40,28 @@
     @h2-mt: 3.5em;
     @h3-mt: 3em;
     @h4-mt: 2.5em;
-    @h5-mt: unit( 2 * @lh * @fz / @h5-fz / @onerem, em);
-    @h6-mt: unit( 2 * @lh * @fz / @h6-fz / @onerem, em);
+    @h5-mt: unit((2 * @lh * @fz / @h5-fz / @onerem), em);
+    @h6-mt: unit((2 * @lh * @fz / @h6-fz / @onerem), em);
 
     //header margin-bottom
-    @h1-mb: unit( @lh * @fz / @h1-fz / @onerem, em);
-    @h2-mb: unit( @lh * @fz / @h2-fz / @onerem, em);
-    @h3-mb: unit( @lh * @fz / @h3-fz / @onerem, em);
-    @h4-mb: unit( @lh * @fz / @h4-fz / @onerem, em);
-    @h5-mb: unit( @lh * @fz / @h5-fz / @onerem, em);
-    @h6-mb: unit( @lh * @fz / @h6-fz / @onerem, em);
+    @h1-mb: unit((@lh * @fz / @h1-fz / @onerem), em);
+    @h2-mb: unit((@lh * @fz / @h2-fz / @onerem), em);
+    @h3-mb: unit((@lh * @fz / @h3-fz / @onerem), em);
+    @h4-mb: unit((@lh * @fz / @h4-fz / @onerem), em);
+    @h5-mb: unit((@lh * @fz / @h5-fz / @onerem), em);
+    @h6-mb: unit((@lh * @fz / @h6-fz / @onerem), em);
 
     //headers size calculations for large screens
-    @h1-l-fz: unit( (round( @fz * pow(@scale2, 4) )) / @onerem, em);
-    @h2-l-fz: unit( (round( @fz * pow(@scale2, 3) )) / @onerem, em);
-    @h3-l-fz: unit( (round( @fz * pow(@scale2, 2) )) / @onerem, em);
-    @h4-l-fz: unit( (round( @fz * pow(@scale2, 1) )) / @onerem, em);
+    @h1-l-fz: unit(((round( @fz * pow(@scale2, 4))) / @onerem), em);
+    @h2-l-fz: unit(((round( @fz * pow(@scale2, 3))) / @onerem), em);
+    @h3-l-fz: unit(((round( @fz * pow(@scale2, 2))) / @onerem), em);
+    @h4-l-fz: unit(((round( @fz * pow(@scale2, 1))) / @onerem), em);
 
     //header margin-bottom for large screens
-    @h1-l-mb: unit( @lh * @fz / @h1-l-fz / @onerem, em);
-    @h2-l-mb: unit( @lh * @fz / @h2-l-fz / @onerem, em);
-    @h3-l-mb: unit( @lh * @fz / @h3-l-fz / @onerem, em);
-    @h4-l-mb: unit( @lh * @fz / @h4-l-fz / @onerem, em);
+    @h1-l-mb: unit((@lh * @fz / @h1-l-fz / @onerem), em);
+    @h2-l-mb: unit((@lh * @fz / @h2-l-fz / @onerem), em);
+    @h3-l-mb: unit((@lh * @fz / @h3-l-fz / @onerem), em);
+    @h4-l-mb: unit((@lh * @fz / @h4-l-fz / @onerem), em);
 
     //double headers
     @h1h2-mt: unit( @h2-lh ,em);
@@ -71,10 +71,10 @@
     @h5h6-mt: 0;
 
     //article and section
-    @section-pt: round(@h2-mt / 2);
-    @section-pb: round(@h2-mt / 2);
-}
+    @section-pt: round((@h2-mt / 2));
+    @section-pb: round((@h2-mt / 2));
 
+}
 
 @bettertext: {
 

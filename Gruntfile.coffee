@@ -42,6 +42,7 @@ module.exports = (grunt) ->
 		less:
 			development:
 				options:
+					strictMath: true
 					sourceMap: true
 				files: [
 					"out/bettertext.css": "bettertext.less"
