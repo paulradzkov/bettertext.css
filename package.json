@@ -1,6 +1,6 @@
 {
   "name": "bettertext.css",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typography for naked HTML and Markdown",
   "author": "Paul Radzkov <radzkov@gmail.com>",
   "repository": {
@@ -15,8 +15,7 @@
     "text",
     "content"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "main": "bettertext.less",
   "devDependencies": {
     "docpad": "~6.78.4",
