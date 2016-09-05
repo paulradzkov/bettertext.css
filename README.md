@@ -6,9 +6,12 @@ Improved typography styles for naked HTML (without any classnames) and Markdown-
 
 `npm install bettertext.css --save-dev`
 
-or
-
 `bower install bettertext.css --save`
+
+or use compiled version from CDN
+
+`https://unpkg.com/bettertext.css@latest/bettertext.css`
+
 
 ## Usage in HTML
 
