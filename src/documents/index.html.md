@@ -6,655 +6,183 @@ description: "Улучшенная типографика для голого HT
 
 # Типографика bettertext.css
 
-## 1. Основной текст
+[![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css) [![bower version](https://badge.fury.io/bo/bettertext.css.svg)](http://badge.fury.io/bo/bettertext.css)
 
-Создание типографики начинается с подбора стилей для основного текста. Первым делом, создайте несколько абзацев текста, подберите для них шрифт, размер шрифта и межстрочное расстояние.
+Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как основу для собственной типографики.
 
-На основе размера шрифта и интерлиньяжа вычисляется основная константа типографики — **шаг вертикального ритма**.
 
-Для основного текста я взял условный sans-serif размером 16px и line-height: 1.5, чтобы высота строки для удобства расчетов равнялась целому числу пикселей — 24px.
+**О проекте**  
+[Как bettertext.css делает текст лучше](#features)  
+[Из чего состоит bettertext.css](/story)  
+[Демо-страница](/testpage)
 
-css:
+**Документация**  
+[Установка и подключение](#install)  
+[Настройка LESS-версии](#settings)  
+[Параметры по-умолчанию](#defaults)  
+[Переопределение настроек](#customization)
 
-```css
-body {
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-}
+**Ссылки**  
+[Скачать][releases]  
+[GitHub проекта][github]  
+[Сообщить о баге][issues]  
+[Настроить онлайн][codepen]  
+[English version][github]
+
+
+<a name="features" id="features"></a>
+
+## Как bettertext.css делает текст лучше
+
+Bettertext.css создан для того, чтобы решить типичные проблемы дефолтных стилей браузера, предотвратить распространенные баги и подготовить качественную основу для собственной типографики.
+
+### Соблюдаются классические пропорции и теория близости
+
+Размеры заголовков вычисляются по классическим печатным пропорциям из размера основного текста и вертикального ритма. Верхние и нижние отступы подобраны с учетом теории близости. Это визуально подчеркивает структуру страницы и облегчает ориентирование по разделам страницы.
+
+### Адаптивные размеры для заголовков
+
+Чтобы заголовки аккуратно выглядели на маленьких экранах и не было проблем с длинными словами, в типографике предусмотрен отдельный набор размеров для экранов меньше 768px.
+
+### Правильное обтекание картинок и списков
+
+Вёрстка содержит исправления для типичных багов обтекания текстом: никаких разрывов текста из-за длинных слов, а буллиты списков не налезут на картинку. Умные отступы предотвратят проблемы с многоколоночным текстом.
+
+### Не содержит классов и не мешает стилям шаблона
+
+CSS написан так, чтобы верстальщику не приходилось ничего обнулять и переопределять в коде шаблона. Стили для структурных тегов section, article, figure, а также для списков ul, ol и таблиц применяются только когда на тегах нет классов.
+
+<a name="install" id="install"></a>
+
+## Установить и подключить
+
+Подключается после normalize.css и веб-шрифтов. Скомпилированная версия не нуждается в настройке и весит всего 4 kb.
+
+**Подключить через CDN**
+```bash
+https://unpkg.com/bettertext.css@latest/bettertext.css
 ```
 
-↓
+**Установить через NPM**
+```bash
+npm install bettertext.css --save-dev
+```
 
-less:
+**Установить через Bower**
+```bash
+bower install bettertext.css --save
+```
+
+## Настроить под свой дизайн
+
+Bettertext.css написан на LESS и настраивается при помощи 11 переменных. Остальные 40 вычисляются по формулам, но их тоже можно переопределить.
+
+Если вы не используете LESS, [настройте типографику онлайн][codepen] и пользуйтесь скомпилированной версией:
+
+* настройте переменные по вашему вкусу;
+* протестируйте на вашем HTML или Markdown коде;
+* нажмите "View Compiled" и заберите скомпилированный CSS.
+
+<a name="settings" id="settings"></a>
+
+## Подключить и настроить LESS-версию
+
+Подключите bettertext.less к стилям вашего проекта.
 
 ```less
-@fz: 16px;
-@rythm: 24px;
-@font1: sans-serif;
-@lh: unit(@rythm / @fz);
-
-body {
-  font-family: @font1;
-  font-size: @fz;
-  line-height: @lh;
-}
+@import (less) "node_modules/bettertext.css/bettertext.less";
 ```
 
-Уделите особое внимание основному тексту, так как такого текста больше всего на информационном сайте.
+<a name="defaults" id="defaults"></a>
 
-Главный критерий — текст должен легко читаться. Для этого он должен быть достаточно крупным.
+### Парамерты по-умолчанию
 
-Выбирайте размер от 14px до 25px. Если текста будет много, шрифт рекомендуется выбирать не меньше 16px.
-
-Высота строки из диапазона 1.2–1.8.
-Меньше 1.4, чтобы блоки текста создавали плотные контрастные прямоугольники. Больше 1.6, чтобы добиться визуальной легкости.
-
-## 2. Абзацы
-
-Основной текст обычно состоит из абзацев. Выберем расстояние между абзацами равное вертикальному ритму.
-
-Оставим только нижний отступ — это избавит нас от таких проблем, как неровный верхний края при использовании многоколоночного текста, от ненужного верхнего отступа у первого абзаца внутри `li` элемента.
-
-Рекомендуемая максимальная длина строки текста должна быть в пределах 60–90 символов.
-
-Слишком длинные строки утомительно читать, потому что глазу тяжелее находить начало строки.
-
-css:
-
-```css
-p {
-  margin: 0 0 1.5em;
-  max-width: 40em;
-}
-```
-
-↓
-
-less:
+У компонента есть глобальный миксин с настройками:
 
 ```less
-@linel: 40em;
+.bettertext-settings() {
 
-p {
-  margin: 0 0 unit(@rythm / @fz, em);
-  max-width: @linel;
+    //settings
+    @fz: 16px;                         // default font-size in px
+    @fz-small: 0.8em;                  // smaller font-size (em)
+    @rythm: 24px;                      // vertical rythm = line-height in pixels
+    @linel: 50rem;                     // max-width for text (em or rem)
+    @font-body: sans-serif;            // body
+    @font-headers: sans-serif;         // headers
+    @font-code: monospace, monospace;  // code (duplication is intentional)
+    @scale1: 1.125;                    // header size multiplier for small screens
+    @scale2: 1.250;                    // header size multiplier for large screens
+    @section-pad: 5vw;                 // padding for article and section
+
+    @bettertext-breakpoint: ~"(min-width: 768px)";
+
+    //calculations
+    // ...
 }
 ```
 
-## 3. Обтекание картинок
+<a name="customization" id="customization"></a>
 
-Первоисточник: https://css-tricks.com/minimum-paragraph-widths/
+### Собственные настройки
 
-Когда текст обтекает картинки, может случиться ситуация, при которой длинные слова не помещаются в оставшееся для текста простанство и переносятся под картинку, создавая неприятный разрыв.
-
-![](img/TheProblem.png)
-
-Зададим параграфу псевдо-элемент с минимальной шириной. Если оставшееся свободное место меньше этой минимальной ширины, псевдо-элемент вытолкнет абзац под картинку.
-
-![](img/PseudoElement.png)
-
-Применим этот трюк к абзацам и спискам. Но так как списки могут использоваться в навигации и других местах, выбирать будем только списки, у которых нет класса.
-
-Пусть минимальная ширина псевдоэлемента равна 10em. Высота псевдо-элемента равна нулю, так как он блочный.
-
-```css
-p:before,
-ol:not([class]):before,
-ul:not([class]):before {
-    content: '';
-    display: block;
-    width: 10em;
-    overflow: hidden;
-}
-
-li p:before {
-    content: none;
-}
-```
-
-## 4. Заголовки. Размер
-
-Заголовки должны обладать контрастом по отношению к основному тексту, тогда читатель беглым взглядом без труда сможет определить иерархию документа по заголовкам. Создать контраст можно при помощи шрифта, размера текста, отступов и цвета.
-
-Для информационных сайтов обычно хватает четырех типов заголовка h1 .. h4. Заголовки h5 и h6 почти не используются. Поэтому для h1 .. h4 создадим контраст при помощи размера, а h5 и h6 оставим на потом.
-
-Размер заголовков в классической типографике принято выбирать в соответствии с каким-либо законом. Например, увеличивать размер шрифта в X раз с каждым шагом.
-
-Сайты, на которых можно подобрать размеры шрифта по классическим типографским пропорциям:
-
-* [http://type-scale.com/]()
-* [http://www.modularscale.com/]()
-* [http://www.gridlover.net/app/]()
-
-Для адаптивной типографики нам понадобится как минимум два набора размеров заголовков. Для больших экранов самый крупный заголовок может быть больше основного текста в 3-4 раза. Для маленьких экранов это соотношение рекомендуется делать не больше 2х. Иначе на узких экранах мобильных устройств, где длина строки составляет 30-40 символов, заголовки будут занимать слишком много строк, отъедая ценное вертикальное пространство, могут появиться проблемы с переносами длинных слов.
-
-<figure>
-![](http://typecast.com/images/uploads/modernscale-one-scale.jpg)
-
-<figcaption>Иллюстрация с  сайта http://typecast.com/blog/a-more-modern-scale-for-web-typography</figcaption>
-</figure>
-
-Поэтому для малых экранов выберем соотношение 1.125
-
-<figure>
-    ![1.125 - Major Second](img/2036bc7e6b.jpg)
-    <figcaption>1.125 - Major Second</figcaption>
-</figure>
-
-А для экранов больше 768px шириной выберем контраст повыше — 1.250
-
-<figure>
-    ![1.250 - Major Third](img/721979a1ad.jpg)
-    <figcaption>1.250 - Major Third</figcaption>
-</figure>
-
-Значение 768px выбрано потому, что с этой ширины экрана начинаются типичные планшеты (iPad в портретной ориентации).
-
-less:
+Вы можете настроить типографику через переменные. Например, поменять размер шрифта основного текста, шрифты:
 
 ```less
-@scale1: 1.125;
-@scale2: 1.250;
-@breakpoint: ~"(min-width: 768px)";
+@import (less) "node_modules/bettertext.css/bettertext.less";
 
-  h1 { font-size: round(@fz * pow(@scale1, 4)); }
-  h2 { font-size: round(@fz * pow(@scale1, 3)); }
-  h3 { font-size: round(@fz * pow(@scale1, 2)); }
-  h4 { font-size: round(@fz * @scale1); }
+.bettertext-settings() {
 
-@media @breakpoint {
-  h1 { font-size: round(@fz * pow(@scale2, 4)); }
-  h2 { font-size: round(@fz * pow(@scale2, 3)); }
-  h3 { font-size: round(@fz * pow(@scale2, 2)); }
-  h4 { font-size: round(@fz * @scale1); }
+    //settings
+    @fz: 14px;                          // default font-size
+    @font-body: 'Arial', sans-serif;    // body
+    @font-headers: 'Georgia', serif;    // headers
+
+    @bettertext-breakpoint: ~"(min-width: 50em)"; // large screens starts from that value
+
 }
 ```
 
-Получим:
-
-> # Header 1
-> ## Header 2
-> ### Header 3
-> #### Header 4
->
-> Paragraph text
-
-## 4. Заголовки. Межстрочное расстояние
-
-Чем крупнее шрифт, тем меньшая высота строки должна быть у заголовков. Подберем высоту строк так, чтобы межстрочный просвет был оптически равным у абзацев и заголовков всех уровней.
-
-```css
-h1 { line-height: 1.1; }
-h2 { line-height: 1.2; }
-h3 { line-height: 1.3; }
-h4 { line-height: 1.4; }
-```
-
-## 4. Заголовки. Отступы
-
-Нельзя оставлять у заголовков одинаковые отступы сверху и снизу: заголовок зависнет между последним абзацем предыдущего раздела и первым абзацем своего раздела на одинаковом расстоянии. По теории близости заголовок должен быть ближе к тексту, который он озаглавливает.
-
-Пусть нижний отступ у всех заголовков будет равен отступу между абзацами. Тогда сохранится ритм, а заголовок и текст будут визуально составлять единое целое.
-
-Верхний отступ должен быть больше, чем нижний. Чем выше уровень заголовка, тем больше отступ. У `h1` верхний отступ больше, чем у `h4`. Пустое пространство между разделами помогает увидеть иерархию в структуре контента.
+Если базовых настроек не достаточно, вы можете переопределить любую формулу из раздела *calculations* внутри миксина `bettertext-settings` (см. [исходный код][source]).
+Например, поменять верхний отступ у заголовков (можно использовать готовые значения и формулы):
 
 ```less
-//calculations for small screens
-@fzh1: round(@fz * pow(@scale1, 4));
-@fzh2: round(@fz * pow(@scale1, 3));
-@fzh3: round(@fz * pow(@scale1, 2));
-@fzh4: round(@fz * pow(@scale1, 1));
+@import (less) "node_modules/bettertext.css/bettertext.less";
 
-h1 {
-  font-size: @fzh1;
-  line-height: 1.1;
-  margin-top: 4em;
-  margin-bottom: unit( @lh * @fz / @fzh1, em);
-}
+.bettertext-settings() {
 
-h2 {
-  font-size: @fzh2;
-  line-height: 1.2;
-  margin-top: 3.5em;
-  margin-bottom: unit( @lh * @fz / @fzh2, em);
-}
+    //settings
+    @fz: 14px;                          // default font-size
+    @font-body: 'Arial', sans-serif;    // body
+    @font-headers: 'Georgia', serif;    // headers
 
-h3 {
-  font-size: @fzh3;
-  line-height: 1.3;
-  margin-top: 3em;
-  margin-bottom: unit( @lh * @fz / @fzh3, em);
-}
+    @bettertext-breakpoint: ~"(min-width: 50em)"; // large screens starts from that value
 
-h4 {
-  font-size: @fzh4;
-  line-height: 1.4;
-  margin-top: 2.5em;
-  margin-bottom: unit( @lh * @fz / @fzh4, em);
-}
-
-//calculations for large screens
-@fzh1-l: round(@fz * pow(@scale2, 4));
-@fzh2-l: round(@fz * pow(@scale2, 3));
-@fzh3-l: round(@fz * pow(@scale2, 2));
-@fzh4-l: round(@fz * pow(@scale2, 1));
-
-@media @breakpoint {
-  h1 {
-    font-size: @fzh1-l;
-    margin-bottom: unit( @lh * @fz / @fzh1-l, em);
-  }
-
-  h2 {
-    font-size: @fzh2-l;
-    margin-bottom: unit( @lh * @fz / @fzh2-l, em);
-  }
-
-  h3 {
-    font-size: @fzh3-l;
-    margin-bottom: unit( @lh * @fz / @fzh3-l, em);
-  }
-
-  h4 {
-    font-size: @fzh4-l;
-    margin-bottom: unit( @lh * @fz / @fzh4-l, em);
-  }
+    //redefining header margin-top
+    @h1-mt: 3em;
+    @h2-mt: 2.5em;
+    @h3-mt: 2em;
+    @h4-mt: 1.5em;
+    @h5-mt: unit((2 * @lh * @fz / @h5-fz), em);
+    @h6-mt: unit((2 * @lh * @fz / @h6-fz), em);
 }
 ```
 
-При этом, если заголовок любого уровня является первым ребенком какого-либо контейнера (`:first-child`), верхний отступ заголовка должен быть обнулен. Отступ от верхней границы контейнера должен задаваться паддингом этого контейнера, а не маргином элемента внутри контейнера. Это позволяет избежать многих проблем, как, например, в случае с верхним отступом абзаца и многоколоночным текстом.
+---
 
-```css
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child {
-  margin-top: 0;
-}
-```
+<small>Автор [Павел Радьков](http://paulradzkov.com), MIT License</small>
 
-Если после заголовка идет подзаголовок, а не абзац текста, то большой отступ между заголовками не нужен. В семантически правильном документе после заголовка `h1` не может идти сразу `h3`, поэтому перечислим все правильные варианты для `h2`, `h3` и `h4` (потому что им мы задавали увеличенный верхний отступ).
+<p class="likely">
+    <span class="facebook">Поделиться</span>
+    <span class="twitter">Твитнуть</span>
+    <span class="gplus">Плюсануть</span>
+    <span class="vkontakte">Поделиться</span>
+    <span class="telegram">Отправить</span>
+</p>
 
-```css
-/* double headers */
-h1 + h2 { margin-top: 1.2em; }
-h2 + h3 { margin-top: 1.3em; }
-h3 + h4 { margin-top: 1.4em; }
-```
 
-Теперь вернемся к оформлению заголовков `h5` и `h6`. `H5` пусть выглядит как жирный основной текст.
-`H6` — уменьшенный размер шрифта, все буквы заглавные и немного разрежены. У обоих заголовков нижний отступ, как у абзаца, равен вертикальному ритму. А верхний отступ равен двойному вертикальному ритму.
 
-```less
-@fzh5: @fz;
-@fzh6: round(@fz * 0.8);
-
-h5 {
-  font-size: @fzh5;
-  margin: unit( 2 * @lh * @fz / @fzh5, em) 0 unit( @lh * @fz / @fzh5, em);
-}
-
-h6 {
-  font-size: @fzh6;
-  margin: unit( 2 * @lh * @fz / @fzh6, em) 0 unit( @lh * @fz / @fzh6, em);
-  text-transform: uppercase;
-  letter-spacing: 0.01em;
-}
-```
-
-> # Съешь ещё этих мягких французских булок да выпей чаю
->
-> ## Съешь ещё этих мягких французских булок да выпей чаю
->
-> ### Съешь ещё этих мягких французских булок да выпей чаю
->
-> #### Съешь ещё этих мягких французских булок да выпей чаю
->
-> ##### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
->
-> ###### Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства
->
-> Параграф текста.
-
-## 5. Списки
-
-Спискам, как и абзацам, зададим максимальную ширину и отступ снизу, равный вертикальному ритму.
-Причем, эти стили применим только к спискам без класса.
-
-```less
-ul:not([class]),
-ol:not([class]) {
-  margin: 0 0 unit(@lh, em);
-  max-width: @linel;
-}
-```
-
-Когда список обтекает картинку, случается такая ситуация:
-
-![Проблема: если картинка обтекает список, то маркеры списка налазят на картинку](img/floated_images_and_lists_problem.png)
-
-<figcaption>Проблема: если список обтекает картинку, то маркеры списка налазят на картинку</figcaption>
-
-Чтобы починить это, потребуется внести пару небольших изменений в стили списков: перенести дефолтный отступ в 2.5em с левой границы списка на правую, а сами элементы списка сдвинуть трансформом вправо на те же 2.5em.
-
-```less
-ul:not([class]),
-ol:not([class]) {
-    margin: 0 0 unit(@lh, em);
-    max-width: calc(@linel - 2.5em);
-    padding-left: 0;
-
-    ul,
-    ol {
-        margin-bottom: 0;
-    }
-
-    li {
-        margin-right: 2.5em;
-        transform: translateX(2.5em);
-    }
-}
-
-```
-
-Теперь буллиты не налазят на картинку:
-
-<p style="float:left;" ><img src="http://placehold.it/200x300" ></p>
-
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo magnam natus saepe, maxime nam sed sunt veritatis atque repellendus.
-
-- ##### Small header
-
-    Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-    Fuga et optio iure tempore, nulla perspiciatis sint, dolorem porro illum odio, accusamus, suscipit debitis voluptas? Dolores accusantium neque, tempore atque ducimus.
-- Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-<hr style="clear:both" >
-
-Вложенным спискам мы обнулили нижний отступ. Протестируем вложенные списки:
-
-1. Lorem ipsum dolor sit amet
-2. Tenetur molestiae
-    1. Coffee
-    2. Milk
-    3. Tea
-        1. green
-        2. black
-        3. white
-3. Fuga et optio iure tempore
-4. Dolores accusantium neque
-5. ipsum
-6. dolor
-7. sit amet
-8. Nemo magnam natus saepe
-9. maxime nam sed sunt
-10. Veritatis atque repellendus
-11. Voluptates eius in beatae!
-
-...
-
-<ol start="98">
-    <li>Magnam natus</li>
-    <li>Maxime nam sed</li>
-    <li>Atque repellendus</li>
-</ol>
-
-- Lorem ipsum dolor sit amet
-    - Tenetur molestiae
-    - Fuga et optio iure tempore
-    - Dolores accusantium neque
-        - ipsum
-        - dolor
-        - sit amet
-- Nemo magnam natus saepe
-- maxime nam sed sunt veritatis atque repellendus
-
-
-
-## 6. Картинки
-
-Всем картинкам ограничиваем максимальную ширину и обнуляем высоту, чтобы картинки масштабировались пропорционально.
-Также переопределим `vertical-align` с `baseline` на `bottom`, чтобы под картинками не было отступа.
-
-```css
-img {
-    max-width: 100%;
-    height: auto;
-    vertical-align: bottom;
-}
-```
-
-<figure>
-    <img src="http://placehold.it/1000x400" alt="">
-</figure>
-
-Картинки с подписью
-
-<figure>
-    <img src="http://placehold.it/1000x400" alt="">
-    <figcaption>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit. Provident, ex, quam. Fugit non maxime et minima commodi.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="http://placehold.it/1000x400" alt="">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
-    <p>Tenetur molestiae, voluptates eius in beatae!</p>
-</figure>
-
-<figure>
-    <img src="http://placehold.it/1000x400" alt="">
-    <figcaption>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
-        <p>Tenetur molestiae, voluptates eius in beatae!</p>
-    </figcaption>
-</figure>
-
-## 7. Таблицы
-
-Пример простой таблицы:
-
-<table>
-    <caption>Optional table caption.</caption>
-    <thead>
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-</table>
-
-Пример таблицы, сгенерированной из Маркдауна:
-
-
-|                                    | Express*| Personal PLUS | Personal MAX |  Family  |
-|------------------------------------|--------:|--------------:|-------------:|---------:|
-| **Main Features**                  |         |               |              |          |
-| Annual Load Limit                  |   £ 300 |       £ 1,900 |     £ 12,000 | £ 12,000 |
-| Maximum card balance               |   £ 300 |       £ 1,900 |      £ 5,000 |  £ 5,000 |
-| Reloadable                         |         |             ✔ |            ✔ |        ✔ |
-| Available at Store                 |       ✔ |             ✔ |            ✔ |        ✔ |
-| Available online                   |       ✘ |             ✔ |            ✔ |        ✔ |
-| UK ATM Access                      |       ✘ |             ✔ |            ✔ |        ✔ |
-| International ATM Access           |       ✘ |             ✘ |            ✔ |        ✔ |
-| Money share                        |       ✘ |             ✘ |            ✔ |        ✔ |
-| Shop anywhere                      |       ✔ |             ✔ |            ✔ |        ✔ |
-| Receive free International minutes |       ✘ |             ✔ |            ✔ |        ✔ |
-| Direct UK bank account loads       |       ✘ |             ✔ |            ✔ |        ✔ |
-| **Pricing**                        |         |               |              |          |
-| NO transaction fee                 |       ✔ |             ✔ |            ✔ |        ✔ |
-| Additional card                    |     n/a |           n/a |       £ 5.00 |   £ 5.00 |
-| Card to card transfer              |     n/a |           n/a |       £ 1.00 |     FREE |
-| International ATM access           |     n/a |           n/a |       £ 1.50 |     FREE |
-| Foreign Exchange Charge            |  £ 1.95 |        £ 1.95 |       £ 1.95 |     FREE |
-| In-Store Card Purchase fee         |  £ 6.95 |        £ 6.95 |       £ 6.95 |   £ 6.95 |
-| Monthly Cost                       |  £ 3.95 |        £ 3.95 |       £ 3.95 |   £ 7.95 |
-| Card to card transfer              |     n/a |           n/a |       £ 1.00 |     FREE |
-| International ATM access           |     n/a |           n/a |       £ 1.50 |     FREE |
-| Foreign Exchange Charge            |  £ 1.95 |        £ 1.95 |       £ 1.95 |     FREE |
-| In-Store Card Purchase fee         |  £ 6.95 |        £ 6.95 |       £ 6.95 |   £ 6.95 |
-| Monthly Cost                       |  £ 3.95 |        £ 3.95 |       £ 3.95 |   £ 7.95 |
-
-
-
-## 8. Цитаты
-
-Помните, что даже если цитируется одно предложение, то оно должно быть внутри абзаца. Поэтому самый простой случай цитирования должен быть сверстан так:
-
-```html
-<blockquote>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-</blockquote>
-```
-
-Так как у цитат есть собственный `padding`, то последнему абзацу обнулим нижний отступ. Это сделает одинаковыми отступы до и после цитаты.
-
-> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-
-Цитата может быть большой и содержать внутри собственную логическую структуру, сопровождаться источником цитирования. Крупная цитата с форматированием внутри:
-
-<blockquote>
-  <h3>Header inside blockquote</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo magnam natus saepe, maxime nam sed sunt veritatis atque repellendus.</p>
-  <ul>
-    <li>Nemo magnam natus saepe</li>
-    <li>maxime nam sed sunt</li>
-    <li>Veritatis atque repellendus</li>
-    <li>Voluptates eius in beatae!</li>
-  </ul>
-  <p>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
-  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
-
-Подпись к цитате рекомендуется верстать так:
-
-```html
-<blockquote>
-  <p>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
-  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-</blockquote>
-```
-
-...или так:
-
-```html
-<blockquote>
-  <p>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
-  <cite>Source Title</cite>
-</blockquote>
-```
-
-## 9. Списки определений
-
-Пример списка определений:
-
-<dl>
-    <dt>Description lists</dt>
-    <dd>A description list is perfect for defining terms.</dd>
-    <dt>Euismod</dt>
-    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-    <dt>Malesuada porta</dt>
-    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-</dl>
-
-Код этого списка:
-
-```html
-<dl>
-    <dt>Description lists</dt>
-    <dd>A description list is perfect for defining terms.</dd>
-    <dt>Euismod</dt>
-    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-    <dt>Malesuada porta</dt>
-    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-</dl>
-```
-
-## 10. Код
-
-Блок кода создается тегами:
-
-```html
-<pre><code> code </code></pre>
-```
-
-Чтобы на узких экранах код было легче читать и не приходилось использовать горизонтальную прокрутку, для элемента `pre` установлен перенос по словам при помощи `white-space: pre-wrap;`.
-
-## 11. Структурные теги article и section
-
-В семантичном документе контент может быть разбит на разделы при помощи тегов `section`, и всё это может лежать внутри тега `article`. Создадим для этих тегов отступы со всех сторон равные 5vw. А если `section` внутри `article`, то обнулим эти отступы по бокам, у первой секции сверху и у последней секции снизу.
-
-```less
-@section-pad: 5vw;
-
-section:not([class]) {
-    padding: @section-pad;
-}
-
-article:not([class]) {
-    padding: @section-pad;
-
-    & section:not([class]) {
-        padding-left: 0;
-        padding-right: 0;
-
-        &:first-child {
-            padding-top: 0;
-        }
-
-        &:last-child {
-            padding-bottom: 0;
-        }
-    }
-}
-```
-
-Таким образом, простейший шаблон будет выглядеть так:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="bettertext.css">
-</head>
-<body>
-    <article>
-        <h1>Tenetur molestiae</h1>
-        <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
-    </article>
-</body>
-</html>
-```
+[github]: https://github.com/paulradzkov/bettertext.css
+[releases]: https://github.com/paulradzkov/bettertext.css/releases
+[issues]: https://github.com/paulradzkov/bettertext.css/issues
+[codepen]: http://codepen.io/paulradzkov/pen/Mygdrb
+[source]: https://github.com/paulradzkov/bettertext.css/blob/master/bettertext.less
