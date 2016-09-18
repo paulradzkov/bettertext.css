@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="<%= @getUrl('/vendor/normalize.css/normalize.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/bettertext.css') %>">
     <link rel="stylesheet" href="<%= @getUrl('/css/github.css') %>">
-    <link rel="stylesheet" href="https://unpkg.com/ilyabirman-likely@2/release/likely.css " media="screen" title="no title">
+    <link rel="stylesheet" href="https://unpkg.com/flxgrid.css@latest/flxgrid.css " media="screen">
+    <link rel="stylesheet" href="https://unpkg.com/ilyabirman-likely@2/release/likely.css " media="screen">
     <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
 
     <%- @partial('opengraph') %>
