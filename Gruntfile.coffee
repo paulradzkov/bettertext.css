@@ -51,6 +51,13 @@ module.exports = (grunt) ->
 				files: [
 					"bettertext.css": "bettertext.less"
 				]
+		cssmin:
+			options:
+				sourceMap: true
+			target:
+				files: [
+					"bettertext.min.css": "bettertext.css"
+				]
 
 		# track changes
 		watch:
@@ -104,11 +111,12 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-less'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-contrib-connect'
+	grunt.loadNpmTasks 'grunt-contrib-cssmin'
 	grunt.loadNpmTasks 'grunt-shell-spawn'
 	grunt.loadNpmTasks 'grunt-newer'
 	grunt.loadNpmTasks 'grunt-notify'
 
 	# Register our Grunt tasks.
-	grunt.registerTask 'deploy',			 ['clean', 'less:development', 'less:production', 'shell:deploy' ]
-	grunt.registerTask 'run',				 ['less:development', 'less:production', 'notify:less', 'shell:docpadrun', 'watch:less']
+	grunt.registerTask 'deploy',			 ['clean', 'less', 'cssmin', 'shell:deploy' ]
+	grunt.registerTask 'run',				 ['less', 'cssmin', 'notify:less', 'shell:docpadrun', 'watch:less']
 	grunt.registerTask 'default',			 ['run']
