@@ -35,7 +35,8 @@
     "component.json",
     "package.json",
     "docpad.coffee",
-    "Gruntfile.coffee"
+    "Gruntfile.coffee",
+    "contributing.json"
   ],
   "dependencies": {
     "normalize.css": "~4.1.1"

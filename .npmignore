@@ -6,3 +6,4 @@ src/
 bower.json
 docpad.coffee
 Gruntfile.coffee
+contributing.json
