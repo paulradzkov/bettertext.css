@@ -81,6 +81,8 @@ Bettertext.css создан для того, чтобы решить типич
 **Подключить через CDN**
 ```bash
 https://unpkg.com/bettertext.css@latest/bettertext.css
+https://unpkg.com/bettertext.css@latest/bettertext.min.css
+https://unpkg.com/bettertext.css@latest/bettertext.min.css.map
 ```
 
 **Установить через NPM**

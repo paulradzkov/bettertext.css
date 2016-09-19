@@ -3,5 +3,6 @@ bower_components/
 out/
 rsync.bat
 .docpad.db
+.log
 .ftppass
 .DS_Store
