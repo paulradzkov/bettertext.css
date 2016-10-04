@@ -33,8 +33,8 @@ description: "Улучшенная типографика для голого HT
         <p>
         **О проекте**  
         [Как bettertext.css делает текст лучше](#features)  
-        [Из чего состоит bettertext.css](story)  
-        [Демо-страница](testpage)
+        [Из чего состоит bettertext.css](story/)  
+        [Демо-страница](testpage/)
         </p>
     </div>
 </div>
