@@ -12,9 +12,9 @@ Improved typography styles for naked HTML (without any classnames) and Markdown-
 
 or use compiled version from CDN
 
-`https://unpkg.com/bettertext.css@latest/bettertext.css`  
-`https://unpkg.com/bettertext.css@latest/bettertext.min.css`  
-`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`
+* `https://unpkg.com/bettertext.css@latest/bettertext.css`  
+* `https://unpkg.com/bettertext.css@latest/bettertext.min.css`  
+* `https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`
 
 
 ## Usage in HTML
