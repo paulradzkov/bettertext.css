@@ -1,6 +1,6 @@
 # bettertext.css
 
-[![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css)
+[![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css) [![bower version](https://badge.fury.io/bo/bettertext.css.svg)](http://badge.fury.io/bo/bettertext.css)
 
 Improved typography styles for naked HTML (without any classnames) and Markdown-generated content. [Demo page](http://paulradzkov.github.io/bettertext.css/)
 
