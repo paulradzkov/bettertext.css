@@ -1,10 +1,12 @@
 ---
 title: "Тестовая страница"
-layout: default
+layout: example
 description: "Улучшенная типографика для голого HTML и Markdown"
+styles:
+    "/css/example0.css"
 ---
 
-# bettertext.css test page
+# Override test page
 
 There are all typography usecases covered by bettertext.css.
 

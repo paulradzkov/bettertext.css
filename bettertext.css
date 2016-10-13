@@ -1,24 +1,22 @@
-/*! bettertext.css v1.0.4 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v2.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
 body {
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.5;
 }
+body:not([class]),
+article:not([class]),
 section:not([class]) {
-  padding: 5vw;
+  margin: calc(24px + 3vw) calc(10px + 4vw);
 }
-article:not([class]) {
-  padding: 5vw;
-}
-article:not([class]) section:not([class]) {
-  padding-left: 0;
-  padding-right: 0;
-}
-article:not([class]) section:not([class]):first-child {
-  padding-top: 0;
-}
-article:not([class]) section:not([class]):last-child {
-  padding-bottom: 0;
+body:not([class]) article:not([class]),
+article:not([class]) article:not([class]),
+section:not([class]) article:not([class]),
+body:not([class]) section:not([class]),
+article:not([class]) section:not([class]),
+section:not([class]) section:not([class]) {
+  margin-left: 0;
+  margin-right: 0;
 }
 p {
   margin: 0 0 1.5em;
@@ -43,16 +41,17 @@ h4,
 h5,
 h6 {
   font-family: sans-serif;
+  font-weight: bolder;
 }
 h1 {
   font-size: 1.625em;
   line-height: 1.1;
-  margin: 4em 0 0.92307692em;
+  margin: 3.23076923em 0 0.92307692em;
 }
 h2 {
   font-size: 1.4375em;
   line-height: 1.2;
-  margin: 3.5em 0 1.04347826em;
+  margin: 3.13043478em 0 1.04347826em;
 }
 h3 {
   font-size: 1.25em;
@@ -62,33 +61,39 @@ h3 {
 h4 {
   font-size: 1.125em;
   line-height: 1.4;
-  margin: 2.5em 0 1.33333333em;
+  margin: 2.66666667em 0 1.33333333em;
 }
 h5 {
   font-size: 1em;
-  margin: 3em 0 1.5em;
+  line-height: 1.5;
+  margin: 2.25em 0 1.5em;
 }
 h6 {
-  font-size: 0.8125em;
-  margin: 3.69230769em 0 1.84615385em;
+  font-size: 0.75em;
+  line-height: 2;
+  margin: 2em 0 0;
   text-transform: uppercase;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.05em;
 }
 @media (min-width: 768px) {
   h1 {
     font-size: 2.4375em;
+    margin-top: 3.07692308em;
     margin-bottom: 0.61538462em;
   }
   h2 {
     font-size: 1.9375em;
+    margin-top: 3.09677419em;
     margin-bottom: 0.77419355em;
   }
   h3 {
     font-size: 1.5625em;
+    margin-top: 2.88em;
     margin-bottom: 0.96em;
   }
   h4 {
     font-size: 1.25em;
+    margin-top: 2.4em;
     margin-bottom: 1.2em;
   }
 }
@@ -111,10 +116,10 @@ h3 + h4 {
   margin-top: 1.4em;
 }
 h4 + h5 {
-  margin-top: 0;
+  margin-top: 1.5em;
 }
 h5 + h6 {
-  margin-top: 0;
+  margin-top: 2em;
 }
 /* lists */
 /* lists without classes */
@@ -146,12 +151,12 @@ figure:not([class]) {
 }
 figure:not([class]) > p {
   max-width: 37.5rem;
-  font-size: 0.8em;
+  font-size: 0.75em;
   margin: 0.5em 0 0;
 }
 figcaption {
   max-width: 37.5rem;
-  font-size: 0.8em;
+  font-size: 0.75em;
   margin: 0.5em 0 3em;
 }
 figcaption > p {
@@ -169,7 +174,7 @@ blockquote > p:last-child {
 blockquote > footer,
 blockquote > cite {
   display: block;
-  font-size: 0.8em;
+  font-size: 0.75em;
 }
 /* code */
 pre {
@@ -185,7 +190,7 @@ table:not([class]) {
 }
 table:not([class]) caption {
   text-align: left;
-  font-size: 0.8em;
+  font-size: 0.75em;
   margin-bottom: 0.625em;
 }
 table:not([class]) td,

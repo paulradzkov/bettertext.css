@@ -34,16 +34,19 @@ Default settings:
 
     //settings
     @fz: 16px;                         // default font-size in px
-    @fz-small: 0.8em;                  // smaller font-size (em)
     @rythm: 24px;                      // vertical rythm = line-height in pixels
-    @linel: 50rem;                     // max-width for text (em or rem)
+    @fz-small: 12px;                   // smaller font-size (px)
+    @linel: 50rem;                     // max-width for text (any css value)
     @font-body: sans-serif;            // body
     @font-headers: sans-serif;         // headers
     @font-code: monospace, monospace;  // code (duplication is intentional)
     @scale1: 1.125;                    // header size multiplier for small screens
     @scale2: 1.250;                    // header size multiplier for large screens
-    @section-pad: 5vw;                 // padding for article and section
 
+    // margin for body, articles and sections (any css value)
+    @structure-margin: ~"calc(24px + 3vw)" 5vw;
+
+    // breakpoint to switch from 'mobile' to 'desktop'
     @bettertext-breakpoint: ~"(min-width: 768px)";
 
     //calculations

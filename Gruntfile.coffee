@@ -46,6 +46,7 @@ module.exports = (grunt) ->
 					sourceMap: true
 				files: [
 					"out/bettertext.css": "bettertext.less"
+					"out/css/example0.css": "src/files/css/example0.less"
 				]
 			production:
 				files: [
@@ -66,7 +67,10 @@ module.exports = (grunt) ->
 				options:
 					livereload: true
 			less:
-				files: ['bettertext.less']
+				files: [
+					'bettertext.less'
+					'src/files/css/*.less'
+				]
 				tasks: [
 					'less:development'
 					'notify:less'
