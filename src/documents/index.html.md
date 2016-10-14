@@ -8,9 +8,18 @@ description: "Улучшенная типографика для голого HT
 
 [![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css) [![bower version](https://badge.fury.io/bo/bettertext.css.svg)](http://badge.fury.io/bo/bettertext.css)
 
-Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как основу для собственной типографики.
+Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как конструктор для собственной типографики.
 
 <div class="row">
+    <div class="col-xs-shrink">
+        <p>
+        **О проекте**  
+        [Как bettertext.css делает текст лучше](#features)  
+        [Из чего состоит bettertext.css](story/)  
+        [Шаблоны для дизайнеров](#templates)  
+        [Демо-страница](testpage/)  
+        </p>
+    </div>
     <div class="col-xs-shrink">
         <p>
         **Документация**  
@@ -23,19 +32,26 @@ description: "Улучшенная типографика для голого HT
     <div class="col-xs-shrink">
         <p>
         **Ссылки**  
-        [Скачать][releases]  
         [GitHub проекта][github]  
+        [История версий][releases]  
         [Сообщить о баге][issues]  
         [Настроить онлайн][codepen]
         </p>
     </div>
+</div>
+
+<div class="row" style="max-width: 50rem">
     <div class="col-xs-shrink">
-        <p>
-        **О проекте**  
-        [Как bettertext.css делает текст лучше](#features)  
-        [Из чего состоит bettertext.css](story/)  
-        [Демо-страница](testpage/)
-        </p>
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-href="/paulradzkov/bettertext.css/stargazers" data-count-api="/repos/paulradzkov/bettertext.css#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star paulradzkov/bettertext.css on GitHub">Star</a>
+    </div>
+    <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Issue</a>
+    </div>
+    <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Download</a>
+    </div>
+    <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov" data-style="mega" data-count-href="/paulradzkov/followers" data-count-api="/users/paulradzkov#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @paulradzkov on GitHub">Follow @paulradzkov</a>
     </div>
 </div>
 
@@ -76,24 +92,20 @@ Bettertext.css создан для того, чтобы решить типич
 
 ## Установить и подключить
 
-Подключается после normalize.css и веб-шрифтов. Скомпилированная версия не нуждается в настройке и весит всего 4 kb.
+Подключается после normalize.css и веб-шрифтов.
 
-**Подключить через CDN**
-```bash
-https://unpkg.com/bettertext.css@latest/bettertext.css
-https://unpkg.com/bettertext.css@latest/bettertext.min.css
-https://unpkg.com/bettertext.css@latest/bettertext.min.css.map
-```
+**Подключить через CDN**  
+[`https://unpkg.com/bettertext.css@latest/bettertext.css`](https://unpkg.com/bettertext.css@latest/bettertext.css) <small>(1.7KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@latest/bettertext.min.css`](https://unpkg.com/bettertext.css@latest/bettertext.min.css) <small>(1.5KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`](https://unpkg.com/bettertext.css@latest/bettertext.min.css.map)
 
-**Установить через NPM**
-```bash
-npm install bettertext.css --save-dev
-```
+**Установить через NPM**  
+`npm install bettertext.css --save-dev`
 
-**Установить через Bower**
-```bash
-bower install bettertext.css --save
-```
+**Установить через Bower**  
+`bower install bettertext.css --save`
+
+Npm и Bower пакеты не имеют зависимостей.
 
 ## Настроить под свой дизайн
 
@@ -103,7 +115,7 @@ Bettertext.css написан на LESS и настраивается при п
 
 * настройте переменные по вашему вкусу;
 * протестируйте на вашем HTML или Markdown коде;
-* нажмите "View Compiled" и заберите скомпилированный CSS.
+* нажмите "View Compiled" и заберите скомпилированный CSS к себе в проект.
 
 <a name="settings" id="settings"></a>
 
@@ -113,6 +125,12 @@ Bettertext.css написан на LESS и настраивается при п
 
 ```less
 @import (less) "node_modules/bettertext.css/bettertext.less";
+```
+
+или
+
+```less
+@import (less) "bower_components/bettertext.css/bettertext.less";
 ```
 
 <a name="defaults" id="defaults"></a>
@@ -126,20 +144,20 @@ Bettertext.css написан на LESS и настраивается при п
 
     //settings
     @fz: 16px;                         // default font-size in px
-    @fz-small: 0.8em;                  // smaller font-size (em)
     @rythm: 24px;                      // vertical rythm = line-height in pixels
-    @linel: 50rem;                     // max-width for text (em or rem)
+    @fz-small: 12px;                   // smaller font-size (px)
+    @linel: 50rem;                     // max-width for text (any css value)
     @font-body: sans-serif;            // body
     @font-headers: sans-serif;         // headers
     @font-code: monospace, monospace;  // code (duplication is intentional)
     @scale1: 1.125;                    // header size multiplier for small screens
     @scale2: 1.250;                    // header size multiplier for large screens
-    @section-pad: 5vw;                 // padding for article and section
 
+    // margin for body, articles and sections (any css value)
+    @structure-margin: ~"calc(24px + 3vw)" 5vw;
+
+    // breakpoint to switch from 'mobile' to 'desktop'
     @bettertext-breakpoint: ~"(min-width: 768px)";
-
-    //calculations
-    // ...
 }
 ```
 
@@ -189,6 +207,44 @@ Bettertext.css написан на LESS и настраивается при п
 }
 ```
 
+<a name="templates" id="templates"></a>
+
+## Шаблоны для дизайнеров
+
+В шаблонах типографики для Скетча и Фотошопа текстовые стили соответствуют стилям по-умолчанию из bettertext.css.
+Используйте эти шаблоны для быстрой настройки типографики в графическом редакторе.
+
+1. [Настройте][codepen] типографику в браузере;
+2. Скачайте шаблон для вашего графического редактора;
+3. Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.
+
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/sketch-typography-kit@0.5x.png 456w,
+            img/sketch-typography-kit@1x.png 912w,
+            img/sketch-typography-kit@1.5x.png 1368w,
+            img/sketch-typography-kit@2x.png 1824w
+            " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.sketch">Скачать bettertext-typography-kit.sketch</a></p>
+    </figcaption>
+</figure>
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/photoshop-typography-kit@0.5x.png 456w,
+            img/photoshop-typography-kit@1x.png 912w,
+            img/photoshop-typography-kit@1.5x.png 1368w,
+            img/photoshop-typography-kit@2x.png 1824w
+            " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.psd">Скачать bettertext-typography-kit.psd</a></p>
+    </figcaption>
+</figure>
+
 ---
 
 <small>Автор [Павел Радьков](http://paulradzkov.com), MIT License</small>
@@ -202,9 +258,10 @@ Bettertext.css написан на LESS и настраивается при п
 </p>
 
 
-
 [github]: https://github.com/paulradzkov/bettertext.css
 [releases]: https://github.com/paulradzkov/bettertext.css/releases
 [issues]: https://github.com/paulradzkov/bettertext.css/issues
 [codepen]: http://codepen.io/paulradzkov/pen/Mygdrb
 [source]: https://github.com/paulradzkov/bettertext.css/blob/master/bettertext.less
+[sketch]: downloads/bettertext-typography-kit.sketch
+[photoshop]: downloads/bettertext-typography-kit.psd
