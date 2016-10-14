@@ -8,7 +8,7 @@ description: "Улучшенная типографика для голого HT
 
 [![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css) [![bower version](https://badge.fury.io/bo/bettertext.css.svg)](http://badge.fury.io/bo/bettertext.css)
 
-Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как основу для собственной типографики.
+Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как конструктор для собственной типографики.
 
 <div class="row">
     <div class="col-xs-shrink">
@@ -92,22 +92,18 @@ Bettertext.css создан для того, чтобы решить типич
 
 ## Установить и подключить
 
-Подключается после normalize.css и веб-шрифтов. Скомпилированная версия не нуждается в настройке.
+Подключается после normalize.css и веб-шрифтов.
 
 **Подключить через CDN**  
 [`https://unpkg.com/bettertext.css@latest/bettertext.css`](https://unpkg.com/bettertext.css@latest/bettertext.css) <small>(1.7KB gzip)</small>  
 [`https://unpkg.com/bettertext.css@latest/bettertext.min.css`](https://unpkg.com/bettertext.css@latest/bettertext.min.css) <small>(1.5KB gzip)</small>  
 [`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`](https://unpkg.com/bettertext.css@latest/bettertext.min.css.map)
 
-**Установить через NPM**
-```bash
-npm install bettertext.css --save-dev
-```
+**Установить через NPM**  
+`npm install bettertext.css --save-dev`
 
-**Установить через Bower**
-```bash
-bower install bettertext.css --save
-```
+**Установить через Bower**  
+`bower install bettertext.css --save`
 
 Npm и Bower пакеты не имеют зависимостей.
 
@@ -162,9 +158,6 @@ Bettertext.css написан на LESS и настраивается при п
 
     // breakpoint to switch from 'mobile' to 'desktop'
     @bettertext-breakpoint: ~"(min-width: 768px)";
-
-    //calculations
-    // ...
 }
 ```
 
@@ -220,6 +213,10 @@ Bettertext.css написан на LESS и настраивается при п
 
 В шаблонах типографики для Скетча и Фотошопа текстовые стили соответствуют стилям по-умолчанию из bettertext.css.
 Используйте эти шаблоны для быстрой настройки типографики в графическом редакторе.
+
+1. [Настройте][codepen] типографику в браузере;
+2. Скачайте шаблон для вашего графического редактора;
+3. Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.
 
 <figure class="row">
     <div class="col-xs-shrink">
