@@ -5,9 +5,9 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    ga('create', '<%= @site.googleAnalyticsId %>', '<%= @site.googleAnalyticsDomain %>');
+    ga('create', '<%= @site.googleAnalyticsId %>', 'auto');
+    ga('require', 'linkid');
     ga('send', 'pageview');
-    ga('set', 'userId', {{USER_ID}}); // Задание идентификатора пользователя с помощью параметра user_id (текущий пользователь).
 
 </script>
 <% end %>

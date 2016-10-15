@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="https://unpkg.com/flxgrid.css@latest/flxgrid.css " media="screen">
     <link rel="stylesheet" href="https://unpkg.com/links.less@latest/links.css " media="screen">
     <link rel="stylesheet" href="https://unpkg.com/ilyabirman-likely@2/release/likely.css " media="screen">
-    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
 
     <!-- DocPad Styles + Our Own -->
     <%- @getBlock('styles').add(@getUrl([].concat(@site.styles or []).concat(@document.styles or []))).toHTML() %>
 
+    <link rel="canonical" href="<%= @site.canonicalUrl %><%= @document.url %>">
     <%- @partial('opengraph') %>
     <%- @partial('twittercard') %>
     <%- @partial('googleAnalytics') %>
@@ -35,5 +35,8 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script async defer src="https://unpkg.com/ilyabirman-likely@2/release/likely.js"></script>
+    <!-- DocPad Scripts + Our Own -->
+    <%- @getBlock('scripts').add(@getUrl([].concat(@site.scripts or []).concat(@document.scripts or []))).toHTML() %>
+
 </body>
 </html>

@@ -2,6 +2,10 @@
 title: "Типографика для сайтов"
 layout: default
 description: "Улучшенная типографика для голого HTML и Markdown"
+styles:
+    'vendor/youtube/embed-youtube.css'
+scripts:
+    'vendor/youtube/embed-youtube.js'
 ---
 
 # Типографика bettertext.css
@@ -10,7 +14,30 @@ description: "Улучшенная типографика для голого HT
 
 Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как конструктор для собственной типографики.
 
-<div class="row">
+<figure class="" style="max-width: 1440px; margin: 0 calc(-10px - 4vw) 3em calc(-10px - 4vw)">
+    <div class="youtube-player" data-id="acVBLst3QQc">
+        <img srcset="
+            img/bettertext-demo@0.25x.png 360w,
+            img/bettertext-demo@0.5x.png 720w,
+            img/bettertext-demo@1x.png 1440w,
+            img/bettertext-demo@1.5x.png 2160w,
+            img/bettertext-demo@2x.png 2880w
+            " src="img/bettertext-demo@0.5x.png" alt="bettertext.css demo">
+        <a href="https://www.youtube.com/watch?v=acVBLst3QQc" target="_blank" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
+    </div>
+</figure>
+
+<nav class="row">
+    <div class="col-xs-shrink">
+        <p>
+        **Документация**  
+        [Установка и подключение](#install)  
+        [Настройка LESS-версии](#settings)  
+        [Параметры по-умолчанию](#defaults)  
+        [Кастомизация](#customization)  
+        [Настроить онлайн][codepen]
+        </p>
+    </div>
     <div class="col-xs-shrink">
         <p>
         **О проекте**  
@@ -20,40 +47,38 @@ description: "Улучшенная типографика для голого HT
         [Демо-страница](testpage/)  
         </p>
     </div>
-    <div class="col-xs-shrink">
-        <p>
-        **Документация**  
-        [Установка и подключение](#install)  
-        [Настройка LESS-версии](#settings)  
-        [Параметры по-умолчанию](#defaults)  
-        [Переопределение настроек](#customization)
-        </p>
-    </div>
-    <div class="col-xs-shrink">
-        <p>
-        **Ссылки**  
-        [GitHub проекта][github]  
-        [История версий][releases]  
-        [Сообщить о баге][issues]  
-        [Настроить онлайн][codepen]
-        </p>
-    </div>
-</div>
+</nav>
 
-<div class="row" style="max-width: 50rem">
+<figure class="row">
     <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-href="/paulradzkov/bettertext.css/stargazers" data-count-api="/repos/paulradzkov/bettertext.css#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star paulradzkov/bettertext.css on GitHub">Star</a>
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
     </div>
     <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Issue</a>
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
     </div>
     <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Download</a>
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
     </div>
-    <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov" data-style="mega" data-count-href="/paulradzkov/followers" data-count-api="/users/paulradzkov#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @paulradzkov on GitHub">Follow @paulradzkov</a>
-    </div>
-</div>
+</figure>
+
+<a name="install" id="install"></a>
+
+## Установить и подключить
+
+Подключается после normalize.css и веб-шрифтов.
+
+**Подключить через CDN**  
+[`https://unpkg.com/bettertext.css@latest/bettertext.css`](https://unpkg.com/bettertext.css@latest/bettertext.css) <small>(1.7KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@latest/bettertext.min.css`](https://unpkg.com/bettertext.css@latest/bettertext.min.css) <small>(1.5KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`](https://unpkg.com/bettertext.css@latest/bettertext.min.css.map)
+
+**Установить через NPM**  
+`npm install bettertext.css --save-dev`
+
+**Установить через Bower**  
+`bower install bettertext.css --save`
+
+Npm и Bower пакеты не имеют зависимостей.
 
 <a name="features" id="features"></a>
 
@@ -88,25 +113,6 @@ Bettertext.css создан для того, чтобы решить типич
     </div>
 </div>
 
-<a name="install" id="install"></a>
-
-## Установить и подключить
-
-Подключается после normalize.css и веб-шрифтов.
-
-**Подключить через CDN**  
-[`https://unpkg.com/bettertext.css@latest/bettertext.css`](https://unpkg.com/bettertext.css@latest/bettertext.css) <small>(1.7KB gzip)</small>  
-[`https://unpkg.com/bettertext.css@latest/bettertext.min.css`](https://unpkg.com/bettertext.css@latest/bettertext.min.css) <small>(1.5KB gzip)</small>  
-[`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`](https://unpkg.com/bettertext.css@latest/bettertext.min.css.map)
-
-**Установить через NPM**  
-`npm install bettertext.css --save-dev`
-
-**Установить через Bower**  
-`bower install bettertext.css --save`
-
-Npm и Bower пакеты не имеют зависимостей.
-
 ## Настроить под свой дизайн
 
 Bettertext.css написан на LESS и настраивается при помощи 11 переменных. Остальные 40 вычисляются по формулам, но их тоже можно переопределить.
@@ -118,6 +124,44 @@ Bettertext.css написан на LESS и настраивается при п
 * нажмите "View Compiled" и заберите скомпилированный CSS к себе в проект.
 
 <a name="settings" id="settings"></a>
+
+<a name="templates" id="templates"></a>
+
+## Шаблоны для дизайнеров
+
+В шаблонах типографики для Скетча и Фотошопа текстовые стили соответствуют стилям по-умолчанию из bettertext.css.
+Используйте эти шаблоны для быстрой настройки типографики в графическом редакторе.
+
+1. [Настройте][codepen] типографику в браузере;
+2. Скачайте шаблон для вашего графического редактора;
+3. Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.
+
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/sketch-typography-kit@0.5x.png 456w,
+            img/sketch-typography-kit@1x.png 912w,
+            img/sketch-typography-kit@1.5x.png 1368w,
+            img/sketch-typography-kit@2x.png 1824w
+            " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.sketch">Скачать bettertext-typography-kit.sketch</a></p>
+    </figcaption>
+</figure>
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/photoshop-typography-kit@0.5x.png 456w,
+            img/photoshop-typography-kit@1x.png 912w,
+            img/photoshop-typography-kit@1.5x.png 1368w,
+            img/photoshop-typography-kit@2x.png 1824w
+            " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.psd">Скачать bettertext-typography-kit.psd</a></p>
+    </figcaption>
+</figure>
 
 ## Подключить и настроить LESS-версию
 
@@ -182,7 +226,7 @@ Bettertext.css написан на LESS и настраивается при п
 }
 ```
 
-Если базовых настроек не достаточно, вы можете переопределить любую формулу из раздела *calculations* внутри миксина `bettertext-settings` (см. [исходный код][source]).
+Если базовых настроек не достаточно, вы можете переписать любую формулу из миксина `bettertext-calculations` внутри миксина `bettertext-settings` (см. [исходный код][source]).
 Например, поменять верхний отступ у заголовков (можно использовать готовые значения и формулы):
 
 ```less
@@ -207,57 +251,19 @@ Bettertext.css написан на LESS и настраивается при п
 }
 ```
 
-<a name="templates" id="templates"></a>
-
-## Шаблоны для дизайнеров
-
-В шаблонах типографики для Скетча и Фотошопа текстовые стили соответствуют стилям по-умолчанию из bettertext.css.
-Используйте эти шаблоны для быстрой настройки типографики в графическом редакторе.
-
-1. [Настройте][codepen] типографику в браузере;
-2. Скачайте шаблон для вашего графического редактора;
-3. Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.
-
-<figure class="row">
-    <div class="col-xs-shrink">
-        <img srcset="
-            img/sketch-typography-kit@0.5x.png 456w,
-            img/sketch-typography-kit@1x.png 912w,
-            img/sketch-typography-kit@1.5x.png 1368w,
-            img/sketch-typography-kit@2x.png 1824w
-            " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch" style="margin: 0  0 -4% -6.14%">
-    </div>
-    <figcaption class="col-xs-12">
-        <p><a href="downloads/bettertext-typography-kit.sketch">Скачать bettertext-typography-kit.sketch</a></p>
-    </figcaption>
-</figure>
-<figure class="row">
-    <div class="col-xs-shrink">
-        <img srcset="
-            img/photoshop-typography-kit@0.5x.png 456w,
-            img/photoshop-typography-kit@1x.png 912w,
-            img/photoshop-typography-kit@1.5x.png 1368w,
-            img/photoshop-typography-kit@2x.png 1824w
-            " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop" style="margin: 0  0 -4% -6.14%">
-    </div>
-    <figcaption class="col-xs-12">
-        <p><a href="downloads/bettertext-typography-kit.psd">Скачать bettertext-typography-kit.psd</a></p>
-    </figcaption>
-</figure>
-
 ---
 
-<small>Автор [Павел Радьков](http://paulradzkov.com), MIT License</small>
+<small>Автор [Павел Радьков][paulradzkov], [GitHub проекта][github], MIT License</small>
 
 <p class="likely">
     <span class="facebook">Поделиться</span>
     <span class="twitter">Твитнуть</span>
     <span class="gplus">Плюсануть</span>
     <span class="vkontakte">Поделиться</span>
-    <span class="telegram">Отправить</span>
+    <span class="telegram">Телеграмнуть</span>
 </p>
 
-
+[paulradzkov]: http://paulradzkov.com
 [github]: https://github.com/paulradzkov/bettertext.css
 [releases]: https://github.com/paulradzkov/bettertext.css/releases
 [issues]: https://github.com/paulradzkov/bettertext.css/issues

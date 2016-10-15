@@ -14,8 +14,10 @@ docpadConfig = {
 		# Specify some site properties
 		site:
 			# The production url of our website
-			url: "//paulradzkov.github.io/bettertext.css/"
-			canonicalUrl: "https://paulradzkov.github.io/bettertext.css/"
+			url: "//paulradzkov.com/bettertext.css"
+
+			# no slash at the end
+			canonicalUrl: "http://paulradzkov.com/bettertext.css"
 
 			# Here are some old site urls that you would like to redirect from
 			oldUrls: [
@@ -36,7 +38,7 @@ docpadConfig = {
 
 			# The website keywords (for SEO) separated by commas
 			keywords: """
-				Typography, text, styles, css,
+				Typography, text, styles, css, LESS, npm, bower, package
 				"""
 
 			email: "radzkov@gmail.com"
