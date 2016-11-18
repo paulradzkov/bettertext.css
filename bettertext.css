@@ -1,7 +1,7 @@
-/*! bettertext.css v2.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v2.0.1 | MIT License | github.com/paulradzkov/bettertext.css */
 body {
   font-family: sans-serif;
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.5;
 }
 body:not([class]),

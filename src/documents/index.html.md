@@ -8,24 +8,11 @@ scripts:
     'vendor/youtube/embed-youtube.js'
 ---
 
-# Типографика bettertext.css
+# Типографика для сайтов bettertext.css
 
 [![npm version](https://badge.fury.io/js/bettertext.css.svg)](http://badge.fury.io/js/bettertext.css) [![bower version](https://badge.fury.io/bo/bettertext.css.svg)](http://badge.fury.io/bo/bettertext.css)
 
 Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как конструктор для собственной типографики.
-
-<figure class="" style="max-width: 1440px; margin: 0 calc(-10px - 4vw) 3em calc(-10px - 4vw)">
-    <div class="youtube-player" data-id="acVBLst3QQc">
-        <img srcset="
-            img/bettertext-demo@0.25x.png 360w,
-            img/bettertext-demo@0.5x.png 720w,
-            img/bettertext-demo@1x.png 1440w,
-            img/bettertext-demo@1.5x.png 2160w,
-            img/bettertext-demo@2x.png 2880w
-            " src="img/bettertext-demo@0.5x.png" alt="bettertext.css demo">
-        <a href="https://www.youtube.com/watch?v=acVBLst3QQc" target="_blank" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
-    </div>
-</figure>
 
 <nav class="row">
     <div class="col-xs-shrink">
@@ -44,21 +31,35 @@ scripts:
         [Как bettertext.css делает текст лучше](#features)  
         [Из чего состоит bettertext.css](story/)  
         [Шаблоны для дизайнеров](#templates)  
-        [Демо-страница](testpage/)  
+        [Ответы на вопросы](#faq)  
+        [Демо-страница](testpage/)
         </p>
     </div>
 </nav>
 
+<figure class="" style="max-width: 1440px; margin: 0 calc(-10px - 4vw) 3em calc(-10px - 4vw)">
+<div class="youtube-player" data-id="acVBLst3QQc">
+<img srcset="
+img/bettertext-demo@0.25x.png 360w,
+img/bettertext-demo@0.5x.png 720w,
+img/bettertext-demo@1x.png 1440w,
+img/bettertext-demo@1.5x.png 2160w,
+img/bettertext-demo@2x.png 2880w
+" src="img/bettertext-demo@0.5x.png" alt="bettertext.css demo">
+<a href="https://www.youtube.com/watch?v=acVBLst3QQc" target="_blank" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
+</div>
+</figure>
+
 <figure class="row">
-    <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
-    </div>
-    <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
-    </div>
-    <div class="col-xs-shrink">
-        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
-    </div>
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
+</div>
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
+</div>
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
+</div>
 </figure>
 
 <a name="install" id="install"></a>
@@ -250,6 +251,32 @@ Bettertext.css написан на LESS и настраивается при п
     @h6-mt: unit((2 * @lh * @fz / @h6-fz), em);
 }
 ```
+
+<a name="faq" id="faq"></a>
+
+## Ответы на вопросы
+
+**— Что такое «типографика»?**
+
+— Это набор стилей для текста. Задача типографики — сделать текст красивее и удобнее для восприятия. Лучше, чем с браузерными стилями по-умолчанию.
+
+**— Зачем мне это нужно?**
+
+— Bettertext.css cэкономит время верстальщика, избавит от рутины: на каждом проекте нужно написать стили для заголовков, абзацев, списков, цитат, таблиц. Обычно у верстальщиков со временем появляется своя заготовка для типографики, которая переходит из проекта в проект с незначительными изменениями.
+
+Bettertext.css — настраиваемая заготовка, которая позволяет при помощи 11 переменных задать базовую типографику сайта.
+
+**— Будет ли версия bettertext нa SASS и Stylus?**
+
+— Пока нет таких планов, потому что я не использую SASS или Stylus. Но если вы хотите помочь мне портировать на SASS или Stylus, пишите на почту radzkov@gmal.com.
+
+**— Почему размер шрифта и высота строки задаются в пикселях?**
+
+— Для удобства настройки. В графических редакторах размеры задаются в пикселях. Вы берёте значения в пикселях из исходника дизайна, а bettertext самостоятельно пересчитывает размеры шрифтов из px в em, а высоту строки в безразмерную величину. По-умолчанию 1em = 16px.
+
+**— Что делать, если я хочу изменить размер шрифта root элемента и 1rem ≠ 16px?**
+
+Если вы пользуетесь техникой «62.5%» и у вас 1rem = 10px, то в настройках bettertext надо переопределить скрытую переменную `@onerem: 10px`. [Пример на codepen](http://codepen.io/paulradzkov/pen/ObMgbd).
 
 ---
 

@@ -1,4 +1,4 @@
-/*! bettertext.css v2.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v2.0.1 | MIT License | github.com/paulradzkov/bettertext.css */
 
 .bettertext-settings() {
 
@@ -26,13 +26,19 @@
     //calculations
     // you almost never need to edit below
 
+    // one rem is 16px by default
+    @onerem: 16px;
+
+    // base font-size in ems
+    @fz-ems: unit(((round( @onerem)) / @fz), em);
+
     // unitless line-height
     @lh: unit((@rythm / @fz));
 
     // margins for paragraphs, lists and other tags
     @m-default: unit(@lh, em);
 
-    // fmall font-size in ems
+    // small font-size in ems
     @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
 
     //headers size calculations for small screens
@@ -101,7 +107,7 @@
 
     body {
         font-family: @font-body;
-        font-size: @fz;
+        font-size: @fz-ems;
         line-height: @lh;
     }
 
