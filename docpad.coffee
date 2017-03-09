@@ -43,7 +43,7 @@ docpadConfig = {
 
 			email: "radzkov@gmail.com"
 
-			googleAnalyticsId: "UA-29416794-2"
+			googleAnalyticsId: "UA-29416794-1"
 
 			googleAnalyticsDomain: "auto"
 
