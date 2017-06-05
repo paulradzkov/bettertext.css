@@ -186,30 +186,33 @@
         letter-spacing: 0.05em;
     }
 
-    @media @bettertext-breakpoint {
+    // do not create breakpoint and override if scale is not changing
+    & when not (@scale1 = @scale2) {
+        @media @bettertext-breakpoint {
 
-        h1 {
-            font-size: @h1-l-fz;
-            margin-top: @h1-l-mt;
-            margin-bottom: @h1-l-mb;
-        }
+            h1 {
+                font-size: @h1-l-fz;
+                margin-top: @h1-l-mt;
+                margin-bottom: @h1-l-mb;
+            }
 
-        h2 {
-            font-size: @h2-l-fz;
-            margin-top: @h2-l-mt;
-            margin-bottom: @h2-l-mb;
-        }
+            h2 {
+                font-size: @h2-l-fz;
+                margin-top: @h2-l-mt;
+                margin-bottom: @h2-l-mb;
+            }
 
-        h3 {
-            font-size: @h3-l-fz;
-            margin-top: @h3-l-mt;
-            margin-bottom: @h3-l-mb;
-        }
+            h3 {
+                font-size: @h3-l-fz;
+                margin-top: @h3-l-mt;
+                margin-bottom: @h3-l-mb;
+            }
 
-        h4 {
-            font-size: @h4-l-fz;
-            margin-top: @h4-l-mt;
-            margin-bottom: @h4-l-mb;
+            h4 {
+                font-size: @h4-l-fz;
+                margin-top: @h4-l-mt;
+                margin-bottom: @h4-l-mb;
+            }
         }
     }
 
