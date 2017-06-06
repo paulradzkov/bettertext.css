@@ -69,9 +69,9 @@ img/bettertext-demo@2x.png 2880w
 Подключается после normalize.css и веб-шрифтов.
 
 **Подключить через CDN**  
-[`https://unpkg.com/bettertext.css@latest/bettertext.css`](https://unpkg.com/bettertext.css@latest/bettertext.css) <small>(1.7KB gzip)</small>  
-[`https://unpkg.com/bettertext.css@latest/bettertext.min.css`](https://unpkg.com/bettertext.css@latest/bettertext.min.css) <small>(1.5KB gzip)</small>  
-[`https://unpkg.com/bettertext.css@latest/bettertext.min.css.map`](https://unpkg.com/bettertext.css@latest/bettertext.min.css.map)
+[`https://unpkg.com/bettertext.css@2.0.x/bettertext.css`](https://unpkg.com/bettertext.css@2.0.x/bettertext.css) <small>(1.4KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css`](https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css) <small>(1.2KB gzip)</small>  
+[`https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css.map`](https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css.map)
 
 **Установить через NPM**  
 `npm install bettertext.css --save-dev`
