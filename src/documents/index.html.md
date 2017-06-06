@@ -52,13 +52,13 @@ img/bettertext-demo@2x.png 2880w
 
 <figure class="row">
 <div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-style="mega" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-size="large" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
 </div>
 <div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
 </div>
 <div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-style="mega" data-count-api="/repos/paulradzkov/bettertext.css#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
 </div>
 </figure>
 
