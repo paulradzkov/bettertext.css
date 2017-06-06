@@ -1,4 +1,4 @@
-/*! bettertext.css v2.0.1 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v2.0.3 | MIT License | github.com/paulradzkov/bettertext.css */
 body {
   font-family: sans-serif;
   font-size: 1em;
@@ -183,6 +183,10 @@ blockquote > cite {
 pre {
   margin: 1.5em 0;
   white-space: pre-wrap;
+}
+p code {
+  line-break: loose;
+  overflow-wrap: break-word;
 }
 /* tables */
 table:not([class]) {
