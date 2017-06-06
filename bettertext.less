@@ -1,4 +1,4 @@
-/*! bettertext.css v2.0.1 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v2.0.2 | MIT License | github.com/paulradzkov/bettertext.css */
 
 .bettertext-settings() {
 
@@ -313,7 +313,29 @@
 
     pre {
         margin: (@m-default) 0;
-        white-space: pre-wrap;
+        white-space: pre;
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%),
+            linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+        background-position: 0 0, 100% 0;
+        background-attachment: scroll, scroll;
+        background-size: 1px 100%, 1px 100%;
+        background-repeat: no-repeat, no-repeat;
+        display: flex;
+
+        > code {
+            display: block;
+            flex: 0 0 auto;
+            min-width: 100%;
+            padding: @m-default 0;
+            background-image:
+                linear-gradient(white 0%, white 100%),
+                linear-gradient(white 0%, white 100%);
+            background-position: 0 0, 100% 0;
+            background-attachment: local, local;
+            background-size: 5px 100%, 5px 100%;
+            background-repeat: no-repeat, no-repeat;
+        }
     }
 
     /* tables */
