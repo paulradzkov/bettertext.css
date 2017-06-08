@@ -167,6 +167,97 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
     </tfoot>
 </table>
 
+<table>
+    <thead>
+        <tr>
+            <td class="words">Player</td>
+            <td>G</td>
+            <td>W</td>
+            <td>L</td>
+            <td>ERA</td>
+            <td>IP</td>
+            <td>H</td>
+            <td>R</td>
+            <td>ER</td>
+            <td>SO</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="words">Greinke, Z</td>
+            <td>28</td>
+            <td>16</td>
+            <td>3</td>
+            <td>192<span class="fraction">2&#8203;/3</span></td>
+            <td>1.68</td>
+            <td>133</td>
+            <td>38</td>
+            <td>36</td>
+            <td>174</td>
+        </tr>
+        <tr>
+            <td class="words">Arrieta, J</td>
+            <td>28</td>
+            <td>18</td>
+            <td>6</td>
+            <td>191</td>
+            <td>2.03</td>
+            <td>132</td>
+            <td>49</td>
+            <td>43</td>
+            <td>197</td>
+        </tr>
+        <tr>
+            <td class="words">Kershaw, C</td>
+            <td>28</td>
+            <td>13</td>
+            <td>6</td>
+            <td>201</td>
+            <td>2.15</td>
+            <td>144</td>
+            <td>55</td>
+            <td>48</td>
+            <td>259</td>
+        </tr>
+        <tr>
+            <td class="words">Gray, S</td>
+            <td>28</td>
+            <td>13</td>
+            <td>7</td>
+            <td>193<span class="fraction">1&#8203;/3</span></td>
+            <td>2.28</td>
+            <td>145</td>
+            <td>57</td>
+            <td>49</td>
+            <td>156</td>
+        </tr>
+        <tr>
+            <td class="words">Keuchel, D</td>
+            <td>28</td>
+            <td>17</td>
+            <td>6</td>
+            <td>200<span class="fraction">2&#8203;/3</span></td>
+            <td>2.29</td>
+            <td>155</td>
+            <td>52</td>
+            <td>51</td>
+            <td>185</td>
+        </tr>
+        <tr>
+            <td class="words">Martinez, C</td>
+            <td>28<a class="fn" href="#fn-a">1</a></td>
+            <td>13</td>
+            <td>7</td>
+            <td>164<span class="fraction">2&#8203;/3</span></td>
+            <td>3.12</td>
+            <td>159</td>
+            <td>62</td>
+            <td>57</td>
+            <td>269</td>
+        </tr>
+    </tbody>
+</table>
+
 ## Blockquotes
 
 Simple blockquote:
