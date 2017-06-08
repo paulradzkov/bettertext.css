@@ -7,8 +7,8 @@
     @rythm: 24px;                      // vertical rythm = line-height in pixels
     @fz-small: 12px;                   // smaller font-size (px)
     @linel: 50rem;                     // max-width for text (em or rem)
-    @font-body: sans-serif;            // body
-    @font-headers: sans-serif;         // headers
+    @font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";            // body
+    @font-headers: @font-body;         // headers
     @font-code: monospace, monospace;  // code (duplication is intentional)
     @scale1: 1.125;                    // header size multiplier for small screens
     @scale2: 1.250;                    // header size multiplier for large screens
@@ -109,6 +109,10 @@
         font-family: @font-body;
         font-size: @fz-ems;
         line-height: @lh;
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+        font-variant-ligatures: common-ligatures contextual;
+        font-feature-settings: "kern", "liga", "clig", "calt";
     }
 
     body:not([class]),
@@ -327,6 +331,8 @@
         margin-bottom: (@m-default * 2);
         border-collapse: separate;
         border-spacing: 0;
+        font-variant-numeric: lining-nums tabular-nums;
+        font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
 
         caption {
             text-align: left;
@@ -378,6 +384,12 @@
     abbr {
         letter-spacing: .05em;
         margin-right: -.05em;
+        font-variant-caps: all-small-caps;
+        font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+
+        &[title] {
+            border-bottom: none; // undo styles from normalize.css
+        }
     }
 
     strong, b, dt {
