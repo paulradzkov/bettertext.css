@@ -139,6 +139,15 @@ ol:not([class]) ol {
 ul:not([class]) li,
 ol:not([class]) li {
   transform: translateX(2.5em);
+  animation: fixlists 1s;
+}
+@keyframes fixlists {
+  0% {
+    text-indent: -0.001em;
+  }
+  100% {
+    text-indent: 0;
+  }
 }
 /* images */
 img {

@@ -244,6 +244,10 @@
 
     /* lists */
     /* lists without classes */
+
+    // 1) force reflow to fix bullet overlapping.
+    // See https://git.io/vHyUo for details.
+
     ul:not([class]),
     ol:not([class]) {
         margin: 0 0 @m-default;
@@ -258,7 +262,13 @@
 
         li {
             transform: translateX(2.5em);
+            animation: fixlists 1s; // 1)
         }
+    }
+
+    @keyframes fixlists {
+        0%   { text-indent: -0.001em;}
+        100% { text-indent: 0;}
     }
 
     /* images */
