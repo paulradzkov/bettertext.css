@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Типографика для сайтов / bettertext.css</title>
+    <meta name="description" content="Улучшенная типографика для голого HTML и Markdown" />
+    <meta name="keywords" content="Typography, text, styles, css, LESS, npm, bower, package" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <meta name="generator" content="DocPad v6.78.4" />
+
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/vendor/normalize.css/normalize.css">
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/bettertext.css">
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/css/github.css">
+    <link rel="stylesheet" href="https://unpkg.com/flxgrid.css@latest/flxgrid.css " media="screen">
+    <link rel="stylesheet" href="https://unpkg.com/links.less@latest/links.css " media="screen">
+    <link rel="stylesheet" href="https://unpkg.com/ilyabirman-likely@2/release/likely.css " media="screen">
+
+    <!-- DocPad Styles + Our Own -->
+    <link  rel="stylesheet" href="//paulradzkov.com/bettertext.css/vendor/youtube/embed-youtube.css" />
+
+    <link rel="canonical" href="http://paulradzkov.com/bettertext.css/">
+    <meta property="og:title" content="Типографика для сайтов" />
+<meta property="og:description" content="Улучшенная типографика для голого HTML и Markdown" />
+
+    <meta property="og:image" content="//paulradzkov.com/bettertext.css/img/og/og-index.png" />
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://paulradzkov.com/bettertext.css" />
+    <meta property="og:site_name" content="bettertext.css" />
+
+<meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@paul_radzkov">
+<meta name="twitter:title" content="Типографика для сайтов">
+<meta name="twitter:description" content="Улучшенная типографика для голого HTML и Markdown">
+
+<meta name="twitter:image" content="//paulradzkov.com/bettertext.css/img/og/og-index.png">
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29416794-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+    <article>
+       <h1 id="-bettertext-css">Типографика для сайтов bettertext.css</h1>
+<p><a href="http://badge.fury.io/js/bettertext.css"><img src="https://badge.fury.io/js/bettertext.css.svg" alt="npm version"></a> <a href="http://badge.fury.io/bo/bettertext.css"><img src="https://badge.fury.io/bo/bettertext.css.svg" alt="bower version"></a></p>
+<p>Делает текст опрятным, а структуру страницы легко различимой, предотвращает распространенные баги. Легко настраивается, не содержит классов и не мешает стилям шаблона. Используйте в готовом виде или как конструктор для собственной типографики.</p>
+<nav class="row">
+    <div class="col-xs-shrink">
+        <p>
+        <strong>Документация</strong><br>        <a href="#install">Установка и подключение</a><br>        <a href="#settings">Настройка LESS-версии</a><br>        <a href="#defaults">Параметры по-умолчанию</a><br>        <a href="#customization">Кастомизация</a><br>        <a href="http://codepen.io/paulradzkov/pen/Mygdrb">Настроить онлайн</a>
+        </p>
+    </div>
+    <div class="col-xs-shrink">
+        <p>
+        <strong>О проекте</strong><br>        <a href="#features">Как bettertext.css делает текст лучше</a><br>        <a href="story/">Из чего состоит bettertext.css</a><br>        <a href="#templates">Шаблоны для дизайнеров</a><br>        <a href="#faq">Ответы на вопросы</a><br>        <a href="testpage/">Демо-страница</a>
+        </p>
+    </div>
+</nav>
+
+<figure class="" style="max-width: 1440px; margin: 0 calc(-10px - 4vw) 3em calc(-10px - 4vw)">
+<div class="youtube-player" data-id="acVBLst3QQc">
+<img srcset="
+img/bettertext-demo@0.25x.png 360w,
+img/bettertext-demo@0.5x.png 720w,
+img/bettertext-demo@1x.png 1440w,
+img/bettertext-demo@1.5x.png 2160w,
+img/bettertext-demo@2x.png 2880w
+" src="img/bettertext-demo@0.5x.png" alt="bettertext.css demo">
+<a href="https://www.youtube.com/watch?v=acVBLst3QQc" target="_blank" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
+</div>
+</figure>
+
+<figure class="row">
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-size="large" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
+</div>
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
+</div>
+<div class="col-xs-shrink">
+<a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
+</div>
+</figure>
+
+<p><a name="install" id="install"></a></p>
+<h2 id="-">Установить и подключить</h2>
+<p>Подключается после normalize.css и веб-шрифтов.</p>
+<p><strong>Подключить через CDN</strong><br><a href="https://unpkg.com/bettertext.css@2.0.x/bettertext.css"><code>https://unpkg.com/bettertext.css@2.0.x/bettertext.css</code></a> <small>(1.4KB gzip)</small><br><a href="https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css"><code>https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css</code></a> <small>(1.2KB gzip)</small><br><a href="https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css.map"><code>https://unpkg.com/bettertext.css@2.0.x/bettertext.min.css.map</code></a></p>
+<p><strong>Установить через NPM</strong><br><code>npm install bettertext.css --save-dev</code></p>
+<p><strong>Установить через Bower</strong><br><code>bower install bettertext.css --save</code></p>
+<p>Npm и Bower пакеты не имеют зависимостей.</p>
+<p><a name="features" id="features"></a></p>
+<h2 id="-bettertext-css-">Как bettertext.css делает текст лучше</h2>
+<p>Bettertext.css создан для того, чтобы решить типичные проблемы дефолтных стилей браузера, предотвратить распространенные баги и подготовить качественную основу для собственной типографики.</p>
+<div class="row" style="max-width: calc(50rem + 30px);">
+    <div class="col-xs-12 col-sm-6">
+        <p>
+        <strong>Соблюдаются классические пропорции и теория близости</strong><br>        Размеры заголовков вычисляются по классическим печатным пропорциям из размера основного текста и вертикального ритма. Верхние и нижние отступы подобраны с учетом теории близости. Это визуально подчеркивает структуру страницы и облегчает ориентирование по разделам страницы.
+        </p>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <p>
+        <strong>Адаптивные размеры для заголовков</strong><br>        Чтобы заголовки аккуратно выглядели на маленьких экранах и не было проблем с длинными словами, в типографике предусмотрен отдельный набор размеров для экранов меньше 768px.
+        </p>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <p>
+        <strong>Правильное обтекание картинок и списков</strong><br>        Вёрстка содержит исправления для типичных багов обтекания текстом: никаких разрывов текста из-за длинных слов, а буллиты списков не налезут на картинку. Умные отступы предотвратят проблемы с многоколоночным текстом.
+        </p>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <p>
+        <strong>Не содержит классов и не мешает стилям шаблона</strong><br>        CSS написан так, чтобы верстальщику не приходилось ничего обнулять и переопределять в коде шаблона. Стили для структурных тегов section, article, figure, а также для списков ul, ol и таблиц применяются только когда на тегах нет классов.
+        </p>
+    </div>
+</div>
+
+<h2 id="-">Настроить под свой дизайн</h2>
+<p>Bettertext.css написан на LESS и настраивается при помощи 11 переменных. Остальные 40 вычисляются по формулам, но их тоже можно переопределить.</p>
+<p>Если вы не используете LESS, <a href="http://codepen.io/paulradzkov/pen/Mygdrb">настройте типографику онлайн</a> и пользуйтесь скомпилированной версией:</p>
+<ul>
+<li>настройте переменные по вашему вкусу;</li>
+<li>протестируйте на вашем HTML или Markdown коде;</li>
+<li>нажмите &quot;View Compiled&quot; и заберите скомпилированный CSS к себе в проект.</li>
+</ul>
+<p><a name="settings" id="settings"></a></p>
+<p><a name="templates" id="templates"></a></p>
+<h2 id="-">Шаблоны для дизайнеров</h2>
+<p>В шаблонах типографики для Скетча и Фотошопа текстовые стили соответствуют стилям по-умолчанию из bettertext.css.
+Используйте эти шаблоны для быстрой настройки типографики в графическом редакторе.</p>
+<ol>
+<li><a href="http://codepen.io/paulradzkov/pen/Mygdrb">Настройте</a> типографику в браузере;</li>
+<li>Скачайте шаблон для вашего графического редактора;</li>
+<li>Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.</li>
+</ol>
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/sketch-typography-kit@0.5x.png 456w,
+            img/sketch-typography-kit@1x.png 912w,
+            img/sketch-typography-kit@1.5x.png 1368w,
+            img/sketch-typography-kit@2x.png 1824w
+            " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.sketch">Скачать bettertext-typography-kit.sketch</a></p>
+    </figcaption>
+</figure>
+<figure class="row">
+    <div class="col-xs-shrink">
+        <img srcset="
+            img/photoshop-typography-kit@0.5x.png 456w,
+            img/photoshop-typography-kit@1x.png 912w,
+            img/photoshop-typography-kit@1.5x.png 1368w,
+            img/photoshop-typography-kit@2x.png 1824w
+            " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop" style="margin: 0  0 -4% -6.14%">
+    </div>
+    <figcaption class="col-xs-12">
+        <p><a href="downloads/bettertext-typography-kit.psd">Скачать bettertext-typography-kit.psd</a></p>
+    </figcaption>
+</figure>
+
+<h2 id="-less-">Подключить и настроить LESS-версию</h2>
+<p>Подключите bettertext.less к стилям вашего проекта.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"node_modules/bettertext.css/bettertext.less"</span>;
+</code></pre>
+<p>или</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"bower_components/bettertext.css/bettertext.less"</span>;
+</code></pre>
+<p><a name="defaults" id="defaults"></a></p>
+<h3 id="-">Парамерты по-умолчанию</h3>
+<p>У компонента есть глобальный миксин с настройками:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-class">.bettertext-settings</span>() {
+
+    <span class="hljs-comment">//settings</span>
+    <span class="hljs-variable">@fz:</span> <span class="hljs-number">16px</span>;                         <span class="hljs-comment">// default font-size in px</span>
+    <span class="hljs-variable">@rythm:</span> <span class="hljs-number">24px</span>;                      <span class="hljs-comment">// vertical rythm = line-height in pixels</span>
+    <span class="hljs-variable">@fz-small:</span> <span class="hljs-number">12px</span>;                   <span class="hljs-comment">// smaller font-size (px)</span>
+    <span class="hljs-variable">@linel:</span> <span class="hljs-number">50rem</span>;                     <span class="hljs-comment">// max-width for text (any css value)</span>
+    <span class="hljs-variable">@font-body:</span> sans-serif;            <span class="hljs-comment">// body</span>
+    <span class="hljs-variable">@font-headers:</span> sans-serif;         <span class="hljs-comment">// headers</span>
+    <span class="hljs-variable">@font-code:</span> monospace, monospace;  <span class="hljs-comment">// code (duplication is intentional)</span>
+    <span class="hljs-variable">@scale1:</span> <span class="hljs-number">1.125</span>;                    <span class="hljs-comment">// header size multiplier for small screens</span>
+    <span class="hljs-variable">@scale2:</span> <span class="hljs-number">1.250</span>;                    <span class="hljs-comment">// header size multiplier for large screens</span>
+
+    <span class="hljs-comment">// margin for body, articles and sections (any css value)</span>
+    <span class="hljs-variable">@structure-margin:</span> <span class="hljs-string">~"calc(24px + 3vw)"</span> <span class="hljs-number">5vw</span>;
+
+    <span class="hljs-comment">// breakpoint to switch from 'mobile' to 'desktop'</span>
+    <span class="hljs-variable">@bettertext-breakpoint:</span> <span class="hljs-string">~"(min-width: 768px)"</span>;
+}
+</code></pre>
+<p><a name="customization" id="customization"></a></p>
+<h3 id="-">Собственные настройки</h3>
+<p>Вы можете настроить типографику через переменные. Например, поменять размер шрифта основного текста, шрифты:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"node_modules/bettertext.css/bettertext.less"</span>;
+
+<span class="hljs-class">.bettertext-settings</span>() {
+
+    <span class="hljs-comment">//settings</span>
+    <span class="hljs-variable">@fz:</span> <span class="hljs-number">14px</span>;                          <span class="hljs-comment">// default font-size</span>
+    <span class="hljs-variable">@font-body:</span> <span class="hljs-string">'Arial'</span>, sans-serif;    <span class="hljs-comment">// body</span>
+    <span class="hljs-variable">@font-headers:</span> <span class="hljs-string">'Georgia'</span>, serif;    <span class="hljs-comment">// headers</span>
+
+    <span class="hljs-variable">@bettertext-breakpoint:</span> <span class="hljs-string">~"(min-width: 50em)"</span>; <span class="hljs-comment">// large screens starts from that value</span>
+
+}
+</code></pre>
+<p>Если базовых настроек не достаточно, вы можете переписать любую формулу из миксина <code>bettertext-calculations</code> внутри миксина <code>bettertext-settings</code> (см. <a href="https://github.com/paulradzkov/bettertext.css/blob/master/bettertext.less">исходный код</a>).
+Например, поменять верхний отступ у заголовков (можно использовать готовые значения и формулы):</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-at_rule">@import</span> (less) <span class="hljs-string">"node_modules/bettertext.css/bettertext.less"</span>;
+
+<span class="hljs-class">.bettertext-settings</span>() {
+
+    <span class="hljs-comment">//settings</span>
+    <span class="hljs-variable">@fz:</span> <span class="hljs-number">14px</span>;                          <span class="hljs-comment">// default font-size</span>
+    <span class="hljs-variable">@font-body:</span> <span class="hljs-string">'Arial'</span>, sans-serif;    <span class="hljs-comment">// body</span>
+    <span class="hljs-variable">@font-headers:</span> <span class="hljs-string">'Georgia'</span>, serif;    <span class="hljs-comment">// headers</span>
+
+    <span class="hljs-variable">@bettertext-breakpoint:</span> <span class="hljs-string">~"(min-width: 50em)"</span>; <span class="hljs-comment">// large screens starts from that value</span>
+
+    <span class="hljs-comment">//redefining header margin-top</span>
+    <span class="hljs-variable">@h1-mt:</span> <span class="hljs-number">3em</span>;
+    <span class="hljs-variable">@h2-mt:</span> <span class="hljs-number">2.5em</span>;
+    <span class="hljs-variable">@h3-mt:</span> <span class="hljs-number">2em</span>;
+    <span class="hljs-variable">@h4-mt:</span> <span class="hljs-number">1.5em</span>;
+    <span class="hljs-variable">@h5-mt:</span> <span class="hljs-function">unit</span>((<span class="hljs-number">2</span> * <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@h5-fz</span>), em);
+    <span class="hljs-variable">@h6-mt:</span> <span class="hljs-function">unit</span>((<span class="hljs-number">2</span> * <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@h6-fz</span>), em);
+}
+</code></pre>
+<p><a name="faq" id="faq"></a></p>
+<h2 id="-">Ответы на вопросы</h2>
+<p><strong>— Что такое «типографика»?</strong></p>
+<p>— Это набор стилей для текста. Задача типографики — сделать текст красивее и удобнее для восприятия. Лучше, чем с браузерными стилями по-умолчанию.</p>
+<p><strong>— Зачем мне это нужно?</strong></p>
+<p>— Bettertext.css cэкономит время верстальщика, избавит от рутины: на каждом проекте нужно написать стили для заголовков, абзацев, списков, цитат, таблиц. Обычно у верстальщиков со временем появляется своя заготовка для типографики, которая переходит из проекта в проект с незначительными изменениями.</p>
+<p>Bettertext.css — настраиваемая заготовка, которая позволяет при помощи 11 переменных задать базовую типографику сайта.</p>
+<p><strong>— Будет ли версия bettertext нa SASS и Stylus?</strong></p>
+<p>— Пока нет таких планов, потому что я не использую SASS или Stylus. Но если вы хотите помочь мне портировать на SASS или Stylus, пишите на почту radzkov@gmal.com.</p>
+<p><strong>— Почему размер шрифта и высота строки задаются в пикселях?</strong></p>
+<p>— Для удобства настройки. В графических редакторах размеры задаются в пикселях. Вы берёте значения в пикселях из исходника дизайна, а bettertext самостоятельно пересчитывает размеры шрифтов из px в em, а высоту строки в безразмерную величину. По-умолчанию 1em = 16px.</p>
+<p><strong>— Что делать, если я хочу изменить размер шрифта root элемента и 1rem ≠ 16px?</strong></p>
+<p>Если вы пользуетесь техникой «62.5%» и у вас 1rem = 10px, то в настройках bettertext надо переопределить скрытую переменную <code>@onerem: 10px</code>. <a href="http://codepen.io/paulradzkov/pen/ObMgbd">Пример на codepen</a>.</p>
+<hr>
+<p><small>Автор <a href="http://paulradzkov.com">Павел Радьков</a>, <a href="https://github.com/paulradzkov/bettertext.css">GitHub проекта</a>, MIT License</small></p>
+<p class="likely">
+    <span class="facebook">Поделиться</span>
+    <span class="twitter">Твитнуть</span>
+    <span class="gplus">Плюсануть</span>
+    <span class="vkontakte">Поделиться</span>
+    <span class="telegram">Телеграмнуть</span>
+</p>
+
+
+    </article>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="https://unpkg.com/ilyabirman-likely@2/release/likely.js"></script>
+    <!-- DocPad Scripts + Our Own -->
+    <script defer="defer"  src="//paulradzkov.com/bettertext.css/vendor/youtube/embed-youtube.js"></script>
+
+</body>
+</html>

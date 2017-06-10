@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+
+    <!-- Site Properities -->
+    <title>Из чего состоит типографика bettertext.css / bettertext.css</title>
+    <meta name="description" content="Улучшенная типографика для голого HTML и Markdown" />
+    <meta name="keywords" content="Typography, text, styles, css, LESS, npm, bower, package" />
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+    <!-- DocPad Meta -->
+    <meta name="generator" content="DocPad v6.78.4" />
+
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/vendor/normalize.css/normalize.css">
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/bettertext.css">
+    <link rel="stylesheet" href="//paulradzkov.com/bettertext.css/css/github.css">
+    <link rel="stylesheet" href="https://unpkg.com/flxgrid.css@latest/flxgrid.css " media="screen">
+    <link rel="stylesheet" href="https://unpkg.com/links.less@latest/links.css " media="screen">
+    <link rel="stylesheet" href="https://unpkg.com/ilyabirman-likely@2/release/likely.css " media="screen">
+
+    <!-- DocPad Styles + Our Own -->
+    
+
+    <link rel="canonical" href="http://paulradzkov.com/bettertext.css/story/">
+    <meta property="og:title" content="Из чего состоит типографика bettertext.css" />
+<meta property="og:description" content="Улучшенная типографика для голого HTML и Markdown" />
+
+    <meta property="og:image" content="//paulradzkov.com/bettertext.css/img/og/og-index.png" />
+
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://paulradzkov.com/bettertext.css" />
+    <meta property="og:site_name" content="bettertext.css" />
+
+<meta property="og:locale" content="ru_RU" />
+
+    <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@paul_radzkov">
+<meta name="twitter:title" content="Из чего состоит типографика bettertext.css">
+<meta name="twitter:description" content="Улучшенная типографика для голого HTML и Markdown">
+
+<meta name="twitter:image" content="//paulradzkov.com/bettertext.css/img/og/og-index.png">
+
+
+    
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-29416794-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+
+</head>
+<body>
+    <article>
+       <h1 id="-bettertext-css">Из чего состоит типографика bettertext.css</h1>
+<h2 id="1-">1. Основной текст</h2>
+<p>Создание типографики начинается с подбора стилей для основного текста. Первым делом, создайте несколько абзацев текста, подберите для них шрифт, размер шрифта и межстрочное расстояние.</p>
+<p>На основе размера шрифта и интерлиньяжа вычисляется основная константа типографики — <strong>шаг вертикального ритма</strong>.</p>
+<p>Для основного текста я взял условный sans-serif размером 16px и line-height: 1.5, чтобы высота строки для удобства расчетов равнялась целому числу пикселей — 24px.</p>
+<p>css:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">body</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">16px</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1.5</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>↓</p>
+<p>less:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-variable">@fz:</span> <span class="hljs-number">16px</span>;
+<span class="hljs-variable">@rythm:</span> <span class="hljs-number">24px</span>;
+<span class="hljs-variable">@font1:</span> sans-serif;
+<span class="hljs-variable">@lh:</span> <span class="hljs-function">unit</span>(<span class="hljs-variable">@rythm</span> / <span class="hljs-variable">@fz</span>);
+
+<span class="hljs-tag">body</span> {
+  <span class="hljs-attribute">font-family</span>: <span class="hljs-variable">@font1</span>;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fz</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-variable">@lh</span>;
+}
+</code></pre>
+<p>Уделите особое внимание основному тексту, так как такого текста больше всего на информационном сайте.</p>
+<p>Главный критерий — текст должен легко читаться. Для этого он должен быть достаточно крупным.</p>
+<p>Выбирайте размер от 14px до 25px. Если текста будет много, шрифт рекомендуется выбирать не меньше 16px.</p>
+<p>Высота строки из диапазона 1.2–1.8.
+Меньше 1.4, чтобы блоки текста создавали плотные контрастные прямоугольники. Больше 1.6, чтобы добиться визуальной легкости.</p>
+<h2 id="2-">2. Абзацы</h2>
+<p>Основной текст обычно состоит из абзацев. Выберем расстояние между абзацами равное вертикальному ритму.</p>
+<p>Оставим только нижний отступ — это избавит нас от таких проблем, как неровный верхний края при использовании многоколоночного текста, от ненужного верхнего отступа у первого абзаца внутри <code>li</code> элемента.</p>
+<p>Рекомендуемая максимальная длина строки текста должна быть в пределах 60–90 символов.</p>
+<p>Слишком длинные строки утомительно читать, потому что глазу тяжелее находить начало строки.</p>
+<p>css:</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">p</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1.5em</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">40em</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>↓</p>
+<p>less:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-variable">@linel:</span> <span class="hljs-number">40em</span>;
+
+<span class="hljs-tag">p</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-function">unit</span>(<span class="hljs-variable">@rythm</span> / <span class="hljs-variable">@fz</span>, em);
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">@linel</span>;
+}
+</code></pre>
+<h2 id="3-">3. Обтекание картинок</h2>
+<p>Первоисточник: <a href="https://css-tricks.com/minimum-paragraph-widths/">https://css-tricks.com/minimum-paragraph-widths/</a></p>
+<p>Когда текст обтекает картинки, может случиться ситуация, при которой длинные слова не помещаются в оставшееся для текста простанство и переносятся под картинку, создавая неприятный разрыв.</p>
+<p><img src="../img/TheProblem.png" alt=""></p>
+<p>Зададим параграфу псевдо-элемент с минимальной шириной. Если оставшееся свободное место меньше этой минимальной ширины, псевдо-элемент вытолкнет абзац под картинку.</p>
+<p><img src="../img/PseudoElement.png" alt=""></p>
+<p>Применим этот трюк к абзацам и спискам. Но так как списки могут использоваться в навигации и других местах, выбирать будем только списки, у которых нет класса.</p>
+<p>Пусть минимальная ширина псевдоэлемента равна 10em. Высота псевдо-элемента равна нулю, так как он блочный.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">p</span><span class="hljs-pseudo">:before</span>,
+<span class="hljs-tag">ol</span><span class="hljs-pseudo">:not(</span><span class="hljs-attr_selector">[class]</span>)<span class="hljs-pseudo">:before</span>,
+<span class="hljs-tag">ul</span><span class="hljs-pseudo">:not(</span><span class="hljs-attr_selector">[class]</span>)<span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">''</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">10em</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">overflow</span>:<span class="hljs-value"> hidden</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">li</span> <span class="hljs-tag">p</span><span class="hljs-pseudo">:before</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> none</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<h2 id="4-">4. Заголовки. Размер</h2>
+<p>Заголовки должны обладать контрастом по отношению к основному тексту, тогда читатель беглым взглядом без труда сможет определить иерархию документа по заголовкам. Создать контраст можно при помощи шрифта, размера текста, отступов и цвета.</p>
+<p>Для информационных сайтов обычно хватает четырех типов заголовка h1 .. h4. Заголовки h5 и h6 почти не используются. Поэтому для h1 .. h4 создадим контраст при помощи размера, а h5 и h6 оставим на потом.</p>
+<p>Размер заголовков в классической типографике принято выбирать в соответствии с каким-либо законом. Например, увеличивать размер шрифта в X раз с каждым шагом.</p>
+<p>Сайты, на которых можно подобрать размеры шрифта по классическим типографским пропорциям:</p>
+<ul>
+<li><a href="">http://type-scale.com/</a></li>
+<li><a href="">http://www.modularscale.com/</a></li>
+<li><a href="">http://www.gridlover.net/app/</a></li>
+</ul>
+<p>Для адаптивной типографики нам понадобится как минимум два набора размеров заголовков. Для больших экранов самый крупный заголовок может быть больше основного текста в 3-4 раза. Для маленьких экранов это соотношение рекомендуется делать не больше 2х. Иначе на узких экранах мобильных устройств, где длина строки составляет 30-40 символов, заголовки будут занимать слишком много строк, отъедая ценное вертикальное пространство, могут появиться проблемы с переносами длинных слов.</p>
+<figure>
+<img src="http://typecast.com/images/uploads/modernscale-one-scale.jpg" alt="">
+
+<figcaption>Иллюстрация с  сайта <a href="http://typecast.com/blog/a-more-modern-scale-for-web-typography">http://typecast.com/blog/a-more-modern-scale-for-web-typography</a></figcaption>
+</figure>
+
+<p>Поэтому для малых экранов выберем соотношение 1.125</p>
+<figure>
+    <img src="../img/2036bc7e6b.jpg" alt="1.125 - Major Second">
+    <figcaption>1.125 - Major Second</figcaption>
+</figure>
+
+<p>А для экранов больше 768px шириной выберем контраст повыше — 1.250</p>
+<figure>
+    <img src="../img/721979a1ad.jpg" alt="1.250 - Major Third">
+    <figcaption>1.250 - Major Third</figcaption>
+</figure>
+
+<p>Значение 768px выбрано потому, что с этой ширины экрана начинаются типичные планшеты (iPad в портретной ориентации).</p>
+<p>less:</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-variable">@scale1:</span> <span class="hljs-number">1.125</span>;
+<span class="hljs-variable">@scale2:</span> <span class="hljs-number">1.250</span>;
+<span class="hljs-variable">@breakpoint:</span> <span class="hljs-string">~"(min-width: 768px)"</span>;
+
+  <span class="hljs-tag">h1</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">4</span>)); }
+  <span class="hljs-tag">h2</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">3</span>)); }
+  <span class="hljs-tag">h3</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">2</span>)); }
+  <span class="hljs-tag">h4</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-variable">@scale1</span>); }
+
+<span class="hljs-at_rule">@media</span> <span class="hljs-variable">@breakpoint</span> {
+  <span class="hljs-tag">h1</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">4</span>)); }
+  <span class="hljs-tag">h2</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">3</span>)); }
+  <span class="hljs-tag">h3</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">2</span>)); }
+  <span class="hljs-tag">h4</span> { <span class="hljs-attribute">font-size</span>: <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-variable">@scale1</span>); }
+}
+</code></pre>
+<p>Получим:</p>
+<blockquote>
+<h1 id="header-1">Header 1</h1>
+<h2 id="header-2">Header 2</h2>
+<h3 id="header-3">Header 3</h3>
+<h4 id="header-4">Header 4</h4>
+<p>Paragraph text</p>
+</blockquote>
+<h2 id="4-">4. Заголовки. Межстрочное расстояние</h2>
+<p>Чем крупнее шрифт, тем меньшая высота строки должна быть у заголовков. Подберем высоту строк так, чтобы межстрочный просвет был оптически равным у абзацев и заголовков всех уровней.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">h1</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1.1</span></span></span>; <span class="hljs-rule">}</span></span>
+<span class="hljs-tag">h2</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1.2</span></span></span>; <span class="hljs-rule">}</span></span>
+<span class="hljs-tag">h3</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1.3</span></span></span>; <span class="hljs-rule">}</span></span>
+<span class="hljs-tag">h4</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">line-height</span>:<span class="hljs-value"> <span class="hljs-number">1.4</span></span></span>; <span class="hljs-rule">}</span></span>
+</code></pre>
+<h2 id="4-">4. Заголовки. Отступы</h2>
+<p>Нельзя оставлять у заголовков одинаковые отступы сверху и снизу: заголовок зависнет между последним абзацем предыдущего раздела и первым абзацем своего раздела на одинаковом расстоянии. По теории близости заголовок должен быть ближе к тексту, который он озаглавливает.</p>
+<p>Пусть нижний отступ у всех заголовков будет равен отступу между абзацами. Тогда сохранится ритм, а заголовок и текст будут визуально составлять единое целое.</p>
+<p>Верхний отступ должен быть больше, чем нижний. Чем выше уровень заголовка, тем больше отступ. У <code>h1</code> верхний отступ больше, чем у <code>h4</code>. Пустое пространство между разделами помогает увидеть иерархию в структуре контента.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-comment">//calculations for small screens</span>
+<span class="hljs-variable">@fzh1:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">4</span>));
+<span class="hljs-variable">@fzh2:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">3</span>));
+<span class="hljs-variable">@fzh3:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">2</span>));
+<span class="hljs-variable">@fzh4:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale1</span>, <span class="hljs-number">1</span>));
+
+<span class="hljs-tag">h1</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh1</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.1</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">4em</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh1</span>, em);
+}
+
+<span class="hljs-tag">h2</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh2</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.2</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">3.5em</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh2</span>, em);
+}
+
+<span class="hljs-tag">h3</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh3</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.3</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">3em</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh3</span>, em);
+}
+
+<span class="hljs-tag">h4</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh4</span>;
+  <span class="hljs-attribute">line-height</span>: <span class="hljs-number">1.4</span>;
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">2.5em</span>;
+  <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh4</span>, em);
+}
+
+<span class="hljs-comment">//calculations for large screens</span>
+<span class="hljs-variable">@fzh1-l:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">4</span>));
+<span class="hljs-variable">@fzh2-l:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">3</span>));
+<span class="hljs-variable">@fzh3-l:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">2</span>));
+<span class="hljs-variable">@fzh4-l:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-function">pow</span>(<span class="hljs-variable">@scale2</span>, <span class="hljs-number">1</span>));
+
+<span class="hljs-at_rule">@media</span> <span class="hljs-variable">@breakpoint</span> {
+  <span class="hljs-tag">h1</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh1-l</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh1-l</span>, em);
+  }
+
+  <span class="hljs-tag">h2</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh2-l</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh2-l</span>, em);
+  }
+
+  <span class="hljs-tag">h3</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh3-l</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh3-l</span>, em);
+  }
+
+  <span class="hljs-tag">h4</span> {
+    <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh4-l</span>;
+    <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh4-l</span>, em);
+  }
+}
+</code></pre>
+<p>При этом, если заголовок любого уровня является первым ребенком какого-либо контейнера (<code>:first-child</code>), верхний отступ заголовка должен быть обнулен. Отступ от верхней границы контейнера должен задаваться паддингом этого контейнера, а не маргином элемента внутри контейнера. Это позволяет избежать многих проблем, как, например, в случае с верхним отступом абзаца и многоколоночным текстом.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">h1</span><span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">h2</span><span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">h3</span><span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">h4</span><span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">h5</span><span class="hljs-pseudo">:first-child</span>,
+<span class="hljs-tag">h6</span><span class="hljs-pseudo">:first-child</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>Если после заголовка идет подзаголовок, а не абзац текста, то большой отступ между заголовками не нужен. В семантически правильном документе после заголовка <code>h1</code> не может идти сразу <code>h3</code>, поэтому перечислим все правильные варианты для <code>h2</code>, <code>h3</code> и <code>h4</code> (потому что им мы задавали увеличенный верхний отступ).</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-comment">/* double headers */</span>
+<span class="hljs-tag">h1</span> + <span class="hljs-tag">h2</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">1.2em</span></span></span>; <span class="hljs-rule">}</span></span>
+<span class="hljs-tag">h2</span> + <span class="hljs-tag">h3</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">1.3em</span></span></span>; <span class="hljs-rule">}</span></span>
+<span class="hljs-tag">h3</span> + <span class="hljs-tag">h4</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">margin-top</span>:<span class="hljs-value"> <span class="hljs-number">1.4em</span></span></span>; <span class="hljs-rule">}</span></span>
+</code></pre>
+<p>Теперь вернемся к оформлению заголовков <code>h5</code> и <code>h6</code>. <code>H5</code> пусть выглядит как жирный основной текст.
+<code>H6</code> — уменьшенный размер шрифта, все буквы заглавные и немного разрежены. У обоих заголовков нижний отступ, как у абзаца, равен вертикальному ритму. А верхний отступ равен двойному вертикальному ритму.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-variable">@fzh5:</span> <span class="hljs-variable">@fz</span>;
+<span class="hljs-variable">@fzh6:</span> <span class="hljs-function">round</span>(<span class="hljs-variable">@fz</span> * <span class="hljs-number">0.8</span>);
+
+<span class="hljs-tag">h5</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh5</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-function">unit</span>( <span class="hljs-number">2</span> * <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh5</span>, em) <span class="hljs-number">0</span> <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh5</span>, em);
+}
+
+<span class="hljs-tag">h6</span> {
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-variable">@fzh6</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-function">unit</span>( <span class="hljs-number">2</span> * <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh6</span>, em) <span class="hljs-number">0</span> <span class="hljs-function">unit</span>( <span class="hljs-variable">@lh</span> * <span class="hljs-variable">@fz</span> / <span class="hljs-variable">@fzh6</span>, em);
+  <span class="hljs-attribute">text-transform</span>: uppercase;
+  <span class="hljs-attribute">letter-spacing</span>: <span class="hljs-number">0.01em</span>;
+}
+</code></pre>
+<blockquote>
+<h1 id="-">Съешь ещё этих мягких французских булок да выпей чаю</h1>
+<h2 id="-">Съешь ещё этих мягких французских булок да выпей чаю</h2>
+<h3 id="-">Съешь ещё этих мягких французских булок да выпей чаю</h3>
+<h4 id="-">Съешь ещё этих мягких французских булок да выпей чаю</h4>
+<h5 id="-">Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства</h5>
+<h6 id="-">Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства</h6>
+<p>Параграф текста.</p>
+</blockquote>
+<h2 id="5-">5. Списки</h2>
+<p>Спискам, как и абзацам, зададим максимальную ширину и отступ снизу, равный вертикальному ритму.
+Причем, эти стили применим только к спискам без класса.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-tag">ul</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>),
+<span class="hljs-tag">ol</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>) {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-function">unit</span>(<span class="hljs-variable">@lh</span>, em);
+  <span class="hljs-attribute">max-width</span>: <span class="hljs-variable">@linel</span>;
+}
+</code></pre>
+<p>Когда список обтекает картинку, случается такая ситуация:</p>
+<p><img src="../img/floated_images_and_lists_problem.png" alt="Проблема: если картинка обтекает список, то маркеры списка налазят на картинку"></p>
+<figcaption>Проблема: если список обтекает картинку, то маркеры списка налазят на картинку</figcaption>
+
+<p>Чтобы починить это, потребуется внести пару небольших изменений в стили списков: перенести дефолтный отступ в 2.5em с левой границы списка на правую, а сами элементы списка сдвинуть трансформом вправо на те же 2.5em.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-tag">ul</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>),
+<span class="hljs-tag">ol</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>) {
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-function">unit</span>(<span class="hljs-variable">@lh</span>, em);
+    <span class="hljs-attribute">max-width</span>: <span class="hljs-function">calc</span>(<span class="hljs-variable">@linel</span> - <span class="hljs-number">2.5em</span>);
+    <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+
+    <span class="hljs-tag">ul</span>,
+    <span class="hljs-tag">ol</span> {
+        <span class="hljs-attribute">margin-bottom</span>: <span class="hljs-number">0</span>;
+    }
+
+    <span class="hljs-tag">li</span> {
+        <span class="hljs-attribute">margin-right</span>: <span class="hljs-number">2.5em</span>;
+        <span class="hljs-attribute">transform</span>: <span class="hljs-function">translateX</span>(<span class="hljs-number">2.5em</span>);
+    }
+}
+</code></pre>
+<p>Теперь буллиты не налазят на картинку:</p>
+<p style="float:left;" ><img src="http://placehold.it/200x300" ></p>
+
+<ul>
+<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo magnam natus saepe, maxime nam sed sunt veritatis atque repellendus.</p>
+</li>
+<li><h5 id="small-header">Small header</h5>
+<p>  Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
+</li>
+<li><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p>  Fuga et optio iure tempore, nulla perspiciatis sint, dolorem porro illum odio, accusamus, suscipit debitis voluptas? Dolores accusantium neque, tempore atque ducimus.</p>
+</li>
+<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+</ul>
+<hr style="clear:both" >
+
+<p>Вложенным спискам мы обнулили нижний отступ. Протестируем вложенные списки:</p>
+<ol>
+<li>Lorem ipsum dolor sit amet</li>
+<li>Tenetur molestiae<ol>
+<li>Coffee</li>
+<li>Milk</li>
+<li>Tea<ol>
+<li>green</li>
+<li>black</li>
+<li>white</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Fuga et optio iure tempore</li>
+<li>Dolores accusantium neque</li>
+<li>ipsum</li>
+<li>dolor</li>
+<li>sit amet</li>
+<li>Nemo magnam natus saepe</li>
+<li>maxime nam sed sunt</li>
+<li>Veritatis atque repellendus</li>
+<li>Voluptates eius in beatae!</li>
+</ol>
+<p>...</p>
+<ol start="98">
+    <li>Magnam natus</li>
+    <li>Maxime nam sed</li>
+    <li>Atque repellendus</li>
+</ol>
+
+<ul>
+<li>Lorem ipsum dolor sit amet<ul>
+<li>Tenetur molestiae</li>
+<li>Fuga et optio iure tempore</li>
+<li>Dolores accusantium neque<ul>
+<li>ipsum</li>
+<li>dolor</li>
+<li>sit amet</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Nemo magnam natus saepe</li>
+<li>maxime nam sed sunt veritatis atque repellendus</li>
+</ul>
+<h2 id="6-">6. Картинки</h2>
+<p>Всем картинкам ограничиваем максимальную ширину и обнуляем высоту, чтобы картинки масштабировались пропорционально.
+Также переопределим <code>vertical-align</code> с <code>baseline</code> на <code>bottom</code>, чтобы под картинками не было отступа.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-tag">img</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> auto</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">vertical-align</span>:<span class="hljs-value"> bottom</span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+</figure>
+
+<p>Картинки с подписью</p>
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <figcaption>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit. Provident, ex, quam. Fugit non maxime et minima commodi.
+    </figcaption>
+</figure>
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
+    <p>Tenetur molestiae, voluptates eius in beatae!</p>
+</figure>
+
+<figure>
+    <img src="http://placehold.it/1000x400" alt="">
+    <figcaption>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio quo dolor aut aliquam officiis accusantium voluptates facilis magnam, excepturi velit suscipit.</p>
+        <p>Tenetur molestiae, voluptates eius in beatae!</p>
+    </figcaption>
+</figure>
+
+<h2 id="7-">7. Таблицы</h2>
+<p>Пример простой таблицы:</p>
+<table>
+    <caption>Optional table caption.</caption>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>Пример таблицы, сгенерированной из Маркдауна:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:right">Express*</th>
+<th style="text-align:right">Personal PLUS</th>
+<th style="text-align:right">Personal MAX</th>
+<th style="text-align:right">Family</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main Features</strong></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Annual Load Limit</td>
+<td style="text-align:right">£ 300</td>
+<td style="text-align:right">£ 1,900</td>
+<td style="text-align:right">£ 12,000</td>
+<td style="text-align:right">£ 12,000</td>
+</tr>
+<tr>
+<td>Maximum card balance</td>
+<td style="text-align:right">£ 300</td>
+<td style="text-align:right">£ 1,900</td>
+<td style="text-align:right">£ 5,000</td>
+<td style="text-align:right">£ 5,000</td>
+</tr>
+<tr>
+<td>Reloadable</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Available at Store</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Available online</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>UK ATM Access</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>International ATM Access</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Money share</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Shop anywhere</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Receive free International minutes</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Direct UK bank account loads</td>
+<td style="text-align:right">✘</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>NO transaction fee</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+<td style="text-align:right">✔</td>
+</tr>
+<tr>
+<td>Additional card</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">£ 5.00</td>
+<td style="text-align:right">£ 5.00</td>
+</tr>
+<tr>
+<td>Card to card transfer</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">£ 1.00</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>International ATM access</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">£ 1.50</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>Foreign Exchange Charge</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>In-Store Card Purchase fee</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+</tr>
+<tr>
+<td>Monthly Cost</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 7.95</td>
+</tr>
+<tr>
+<td>Card to card transfer</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">£ 1.00</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>International ATM access</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">n/a</td>
+<td style="text-align:right">£ 1.50</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>Foreign Exchange Charge</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">£ 1.95</td>
+<td style="text-align:right">FREE</td>
+</tr>
+<tr>
+<td>In-Store Card Purchase fee</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+<td style="text-align:right">£ 6.95</td>
+</tr>
+<tr>
+<td>Monthly Cost</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 3.95</td>
+<td style="text-align:right">£ 7.95</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-">8. Цитаты</h2>
+<p>Помните, что даже если цитируется одно предложение, то оно должно быть внутри абзаца. Поэтому самый простой случай цитирования должен быть сверстан так:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+</code></pre>
+<p>Так как у цитат есть собственный <code>padding</code>, то последнему абзацу обнулим нижний отступ. Это сделает одинаковыми отступы до и после цитаты.</p>
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+</blockquote>
+<p>Цитата может быть большой и содержать внутри собственную логическую структуру, сопровождаться источником цитирования. Крупная цитата с форматированием внутри:</p>
+<blockquote>
+  <h3>Header inside blockquote</h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo magnam natus saepe, maxime nam sed sunt veritatis atque repellendus.</p>
+  <ul>
+    <li>Nemo magnam natus saepe</li>
+    <li>maxime nam sed sunt</li>
+    <li>Veritatis atque repellendus</li>
+    <li>Voluptates eius in beatae!</li>
+  </ul>
+  <p>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.</p>
+  <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+</blockquote>
+
+<p>Подпись к цитате рекомендуется верстать так:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>Someone famous in <span class="hljs-tag">&lt;<span class="hljs-title">cite</span> <span class="hljs-attribute">title</span>=<span class="hljs-value">"Source Title"</span>&gt;</span>Source Title<span class="hljs-tag">&lt;/<span class="hljs-title">cite</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+</code></pre>
+<p>...или так:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">blockquote</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Tenetur molestiae, voluptates eius in beatae! Velit veniam magni, deserunt impedit.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">cite</span>&gt;</span>Source Title<span class="hljs-tag">&lt;/<span class="hljs-title">cite</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">blockquote</span>&gt;</span>
+</code></pre>
+<h2 id="9-">9. Списки определений</h2>
+<p>Пример списка определений:</p>
+<dl>
+    <dt>Description lists</dt>
+    <dd>A description list is perfect for defining terms.</dd>
+    <dt>Euismod</dt>
+    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+    <dt>Malesuada porta</dt>
+    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+</dl>
+
+<p>Код этого списка:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">dl</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Description lists<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>A description list is perfect for defining terms.<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Euismod<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Donec id elit non mi porta gravida at eget metus.<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dt</span>&gt;</span>Malesuada porta<span class="hljs-tag">&lt;/<span class="hljs-title">dt</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dd</span>&gt;</span>Etiam porta sem malesuada magna mollis euismod.<span class="hljs-tag">&lt;/<span class="hljs-title">dd</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dl</span>&gt;</span>
+</code></pre>
+<h2 id="10-">10. Код</h2>
+<p>Блок кода создается тегами:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span> code <span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pre</span>&gt;</span>
+</code></pre>
+<p>Чтобы на узких экранах код было легче читать и не приходилось использовать горизонтальную прокрутку, для элемента <code>pre</code> установлен перенос по словам при помощи <code>white-space: pre-wrap;</code>.</p>
+<h2 id="11-article-section">11. Структурные теги article и section</h2>
+<p>В семантичном документе контент может быть разбит на разделы при помощи тегов <code>section</code>, и всё это может лежать внутри тега <code>article</code>. Создадим для этих тегов отступы со всех сторон равные 5vw. А если <code>section</code> внутри <code>article</code>, то обнулим эти отступы по бокам, у первой секции сверху и у последней секции снизу.</p>
+<pre class="highlight"><code class="hljs less"><span class="hljs-variable">@section-pad:</span> <span class="hljs-number">5vw</span>;
+
+<span class="hljs-tag">section</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>) {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">@section-pad</span>;
+}
+
+<span class="hljs-tag">article</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>) {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-variable">@section-pad</span>;
+
+    <span class="hljs-keyword">&amp;</span> <span class="hljs-tag">section</span><span class="hljs-pseudo">:not</span>(<span class="hljs-attr_selector">[class]</span>) {
+        <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+        <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
+
+        <span class="hljs-keyword">&amp;</span><span class="hljs-pseudo">:first-child</span> {
+            <span class="hljs-attribute">padding-top</span>: <span class="hljs-number">0</span>;
+        }
+
+        <span class="hljs-keyword">&amp;</span><span class="hljs-pseudo">:last-child</span> {
+            <span class="hljs-attribute">padding-bottom</span>: <span class="hljs-number">0</span>;
+        }
+    }
+}
+</code></pre>
+<p>Таким образом, простейший шаблон будет выглядеть так:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"normalize.css"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"bettertext.css"</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">article</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Tenetur molestiae<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">article</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+
+    </article>
+
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script async defer src="https://unpkg.com/ilyabirman-likely@2/release/likely.js"></script>
+    <!-- DocPad Scripts + Our Own -->
+    
+
+</body>
+</html>
