@@ -1,8 +1,12 @@
-/*! bettertext.css v2.0.4 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v3.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
 body {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1em;
   line-height: 1.5;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures contextual;
+  font-feature-settings: "kern", "liga", "clig", "calt";
 }
 body:not([class]),
 article:not([class]),
@@ -40,33 +44,33 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: bolder;
 }
 h1 {
   font-size: 1.625em;
   line-height: 1.1;
-  margin: 3.23076923em 0 0.92307692em;
+  margin: 6.46153846em 0 0.92307692em;
 }
 h2 {
   font-size: 1.4375em;
   line-height: 1.2;
-  margin: 3.13043478em 0 1.04347826em;
+  margin: 4.52173913em 0 1.04347826em;
 }
 h3 {
   font-size: 1.25em;
   line-height: 1.3;
-  margin: 3em 0 1.2em;
+  margin: 3.2em 0 1.2em;
 }
 h4 {
   font-size: 1.125em;
   line-height: 1.4;
-  margin: 2.66666667em 0 1.33333333em;
+  margin: 2.22222222em 0 1.33333333em;
 }
 h5 {
   font-size: 1em;
   line-height: 1.5;
-  margin: 2.25em 0 1.5em;
+  margin: 1.5em 0 0;
 }
 h6 {
   font-size: 0.75em;
@@ -78,22 +82,22 @@ h6 {
 @media (min-width: 768px) {
   h1 {
     font-size: 2.4375em;
-    margin-top: 3.07692308em;
+    margin-top: 4.30769231em;
     margin-bottom: 0.61538462em;
   }
   h2 {
     font-size: 1.9375em;
-    margin-top: 3.09677419em;
+    margin-top: 3.35483871em;
     margin-bottom: 0.77419355em;
   }
   h3 {
     font-size: 1.5625em;
-    margin-top: 2.88em;
+    margin-top: 2.56em;
     margin-bottom: 0.96em;
   }
   h4 {
     font-size: 1.25em;
-    margin-top: 2.4em;
+    margin-top: 2em;
     margin-bottom: 1.2em;
   }
 }
@@ -203,6 +207,8 @@ table:not([class]) {
   margin-bottom: 3em;
   border-collapse: separate;
   border-spacing: 0;
+  font-variant-numeric: lining-nums tabular-nums;
+  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
 }
 table:not([class]) caption {
   text-align: left;
@@ -245,6 +251,11 @@ hr:not([class]) {
 abbr {
   letter-spacing: .05em;
   margin-right: -0.05em;
+  font-variant-caps: all-small-caps;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+}
+abbr[title] {
+  border-bottom: none;
 }
 strong,
 b,

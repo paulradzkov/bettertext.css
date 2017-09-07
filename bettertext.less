@@ -1,4 +1,4 @@
-/*! bettertext.css v2.0.4 | MIT License | github.com/paulradzkov/bettertext.css */
+/*! bettertext.css v3.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
 
 .bettertext-settings() {
 
@@ -63,26 +63,26 @@
     @h5-lh: unit((@rythm / @fz));
     @h6-lh: unit((@rythm / @fz-small));
 
-    //headers margin-top
-    @h1-mt: unit((@lh / @h1-fz * 3.5), em);
-    @h2-mt: unit((@lh / @h2-fz * 3),   em);
-    @h3-mt: unit((@lh / @h3-fz * 2.5), em);
-    @h4-mt: unit((@lh / @h4-fz * 2),   em);
-    @h5-mt: unit((@lh / @h5-fz * 1.5), em);
-    @h6-mt: unit((@lh / @h6-fz * 1),   em);
+    // new headers margin-top
+    @h1-mt: unit(((@rythm * 5 + @fz * 3) / (round(@fz * pow(@scale1, 4)))), em);
+    @h2-mt: unit(((@rythm * 3 + @fz * 2) / (round(@fz * pow(@scale1, 3)))), em);
+    @h3-mt: unit(((@rythm * 2 + @fz * 1) / (round(@fz * pow(@scale1, 2)))), em);
+    @h4-mt: unit(((@rythm * 1 + @fz * 1) / (round(@fz * pow(@scale1, 1)))), em);
+    @h5-mt: unit(((@rythm * 1) /           (round(@fz * pow(@scale1, 0)))), em);
+    @h6-mt: unit(((@rythm * 1) / @fz-small), em);
 
-    //headers margin-top for large screens
-    @h1-l-mt: unit((@lh / @h1-l-fz * 5), em);
-    @h2-l-mt: unit((@lh / @h2-l-fz * 4), em);
-    @h3-l-mt: unit((@lh / @h3-l-fz * 3), em);
-    @h4-l-mt: unit((@lh / @h4-l-fz * 2), em);
+    // new headers margin-top for large screens
+    @h1-l-mt: unit(((@rythm * 5 + @fz * 3) / (round(@fz * pow(@scale2, 4)))), em);
+    @h2-l-mt: unit(((@rythm * 3 + @fz * 2) / (round(@fz * pow(@scale2, 3)))), em);
+    @h3-l-mt: unit(((@rythm * 2 + @fz * 1) / (round(@fz * pow(@scale2, 2)))), em);
+    @h4-l-mt: unit(((@rythm * 1 + @fz * 1) / (round(@fz * pow(@scale2, 1)))), em);
 
     //headers margin-bottom
     @h1-mb: unit((@lh / @h1-fz), em);
     @h2-mb: unit((@lh / @h2-fz), em);
     @h3-mb: unit((@lh / @h3-fz), em);
     @h4-mb: unit((@lh / @h4-fz), em);
-    @h5-mb: unit((@lh / @h5-fz), em);
+    @h5-mb: 0;
     @h6-mb: 0;
 
     //headers margin-bottom for large screens
