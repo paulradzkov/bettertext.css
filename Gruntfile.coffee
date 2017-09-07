@@ -72,7 +72,8 @@ module.exports = (grunt) ->
 					'src/files/css/*.less'
 				]
 				tasks: [
-					'less:development'
+					'less'
+					'cssmin'
 				]
 
 		# start server
