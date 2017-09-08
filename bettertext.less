@@ -7,7 +7,7 @@
     @rythm: 24px;                      // vertical rythm = line-height in pixels
     @fz-small: 12px;                   // smaller font-size (px)
     @linel: 50rem;                     // max-width for text (em or rem)
-    @font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";            // body
+    @font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;            // body
     @font-headers: @font-body;         // headers
     @font-code: monospace, monospace;  // code (duplication is intentional)
     @scale1: 1.125;                    // header size multiplier for small screens
@@ -30,7 +30,7 @@
     @onerem: 16px;
 
     // base font-size in ems
-    @fz-ems: unit(((round( @onerem)) / @fz), em);
+    @fz-ems: unit(( @fz / @onerem), em);
 
     // unitless line-height
     @lh: unit((@rythm / @fz));
@@ -42,40 +42,65 @@
     @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
 
     //headers size calculations for small screens
-    @h1-fz: unit(((round( @fz * pow(@scale1, 4))) / @fz), em);
-    @h2-fz: unit(((round( @fz * pow(@scale1, 3))) / @fz), em);
-    @h3-fz: unit(((round( @fz * pow(@scale1, 2))) / @fz), em);
-    @h4-fz: unit(((round( @fz * pow(@scale1, 1))) / @fz), em);
-    @h5-fz: unit(((round( @fz * pow(@scale1, 0))) / @fz), em);
+    @h0-fz-px: round((@fz * pow(@scale1, 5)));
+    @h1-fz-px: round((@fz * pow(@scale1, 4)));
+    @h2-fz-px: round((@fz * pow(@scale1, 3)));
+    @h3-fz-px: round((@fz * pow(@scale1, 2)));
+    @h4-fz-px: round((@fz * pow(@scale1, 1)));
+    @h5-fz-px: round((@fz * pow(@scale1, 0)));
+    @h6-fz-px: @fz-small;
+
+    @h1-fz: unit((@h1-fz-px / @fz), em);
+    @h2-fz: unit((@h2-fz-px / @fz), em);
+    @h3-fz: unit((@h3-fz-px / @fz), em);
+    @h4-fz: unit((@h4-fz-px / @fz), em);
+    @h5-fz: unit((@h5-fz-px / @fz), em);
     @h6-fz: @fz-small-ems;
 
     //headers size calculations for large screens
-    @h1-l-fz: unit(((round( @fz * pow(@scale2, 4))) / @fz), em);
-    @h2-l-fz: unit(((round( @fz * pow(@scale2, 3))) / @fz), em);
-    @h3-l-fz: unit(((round( @fz * pow(@scale2, 2))) / @fz), em);
-    @h4-l-fz: unit(((round( @fz * pow(@scale2, 1))) / @fz), em);
+    @h0-l-fz-px: round((@fz * pow(@scale2, 5)));
+    @h1-l-fz-px: round((@fz * pow(@scale2, 4)));
+    @h2-l-fz-px: round((@fz * pow(@scale2, 3)));
+    @h3-l-fz-px: round((@fz * pow(@scale2, 2)));
+    @h4-l-fz-px: round((@fz * pow(@scale2, 1)));
+
+    @h1-l-fz: unit((@h1-l-fz-px / @fz), em);
+    @h2-l-fz: unit((@h2-l-fz-px / @fz), em);
+    @h3-l-fz: unit((@h3-l-fz-px / @fz), em);
+    @h4-l-fz: unit((@h4-l-fz-px / @fz), em);
 
     //headers lihe-height
-    @h1-lh: 1.1;
-    @h2-lh: 1.2;
-    @h3-lh: 1.3;
-    @h4-lh: 1.4;
-    @h5-lh: unit((@rythm / @fz));
+    @lh-slope: (@rythm - @h0-fz-px * 1.1) / (@fz - @h0-fz-px);
+    @lh-shift: (@rythm - @lh-slope * @fz);
+
+    @h1-lh: unit((round((@lh-slope * @h1-fz-px + @lh-shift)) / @h1-fz-px));
+    @h2-lh: unit((round((@lh-slope * @h2-fz-px + @lh-shift)) / @h2-fz-px));
+    @h3-lh: unit((round((@lh-slope * @h3-fz-px + @lh-shift)) / @h3-fz-px));
+    @h4-lh: unit((round((@lh-slope * @h4-fz-px + @lh-shift)) / @h4-fz-px));
+    @h5-lh: unit((round((@lh-slope * @h5-fz-px + @lh-shift)) / @h5-fz-px));
     @h6-lh: unit((@rythm / @fz-small));
 
+    @lh-l-slope: (@rythm - @h0-l-fz-px * 1.1) / (@fz - @h0-l-fz-px);
+    @lh-l-shift: (@rythm - @lh-l-slope * @fz);
+
+    @h1-l-lh: unit((round((@lh-l-slope * @h1-l-fz-px + @lh-l-shift)) / @h1-l-fz-px));
+    @h2-l-lh: unit((round((@lh-l-slope * @h2-l-fz-px + @lh-l-shift)) / @h2-l-fz-px));
+    @h3-l-lh: unit((round((@lh-l-slope * @h3-l-fz-px + @lh-l-shift)) / @h3-l-fz-px));
+    @h4-l-lh: unit((round((@lh-l-slope * @h4-l-fz-px + @lh-l-shift)) / @h4-l-fz-px));
+
     // new headers margin-top
-    @h1-mt: unit(((@rythm * 5 + @fz * 3) / (round(@fz * pow(@scale1, 4)))), em);
-    @h2-mt: unit(((@rythm * 3 + @fz * 2) / (round(@fz * pow(@scale1, 3)))), em);
-    @h3-mt: unit(((@rythm * 2 + @fz * 1) / (round(@fz * pow(@scale1, 2)))), em);
-    @h4-mt: unit(((@rythm * 1 + @fz * 1) / (round(@fz * pow(@scale1, 1)))), em);
-    @h5-mt: unit(((@rythm * 1) /           (round(@fz * pow(@scale1, 0)))), em);
-    @h6-mt: unit(((@rythm * 1) / @fz-small), em);
+    @h1-mt: unit(((@rythm + @fz * 4) / @h1-fz-px), em);
+    @h2-mt: unit(((@rythm + @fz * 3) / @h2-fz-px), em);
+    @h3-mt: unit(((@rythm + @fz * 2) / @h3-fz-px), em);
+    @h4-mt: unit(((@rythm + @fz * 1) / @h4-fz-px), em);
+    @h5-mt: unit(((@rythm) /           @h5-fz-px), em);
+    @h6-mt: unit(((@rythm) /           @fz-small), em);
 
     // new headers margin-top for large screens
-    @h1-l-mt: unit(((@rythm * 5 + @fz * 3) / (round(@fz * pow(@scale2, 4)))), em);
-    @h2-l-mt: unit(((@rythm * 3 + @fz * 2) / (round(@fz * pow(@scale2, 3)))), em);
-    @h3-l-mt: unit(((@rythm * 2 + @fz * 1) / (round(@fz * pow(@scale2, 2)))), em);
-    @h4-l-mt: unit(((@rythm * 1 + @fz * 1) / (round(@fz * pow(@scale2, 1)))), em);
+    @h1-l-mt: unit(((@rythm * 5 + @fz * 3) / @h1-l-fz-px), em);
+    @h2-l-mt: unit(((@rythm * 3 + @fz * 2) / @h2-l-fz-px), em);
+    @h3-l-mt: unit(((@rythm * 2 + @fz * 1) / @h3-l-fz-px), em);
+    @h4-l-mt: unit(((@rythm * 1 + @fz * 1) / @h4-l-fz-px), em);
 
     //headers margin-bottom
     @h1-mb: unit((@lh / @h1-fz), em);
@@ -99,7 +124,7 @@
     @h5h6-mt: unit((@lh / @h6-fz), em);
 }
 
-@bettertext: {
+& {
 
     .bettertext-settings();
 
@@ -155,37 +180,43 @@
     h1 {
         font-size: @h1-fz;
         line-height: @h1-lh;
-        margin: @h1-mt 0 @h1-mb;
+        margin-top: @h1-mt;
+        margin-bottom: @h1-mb;
     }
 
     h2 {
         font-size: @h2-fz;
         line-height: @h2-lh;
-        margin: @h2-mt 0 @h2-mb;
+        margin-top: @h2-mt;
+        margin-bottom: @h2-mb;
     }
 
     h3 {
         font-size: @h3-fz;
         line-height: @h3-lh;
-        margin: @h3-mt 0 @h3-mb;
+        margin-top: @h3-mt;
+        margin-bottom: @h3-mb;
     }
 
     h4 {
         font-size: @h4-fz;
         line-height: @h4-lh;
-        margin: @h4-mt 0 @h4-mb;
+        margin-top: @h4-mt;
+        margin-bottom: @h4-mb;
     }
 
     h5 {
         font-size: @h5-fz;
         line-height: @h5-lh;
-        margin: @h5-mt 0 @h5-mb;
+        margin-top: @h5-mt;
+        margin-bottom: @h5-mb;
     }
 
     h6 {
         font-size: @h6-fz;
         line-height: @h6-lh;
-        margin: @h6-mt 0 @h6-mb;
+        margin-top: @h6-mt;
+        margin-bottom: @h6-mb;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
@@ -196,24 +227,28 @@
 
             h1 {
                 font-size: @h1-l-fz;
+                line-height: @h1-l-lh;
                 margin-top: @h1-l-mt;
                 margin-bottom: @h1-l-mb;
             }
 
             h2 {
                 font-size: @h2-l-fz;
+                line-height: @h2-l-lh;
                 margin-top: @h2-l-mt;
                 margin-bottom: @h2-l-mb;
             }
 
             h3 {
                 font-size: @h3-l-fz;
+                line-height: @h3-l-lh;
                 margin-top: @h3-l-mt;
                 margin-bottom: @h3-l-mb;
             }
 
             h4 {
                 font-size: @h4-l-fz;
+                line-height: @h4-l-lh;
                 margin-top: @h4-l-mt;
                 margin-bottom: @h4-l-mb;
             }
@@ -414,6 +449,4 @@
         font-size: 1em;
     }
 
-};
-
-@bettertext();
+}
