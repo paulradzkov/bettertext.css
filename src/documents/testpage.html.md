@@ -271,8 +271,9 @@ Or with structure tags inside:
 
 <blockquote>
     <h4>Blockquote definition updated</h4>
-    <p>The <code>blockquote</code> element represents content that is quoted from another source, <em>optionally</em> with a citation which <em>must</em> be within a <code>footer</code> or <code>cite</code> element, and <em>optionally</em> with in-line changes such as annotations and abbreviations.<p><p>Content inside a <code>blockquote</code> other than citations and in-line changes <em>must</em> be quoted from another source, whose address, if it has one, <em>may</em> be cited in the <code>cite</code> attribute.</p>
-    <footer>– <cite><a href="https://w3c.github.io/html/grouping-content.html#the-blockquote-element">4.4.4 the Blockquote element</a> , Faulkner et al. 2016 </cite></footer>
+    <p>The <code>blockquote</code> element represents content that is quoted from another source, <em>optionally</em> with a citation which <em>must</em> be within a <code>footer</code> or <code>cite</code> element, and <em>optionally</em> with in-line changes such as annotations and abbreviations.</p>
+    <p>Content inside a <code>blockquote</code> other than citations and in-line changes <em>must</em> be quoted from another source, whose address, if it has one, <em>may</em> be cited in the <code>cite</code> attribute.</p>
+    <footer>— <cite><a href="https://w3c.github.io/html/grouping-content.html#the-blockquote-element">4.4.4 the Blockquote element</a> , Faulkner et al. 2016 </cite></footer>
 </blockquote>
 
 ## Figures and captions

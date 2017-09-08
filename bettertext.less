@@ -30,7 +30,7 @@
     @onerem: 16px;
 
     // base font-size in ems
-    @fz-ems: unit(( @fz / @onerem), em);
+    @fz-ems: unit((@fz / @onerem), em);
 
     // unitless line-height
     @lh: unit((@rythm / @fz));
@@ -39,7 +39,7 @@
     @m-default: unit(@lh, em);
 
     // small font-size in ems
-    @fz-small-ems:  unit(((round( @fz-small)) / @fz), em);
+    @fz-small-ems:  unit((@fz-small / @fz), em);
 
     //headers size calculations for small screens
     @h0-fz-px: round((@fz * pow(@scale1, 5)));
@@ -392,6 +392,18 @@
             border-style: solid;
             border-color: rgba(0,0,0,0.1);
             border-width: 0 0 1px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+
+        th {
+            font-weight: bolder;
         }
 
         thead {

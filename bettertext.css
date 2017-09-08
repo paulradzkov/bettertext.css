@@ -234,6 +234,17 @@ table:not([class]) th {
   border-color: rgba(0, 0, 0, 0.1);
   border-width: 0 0 1px;
 }
+table:not([class]) td:first-child,
+table:not([class]) th:first-child {
+  padding-left: 0;
+}
+table:not([class]) td:last-child,
+table:not([class]) th:last-child {
+  padding-right: 0;
+}
+table:not([class]) th {
+  font-weight: bolder;
+}
 table:not([class]) thead td,
 table:not([class]) thead th {
   vertical-align: bottom;
