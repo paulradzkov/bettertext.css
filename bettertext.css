@@ -11,7 +11,7 @@ body {
 body:not([class]),
 article:not([class]),
 section:not([class]) {
-  margin: calc(24px + 4vh) calc(10px + 4vw);
+  margin: 40px calc(8px + 5vw);
 }
 body:not([class]) article:not([class]),
 article:not([class]) article:not([class]),
@@ -231,7 +231,7 @@ table:not([class]) th {
   text-align: left;
   vertical-align: top;
   border-style: solid;
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgba(128, 128, 128, 0.2);
   border-width: 0 0 1px;
 }
 table:not([class]) td:first-child,

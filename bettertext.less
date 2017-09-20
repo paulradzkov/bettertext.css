@@ -7,18 +7,18 @@
     @rythm: 24px;                      // vertical rythm = line-height in pixels
     @fz-small: 12px;                   // smaller font-size (px)
     @linel: 50rem;                     // max-width for text (em or rem)
-    @font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;            // body
+    @font-body: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+                                       // body
     @font-headers: @font-body;         // headers
     @font-code: monospace, monospace;  // code (duplication is intentional)
-    @scale1: 1.125;                    // header size multiplier for small screens
-    @scale2: 1.250;                    // header size multiplier for large screens
+    @scale1: 1.125;                    // header size multiplier for 'mobile' screens
+    @scale2: 1.250;                    // header size multiplier for 'desktop' screens
 
     // margins for body, articles and sections
-    @space-around: ~"calc(24px + 4vh) calc(10px + 4vw)";
+    @space-around: ~"40px calc(8px + 5vw)";
 
     // breakpoint to switch from 'mobile' to 'desktop'
     @bettertext-breakpoint: ~"(min-width: 768px)";
-
 }
 
 .bettertext-calculations() {
@@ -70,7 +70,7 @@
     @h4-l-fz: unit((@h4-l-fz-px / @fz), em);
 
     //headers lihe-height
-    @lh-slope: (@rythm - @h0-fz-px * 1.1) / (@fz - @h0-fz-px);
+    @lh-slope: ((@rythm - @h0-fz-px * 1.1) / (@fz - @h0-fz-px));
     @lh-shift: (@rythm - @lh-slope * @fz);
 
     @h1-lh: unit((round((@lh-slope * @h1-fz-px + @lh-shift)) / @h1-fz-px));
@@ -80,7 +80,7 @@
     @h5-lh: unit((round((@lh-slope * @h5-fz-px + @lh-shift)) / @h5-fz-px));
     @h6-lh: unit((@rythm / @fz-small));
 
-    @lh-l-slope: (@rythm - @h0-l-fz-px * 1.1) / (@fz - @h0-l-fz-px);
+    @lh-l-slope: ((@rythm - @h0-l-fz-px * 1.1) / (@fz - @h0-l-fz-px));
     @lh-l-shift: (@rythm - @lh-l-slope * @fz);
 
     @h1-l-lh: unit((round((@lh-l-slope * @h1-l-fz-px + @lh-l-shift)) / @h1-l-fz-px));
@@ -150,7 +150,6 @@
             margin-left: 0;
             margin-right: 0;
         }
-
     }
 
     p {
@@ -390,7 +389,7 @@
             text-align: left;
             vertical-align: top;
             border-style: solid;
-            border-color: rgba(0,0,0,0.1);
+            border-color: rgba(128,128,128,0.2);
             border-width: 0 0 1px;
 
             &:first-child {

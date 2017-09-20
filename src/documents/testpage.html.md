@@ -327,3 +327,5 @@ I am <sup>the sup tag</sup> example  
 I am <sub>the sub tag</sub> example  
 I am <var>the var tag</var> example  
 I am <mark>the mark tag</mark> example
+
+## 🤦‍ Emoji test — ✅
