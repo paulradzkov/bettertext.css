@@ -4,25 +4,73 @@ layout: default
 description: "Улучшенная типографика для голого HTML и Markdown"
 ---
 
-# bettertext.css test page
+# Example articles for typography testing
 
-There are all typography usecases covered by bettertext.css.
+There are some articles on the page to see bettertext in action.
 
-## Body text and headers
+<dfn>Typography</dfn> is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing (leading), and letter-spacing (tracking), and adjusting the space between pairs of letters (kerning). The term typography is also applied to the style, arrangement, and appearance of the letters, numbers, and symbols created by the process. Type design is a closely related craft, sometimes considered part of typography; most typographers do not design typefaces, and some type designers do not consider themselves typographers. Typography also may be used as a decorative device, unrelated to communication of information.
 
-Have you ever finally just gave in to the temptation and read your horoscope in the newspaper on Sunday morning? Sure, we all have. For most of us, it’s a curiosity, an amusement to see what they say our day will be like based on the sign of the zodiac that we were born under. Sometimes we forget that this little diversion is actually part of an ancient science called astrology that has had a powerful effect on many cultures dating back to centuries before Christ.
+The word “typography” in English comes from the Greek roots τύπος typos = “impression” and -γραφία -graphia = “writing”.
 
-That is not to say that astrology is a dead art today. It is easy to find astrology advocates in every town, advertising in the newspaper and on television trying to convince us that they can tell our fortune, our future and help cure our ills by exploring the mysteries of astrology.
+— <cite>[Wikipedia.org](https://en.wikipedia.org/wiki/Typography)</cite>
 
-<section>
-    <h1>H1. I watched the storm, so beautiful yet terrific</h1>
-    <h2>H2. Almost before we knew it, we had left the ground</h2>
-    <h3>H3. A shining crescent far beneath the flying vessel</h3>
-    <h4>H4. Mist enveloped the ship three hours out from port</h4>
-    <h5>H5. A red flair silhouetted the jagged edge of a wing</h5>
-    <h6>H6. My two natures had memory in common</h6>
-    <p>Paragraph. Then came the night of the first falling star. The face of the moon was in shadow. She stared through the window at the stars.</p>
-</section>
+
+# Fibonacci numbers
+
+In mathematics, the <dfn>Fibonacci numbers</dfn> are the numbers in the following integer sequence, called the <dfn>Fibonacci sequence</dfn>, and characterized by the fact that every number after the first two is the sum of the two preceding ones:
+
+> 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
+
+By definition, the first two numbers in the Fibonacci sequence are 1 and 1. Each subsequent number is the sum of the previous two.
+
+The sequence <var>F<sub>n</sub></var> of Fibonacci numbers is defined by the recurrence relation:
+
+> <var>F<sub>n</sub></var> = <var>F<sub>n - 1</sub></var> + <var>F<sub>n - 2</sub></var>
+
+with seed values
+
+> <var>F<sub>1</sub></var> = <var>1</var>,  <var>F<sub>2</sub></var> = <var>1</var>
+
+The Fibonacci sequence is named after Italian mathematician Leonardo of Pisa, known as Fibonacci. His 1202 book <cite>Liber Abaci</cite> introduced the sequence to Western European mathematics, although the sequence had been described earlier in Indian mathematics. The sequence described in <cite>Liber Abaci</cite> began with <var>F<sub>1</sub></var> = <var>1</var>.
+
+Fibonacci numbers are closely related to Lucas numbers <var>L<sub>n</sub></var> in that they form a complementary pair of Lucas sequences <var>U<sub>n</sub></var>(1, −1) = <var>F<sub>n</sub></var> and <var>V<sub>n</sub></var>(1, −1) = <var>L<sub>n</sub></var>. They are intimately connected with the _golden ratio_; for example, the closest rational approximations to the ratio are 2/1, 3/2, 5/3, 8/5, ... .
+
+
+# Caffeine
+
+<dfn>Caffeine</dfn> is a central nervous system (<abbr>CNS</abbr>) stimulant of the methylxanthine class.<sup>[10]</sup> It’s chemical formula is C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>. It is the world’s most widely consumed psychoactive drug. Unlike many other psychoactive substances, it is legal and unregulated in nearly all parts of the world. There are several known mechanisms of action to explain the effects of caffeine. The most prominent is that it reversibly blocks the action of adenosine on its receptor and consequently prevents the onset of drowsiness induced by adenosine. Caffeine also stimulates certain portions of the autonomic nervous system.
+
+
+# The typographic scale
+
+The typographic scale has been used for centuries as a means of creating balanced and harmonious font sizing. It is the bedrock of modern typography.
+
+The classic typographic scale is a harmonious progression of font sizes, like the notes of a musical scale. Because the classic typographic scale is a _scale_, it must obey the scaling property: if <var>x</var> is a size in the scale, then <var>r</var> × <var>x</var> must also be a size in the scale, where <var>r</var> is the _ratio_ of the scale. This ratio is a defining property of the scale.
+
+Some common scale ratios:  
+`1.067` — Minor Second (15:16)  
+`1.125` — Major Second (8:9) — default scale for mobile screens  
+`1.200` — Minor Third (5:6)  
+`1.250` — Major Third (4:5) — default scale for desktop screens  
+`1.333` — Perfect Fourth (3:4)  
+`1.414` — Augmented Fourth (1:√2)  
+`1.500` — Perfect Fifth (2:3)  
+`1.618` — Golden Ratio
+
+<figure>
+    <section>
+        <h1>H1. I watched the storm, so beautiful yet terrific</h1>
+        <h2>H2. Almost before we knew it, we had left the ground</h2>
+        <h3>H3. A shining crescent far beneath the flying vessel</h3>
+        <h4>H4. Mist enveloped the ship three hours out from port</h4>
+        <h5>H5. A red flair silhouetted the jagged edge of a wing</h5>
+        <h6>H6. My two natures had memory in common</h6>
+        <p>Paragraph. Then came the night of the first falling star. The face of the moon was in shadow. She stared through the window at the stars.</p>
+    </section>
+    <figcaption>Headings scale example.  
+    For mobile screens choosen Major Second (8:9) scale.  
+    For desktop screens — Major Third (4:5)</figcaption>
+</figure>
 
 # H1. I watched the storm, so beautiful yet terrific
 
@@ -170,7 +218,7 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
 <table>
     <thead>
         <tr>
-            <td class="words">Player</td>
+            <th class="words">Player</th>
             <td>G</td>
             <td>W</td>
             <td>L</td>
@@ -188,7 +236,7 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>28</td>
             <td>16</td>
             <td>3</td>
-            <td>192<span class="fraction">2&#8203;/3</span></td>
+            <td>192<small class="fraction">2&#8203;/3</small></td>
             <td>1.68</td>
             <td>133</td>
             <td>38</td>
@@ -224,7 +272,7 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>28</td>
             <td>13</td>
             <td>7</td>
-            <td>193<span class="fraction">1&#8203;/3</span></td>
+            <td>193<small class="fraction">1/3</small></td>
             <td>2.28</td>
             <td>145</td>
             <td>57</td>
@@ -236,7 +284,7 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>28</td>
             <td>17</td>
             <td>6</td>
-            <td>200<span class="fraction">2&#8203;/3</span></td>
+            <td>200<small class="fraction">2/3</small></td>
             <td>2.29</td>
             <td>155</td>
             <td>52</td>
@@ -245,10 +293,10 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
         </tr>
         <tr>
             <td class="words">Martinez, C</td>
-            <td>28<a class="fn" href="#fn-a">1</a></td>
+            <td>28</td>
             <td>13</td>
             <td>7</td>
-            <td>164<span class="fraction">2&#8203;/3</span></td>
+            <td>164<small class="fraction">2/3</small></td>
             <td>3.12</td>
             <td>159</td>
             <td>62</td>
@@ -310,6 +358,7 @@ I am <a href="#abc123">the a tag</a> example  
 I am the <abbr title="test">ABBR</abbr> tag with title and <abbr>ABBR</abbr> without  
 I am <b>the b tag</b> example  
 I am <strong>the strong tag</strong> example  
+I am <strong>a <strong>nested <strong>strong</strong> tag</strong> example</strong>  
 I am <code>the code tag</code> example  
 I am <kbd>the kbd tag</kbd> example  
 I am <samp>the samp tag</samp> example  
@@ -317,6 +366,7 @@ I am <del>the del tag</del> example  
 I am <ins>the ins tag</ins> example  
 I am <dfn>the dfn tag</dfn> example  
 I am <em>the em tag</em> example  
+I am <em>a <em>nested <em>em</em> tag</em> example</em>  
 I am <i>the i tag</i> example  
 I am <cite>the cite tag</cite> example  
 I am <q>the q tag</q> example  
@@ -328,4 +378,47 @@ I am <sub>the sub tag</sub> example  
 I am <var>the var tag</var> example  
 I am <mark>the mark tag</mark> example
 
-## 🤦‍ Emoji test — ✅
+# Preformatted text
+
+```bash
+src/
+├── documents/
+│   └── *.html.eco                // page content
+├── layouts/
+│   ├── default.html.eco          // default page template
+│   ├── mvno.html.eco             // template for FAQ page
+│   └── mvno-faq-item.html.eco    // template for rendering each Q&A
+└── partials/
+    └── mvno/
+        ├── en-us/
+        │   └── *.html.md         // Q&As in English
+        └── es-us/
+            └── *.html.md         // Q&As in Spanish
+```
+
+-----
+
+# Emoji support 🤦
+
+Emoji (Japanese: 絵文字えもじ, pronounced [emodʑi]; singular emoji, plural emoji or emojis) are ideograms and smileys used in electronic messages and Web pages. Emoji are used much like emoticons and exist in various genres, including facial expressions, common objects, places and types of weather, and animals. Originally meaning pictograph, the word emoji comes from Japanese e (絵, “picture”) + moji (文字, “character”). The resemblance to the English words emotion and emoticon is purely coincidental.
+
+Originating on Japanese mobile phones in the late 1990s, emoji have become increasingly popular worldwide since their international inclusion in Apple’s iPhone, which was followed by similar adoption by Android and other mobile operating systems. In 2015, Oxford Dictionaries named an emoji 😂 (Face With Tears of Joy) the Word of the year.
+
+## Skin color
+
+Five symbol modifier characters were added with Unicode 8.0 to provide a range of skin tones for human emoji. These modifiers are called EMOJI MODIFIER FITZPATRICK TYPE-1-2, -3, -4, -5, and -6 (`U+1F3FB`–`U+1F3FF`): 🏻 🏼 🏽 🏾 🏿. They are based on the Fitzpatrick scale for classifying human skin color. Human emoji that are not followed by one of these five modifiers should be displayed in a generic, non-realistic skin tone, such as bright yellow, blue, or gray. Non-human emoji (like `U+26FD` FUEL PUMP — ⛽️) are unaffected by the Fitzpatrick modifiers.
+
+Sample use of Fitzpatrick modifiers:
+
+| Code point     | default | FITZ-1-2 | FITZ-3 | FITZ-4 | FITZ-5 | FITZ-6 |
+|----------------|---------|----------|--------|--------|--------|--------|
+| U+1F466: BOY   | 👦      | 👦🏻        | 👦🏼      | 👦🏽      | 👦🏾      | 👦🏿   |
+| U+1F467: GIRL  | 👧      | 👧🏻        | 👧🏼      | 👧🏽      | 👧🏾      | 👧🏿   |
+| U+1F468: MAN   | 👨      | 👨🏻        | 👨🏼      | 👨🏽      | 👨🏾      | 👨🏿   |
+| U+1F469: WOMAN | 👩      | 👩🏻        | 👩🏼      | 👩🏽      | 👩🏾      | 👩🏿   |
+
+## Joining
+
+Implementations may use `U+200D` ZERO WIDTH JOINER (ZWJ) between emoji to make them behave like a single, unique emoji character. (Systems that don’t support this should ignore the ZWJ character.)
+
+For example, the sequence `U+1F468` MAN, `U+200D` ZWJ, `U+1F469` WOMAN, `U+200D` ZWJ, `U+1F467` GIRL (👨‍👩‍👧) could be displayed as a single emoji depicting a family with a man, a woman, and a girl if the implementation supports it. Systems that don’t support it would ignore the ZWJs, showing the base emoji in the sequence: `U+1F468` MAN, `U+1F469` WOMAN, `U+1F467` GIRL (👨👩👧).

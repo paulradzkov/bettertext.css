@@ -1,17 +1,55 @@
 /*! bettertext.css v3.0.0 | MIT License | github.com/paulradzkov/bettertext.css */
+/*
+    1. Prevent adjustments of font size after orientation changes in
+       IE on Windows Phone and in iOS.
+    2. Because the text-underline-position property inherits and is not reset
+       by the text-decoration shorthand property, it may be appropriate to set
+       its value at a global level. For example, the under value may be appropriate
+       for a document with lots of chemical and mathematical formulas, which make
+       a large use of subscripts.
+    */
+html {
+  -ms-text-size-adjust: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 1 */
+  text-underline-position: under;
+  /* 2 */
+}
+/*
+    1. Font kerning information stored in the font must be applied.
+    2. The browser emphasizes legibility over rendering speed and geometric
+       precision. This enables kerning and optional ligatures.
+    3. OpenType features
+       https://helpx.adobe.com/typekit/using/open-type-syntax.html
+       "kern" — kerning
+       "liga" — common ligatures
+       "clig" — contextual ligatures
+       "calt" — contextual alternates
+    */
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   font-size: 1em;
   line-height: 1.5;
   font-kerning: normal;
+  /* 1 */
   text-rendering: optimizeLegibility;
+  /* 2 */
   font-variant-ligatures: common-ligatures contextual;
+  /* 3 */
   font-feature-settings: "kern", "liga", "clig", "calt";
+  /* 3 */
 }
+/*
+    Add default spacing for structure tags without classnames
+    */
 body:not([class]),
 article:not([class]),
 section:not([class]) {
   margin: 40px calc(8px + 5vw);
+  /*
+        Reset nested margins
+        */
 }
 body:not([class]) article:not([class]),
 article:not([class]) article:not([class]),
@@ -26,7 +64,9 @@ p {
   margin: 0 0 1.5em;
   max-width: 50rem;
 }
-/* minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/ */
+/*
+    minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/
+    */
 p:before,
 ol:not([class]):before,
 ul:not([class]):before {
@@ -163,7 +203,6 @@ ol:not([class]) li {
     text-indent: 0;
   }
 }
-/* images */
 img {
   max-width: 100%;
   height: auto;
@@ -172,10 +211,10 @@ img {
 p img:not(:only-child) {
   vertical-align: baseline;
 }
-figure:not([class]) {
+figure {
   margin: 3em 0;
 }
-figure:not([class]) > p {
+figure > p {
   max-width: 37.5rem;
   font-size: 0.75em;
   margin: 0.5em 0 0;
@@ -188,7 +227,6 @@ figcaption {
 figcaption > p {
   margin: 0.5em 0 0;
 }
-/* blockquotes */
 blockquote {
   max-width: calc(45rem);
   margin: 0 0 1.5em;
@@ -202,23 +240,25 @@ blockquote > cite {
   display: block;
   font-size: 0.75em;
 }
-/* code */
-pre {
-  margin: 1.5em 0;
-  white-space: pre-wrap;
-}
-p code {
-  line-break: loose;
-  overflow-wrap: break-word;
-}
-/* tables */
+/*
+    1. Open Type features
+       https://helpx.adobe.com/typekit/using/open-type-syntax.html
+       "kern" — kerning
+       "liga" — common ligatures
+       "clig" — contextual ligatures
+       "calt" — contextual alternates
+       "lnum" — lining figures (not oldstyle figures "onum")
+       "tnum" — tabular figures (not proportional figures "pnum")
+    */
 table:not([class]) {
   margin-top: 3em;
   margin-bottom: 3em;
   border-collapse: separate;
   border-spacing: 0;
-  font-variant-numeric: lining-nums tabular-nums;
-  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+  font-variant-numeric: lining-nums tabular-nums diagonal-fractions;
+  /* 1 */
+  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum", "frac";
+  /* 1 */
 }
 table:not([class]) caption {
   text-align: left;
@@ -261,7 +301,18 @@ dl:not([class]) dt:not([class]) {
 dl:not([class]) dd:not([class]) {
   margin: 0 0 1.5em;
 }
-/* other tags */
+/*
+    1. Add the correct box sizing in Firefox.
+    2. Show the overflow in Edge and IE.
+    */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
 hr:not([class]) {
   border: 0;
   border-bottom: 1px solid;
@@ -269,24 +320,142 @@ hr:not([class]) {
   max-width: 50rem;
   opacity: .1;
 }
+em > em {
+  font-family: cursive;
+}
+/*
+    1. Increase letter-spacing for all capitals
+    2. Compensate letter-spacing after last letter to keep same optical word-spacing
+    3. Open Type features
+       https://helpx.adobe.com/typekit/using/open-type-syntax.html
+       "kern" — kerning
+       "liga" — common ligatures
+       "clig" — contextual ligatures
+       "calt" — contextual alternates
+       "onum" — oldstyle figures
+       "pnum" — proportional figures
+    4. Undo normalize.css styles
+    */
 abbr {
   letter-spacing: .05em;
+  /* 1 */
   margin-right: -0.05em;
-  font-variant-caps: all-small-caps;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+  /* 2 */
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  /* 3 */
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  /* 3 */
 }
 abbr[title] {
   border-bottom: none;
+  /* 4 */
 }
+/*
+    1. Use 'normal' to look same as regular text
+    */
+dfn,
+address {
+  font-style: normal;
+  /* 1 */
+}
+/*
+    1. Use 'bolder' instead of 'bold' to make styles relative to the weight of parent node
+    */
 strong,
 b,
-dt {
+dt,
+dfn {
   font-weight: bolder;
+  /* 1 */
 }
+/*
+    1. Correct the inheritance and scaling of font size in all browsers.
+    2. Correct the odd `em` font sizing in all browsers.
+    3. Open Type features:
+       https://helpx.adobe.com/typekit/using/open-type-syntax.html
+       - tunr off ligatures
+       - use lining figures and tabulat figures
+       "kern" — kerning
+       "liga" — common ligatures
+       "clig" — contextual ligatures
+       "calt" — contextual alternates
+       "lnum" — lining figures (not oldstyle figures "onum")
+       "tnum" — tabular figures (not proportional figures "pnum")
+    */
+pre,
 code,
 kbd,
-pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: Courier, monospace, monospace;
+  /* 1 */
   font-size: 1em;
+  /* 2 */
+  font-variant-ligatures: none;
+  /* 3 */
+  font-variant-numeric: lining-nums tabular-nums;
+  /* 3 */
+  font-feature-settings: "kern", "liga" 0, "clig" 0, "calt" 0, "lnum", "tnum";
+  /* 3 */
+}
+var {
+  font-family: Georgia, Times, serif;
+  font-variant-numeric: lining-nums tabular-nums;
+  /* 3 */
+  font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+  /* 3 */
+  font-style: italic;
+}
+/* 1. opinionated: wrap words */
+pre {
+  margin: 1.5em 0;
+  white-space: pre-wrap;
+  /* 1 */
+}
+/*
+    1. Break text using the least restrictive line break rule.
+       Typically used for short lines, such as in newspapers.
+    2. To prevent overflow, normally unbreakable words may be broken at arbitrary points
+       if there are no otherwise acceptable break points in the line.
+    3. Adjust font-size and line-height.
+       Make monospaced font looks same height as regular paragraph text and compensate
+       line-height.
+    */
+p code,
+p kbd,
+p samp {
+  line-break: loose;
+  /* 1 */
+  overflow-wrap: break-word;
+  /* 2 */
+  font-size: 1.075em;
+  /* 3 */
+  line-height: 1.3;
+  /* 3 */
+}
+mark {
+  color: inherit;
+  background-color: rgba(255, 229, 0, 0.5);
+}
+ins {
+  text-decoration: underline dashed green;
+  text-underline-position: under;
+}
+/**
+     * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+     */
+sub,
+sup {
+  font-size: 0.75em;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+small {
+  font-size: 0.75em;
 }
