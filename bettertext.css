@@ -459,3 +459,8 @@ sup {
 small {
   font-size: 0.75em;
 }
+kbd {
+  border: 1px solid;
+  border-radius: 0.25em;
+  padding: 0.5em;
+}

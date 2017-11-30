@@ -48,13 +48,13 @@ The typographic scale has been used for centuries as a means of creating balance
 The classic typographic scale is a harmonious progression of font sizes, like the notes of a musical scale. Because the classic typographic scale is a _scale_, it must obey the scaling property: if <var>x</var> is a size in the scale, then <var>r</var> × <var>x</var> must also be a size in the scale, where <var>r</var> is the _ratio_ of the scale. This ratio is a defining property of the scale.
 
 Some common scale ratios:  
-`1.067` — Minor Second (15:16)  
-`1.125` — Major Second (8:9) — default scale for mobile screens  
-`1.200` — Minor Third (5:6)  
-`1.250` — Major Third (4:5) — default scale for desktop screens  
-`1.333` — Perfect Fourth (3:4)  
-`1.414` — Augmented Fourth (1:√2)  
-`1.500` — Perfect Fifth (2:3)  
+`1.067` — Minor Second (16:15)  
+`1.125` — Major Second (9:8) — default scale for mobile screens  
+`1.200` — Minor Third (6:5)  
+`1.250` — Major Third (5:4) — default scale for desktop screens  
+`1.333` — Perfect Fourth (4:3)  
+`1.414` — Augmented Fourth (√2:1)  
+`1.500` — Perfect Fifth (3:2)  
 `1.618` — Golden Ratio
 
 <figure>
