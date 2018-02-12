@@ -29,9 +29,9 @@
     <%- @partial('googleAnalytics') %>
 </head>
 <body>
-    <article>
+
        <%- @content %>
-    </article>
+
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script async defer src="https://unpkg.com/ilyabirman-likely@2/release/likely.js"></script>

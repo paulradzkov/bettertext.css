@@ -160,6 +160,7 @@
         font-family: @font-body;
         font-size: @fz-ems;
         line-height: @lh;
+        font-display: swap;
         font-kerning: normal; /* 1 */
         text-rendering: optimizeLegibility; /* 2 */
         font-variant-ligatures: common-ligatures contextual; /* 3 */
@@ -169,16 +170,16 @@
     /*
     Add default spacing for structure tags without classnames
     */
-    body:not([class]),
-    article:not([class]),
-    section:not([class]) {
+    body:not(.default),
+    article:not(.default),
+    section:not(.default) {
         margin: @space-around;
 
         /*
         Reset nested margins
         */
-        article:not([class]),
-        section:not([class]) {
+        article:not(.default),
+        section:not(.default) {
             margin-left: 0;
             margin-right: 0;
         }
@@ -208,6 +209,7 @@
     h1, h2, h3, h4, h5, h6 {
         font-family: @font-headers;
         font-weight: bolder;
+        max-width: @linel;
     }
 
     h1 {
@@ -374,6 +376,7 @@
     }
 
     blockquote {
+        box-sizing: border-box;
         max-width: calc(@linel - 5em);
         margin: 0 0 (@m-default);
         padding: (@m-default) 2.5em;
@@ -471,7 +474,8 @@
         &:not([class]) {
             border: 0;
             border-bottom: 1px solid;
-            margin: @m-default 0;
+            margin-top: @m-default;
+            margin-bottom: @m-default;
             max-width: @linel;
             opacity: .1;
         }
@@ -616,7 +620,34 @@
     kbd {
         border: 1px solid;
         border-radius: 0.25em;
-        padding: 0.5em;
+        padding: 0.125em;
+    }
+
+    // default layout experiment
+    body:not(.default),
+    article:not(.default),
+    section:not(.default) {
+
+        @media (min-width: 60rem) {
+            //display: flex;
+            //flex-direction: column;
+
+            & > * {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: @linel;
+                min-width: @linel;
+            }
+
+            & > figure,
+            & > pre {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: none;
+                min-width: @linel;
+                width: fit-content;
+            }
+        }
     }
 
 }
