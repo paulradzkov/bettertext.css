@@ -98,65 +98,67 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
 
 ## Lists
 
-<div class="row">
-    <div class="col-xs-shrink">
-        <p>Ordered list:</p>
-        <ol>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Tenetur molestiae
-                <ol>
-                    <li>Coffee</li>
-                    <li>Milk</li>
-                    <li>Tea
-                        <ol>
-                            <li>green</li>
-                            <li>black</li>
-                            <li>white</li>
-                        </ol>
-                    </li>
-                </ol>
-            </li>
-            <li>Fuga et optio iure tempore</li>
-            <li>Dolores accusantium neque</li>
-            <li>...</li>
-        </ol>
-        <ol start="98">
-            <li>Magnam natus</li>
-            <li>Maxime nam sed</li>
-            <li>Atque repellendus</li>
-        </ol>
-    </div>
-    <div class="col-xs-shrink">
-        <p>Unordered list:</p>
-        <ul>
-            <li>Lorem ipsum dolor sit amet
-                <ul>
-                    <li>Tenetur molestiae</li>
-                    <li>Fuga et optio iure tempore</li>
-                    <li>Dolores accusantium neque
-                        <ul>
-                            <li>ipsum</li>
-                            <li>dolor</li>
-                            <li>sit amet</li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li>Nemo magnam natus saepe</li>
-            <li>maxime nam sed sunt veritatis atque repellendus</li>
-        </ul>
-    </div>
-    <div class="col-xs-shrink">
-        <p>Definition list:</p>
-        <dl>
-            <dt>Description lists</dt>
-            <dd>A description list is perfect for defining terms.</dd>
-            <dt>Euismod</dt>
-            <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-            <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-            <dt>Malesuada porta</dt>
-            <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-        </dl>
+<div>
+    <div class="row">
+        <div class="col-xs-shrink">
+            <p>Ordered list:</p>
+            <ol>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Tenetur molestiae
+                    <ol>
+                        <li>Coffee</li>
+                        <li>Milk</li>
+                        <li>Tea
+                            <ol>
+                                <li>green</li>
+                                <li>black</li>
+                                <li>white</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+                <li>Fuga et optio iure tempore</li>
+                <li>Dolores accusantium neque</li>
+                <li>...</li>
+            </ol>
+            <ol start="98">
+                <li>Magnam natus</li>
+                <li>Maxime nam sed</li>
+                <li>Atque repellendus</li>
+            </ol>
+        </div>
+        <div class="col-xs-shrink">
+            <p>Unordered list:</p>
+            <ul>
+                <li>Lorem ipsum dolor sit amet
+                    <ul>
+                        <li>Tenetur molestiae</li>
+                        <li>Fuga et optio iure tempore</li>
+                        <li>Dolores accusantium neque
+                            <ul>
+                                <li>ipsum</li>
+                                <li>dolor</li>
+                                <li>sit amet</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>Nemo magnam natus saepe</li>
+                <li>maxime nam sed sunt veritatis atque repellendus</li>
+            </ul>
+        </div>
+        <div class="col-xs-shrink">
+            <p>Definition list:</p>
+            <dl>
+                <dt>Description lists</dt>
+                <dd>A description list is perfect for defining terms.</dd>
+                <dt>Euismod</dt>
+                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                <dt>Malesuada porta</dt>
+                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+            </dl>
+        </div>
     </div>
 </div>
 

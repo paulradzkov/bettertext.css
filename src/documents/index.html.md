@@ -37,7 +37,7 @@ scripts:
     </div>
 </nav>
 
-<figure class="" style="max-width: 1440px; margin: 0 calc(-10px - 4vw) 3em calc(-10px - 4vw)">
+<figure class="default" style="max-width: 1440px;">
 <div class="youtube-player" data-id="acVBLst3QQc">
 <img srcset="
 img/bettertext-demo@0.25x.png 360w,
@@ -46,21 +46,23 @@ img/bettertext-demo@1x.png 1440w,
 img/bettertext-demo@1.5x.png 2160w,
 img/bettertext-demo@2x.png 2880w
 " src="img/bettertext-demo@0.5x.png" alt="bettertext.css demo">
-<a href="https://www.youtube.com/watch?v=acVBLst3QQc" target="_blank" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
+<a href="https://www.youtube.com/watch?v=acVBLst3QQc" class="youtube-player-play"><span>Посмотреть демонстрацию</span></a>
 </div>
 </figure>
 
-<figure class="row">
-<div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-size="large" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
+<div>
+    <div class="row">
+        <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/releases" data-icon="octicon-cloud-download" data-size="large" aria-label="Download paulradzkov/bettertext.css on GitHub">Скачать с ГитХаба</a>
+        </div>
+        <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
+        </div>
+        <div class="col-xs-shrink">
+        <a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
+        </div>
+    </div>
 </div>
-<div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css/issues" data-icon="octicon-issue-opened" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Сообщить о баге</a>
-</div>
-<div class="col-xs-shrink">
-<a class="github-button" href="https://github.com/paulradzkov/bettertext.css" data-icon="octicon-star" data-size="large" data-show-count="true" data-count-aria-label="# issues on GitHub" aria-label="Issue paulradzkov/bettertext.css on GitHub">Звёзды на GitHub</a>
-</div>
-</figure>
 
 <a name="install" id="install"></a>
 
@@ -137,29 +139,25 @@ Bettertext.css написан на LESS и настраивается при п
 2. Скачайте шаблон для вашего графического редактора;
 3. Обновите текстовые стили шаблона в соответствии со сгенерированной в браузере типографикой.
 
-<figure class="row">
-    <div class="col-xs-shrink">
-        <img srcset="
-            img/sketch-typography-kit@0.5x.png 456w,
-            img/sketch-typography-kit@1x.png 912w,
-            img/sketch-typography-kit@1.5x.png 1368w,
-            img/sketch-typography-kit@2x.png 1824w
-            " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch" style="margin: 0  0 -4% -6.14%">
-    </div>
-    <figcaption class="col-xs-12">
+<figure>
+    <img srcset="
+        img/sketch-typography-kit@0.5x.png 456w,
+        img/sketch-typography-kit@1x.png 912w,
+        img/sketch-typography-kit@1.5x.png 1368w,
+        img/sketch-typography-kit@2x.png 1824w
+        " src="img/sketch-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Sketch">
+    <figcaption>
         <p><a href="downloads/bettertext-typography-kit.sketch">Скачать bettertext-typography-kit.sketch</a></p>
     </figcaption>
 </figure>
-<figure class="row">
-    <div class="col-xs-shrink">
-        <img srcset="
-            img/photoshop-typography-kit@0.5x.png 456w,
-            img/photoshop-typography-kit@1x.png 912w,
-            img/photoshop-typography-kit@1.5x.png 1368w,
-            img/photoshop-typography-kit@2x.png 1824w
-            " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop" style="margin: 0  0 -4% -6.14%">
-    </div>
-    <figcaption class="col-xs-12">
+<figure>
+    <img srcset="
+        img/photoshop-typography-kit@0.5x.png 456w,
+        img/photoshop-typography-kit@1x.png 912w,
+        img/photoshop-typography-kit@1.5x.png 1368w,
+        img/photoshop-typography-kit@2x.png 1824w
+        " src="img/photoshop-typography-kit@1x.png" width="912" height="660" alt="Скриншот шаблона типографики для Photoshop">
+    <figcaption>
         <p><a href="downloads/bettertext-typography-kit.psd">Скачать bettertext-typography-kit.psd</a></p>
     </figcaption>
 </figure>
@@ -282,6 +280,7 @@ Bettertext.css — настраиваемая заготовка, которая
 
 <small>Автор [Павел Радьков][paulradzkov], [GitHub проекта][github], MIT License</small>
 
+<div>
 <p class="likely">
     <span class="facebook">Поделиться</span>
     <span class="twitter">Твитнуть</span>
@@ -289,6 +288,7 @@ Bettertext.css — настраиваемая заготовка, которая
     <span class="vkontakte">Поделиться</span>
     <span class="telegram">Телеграмнуть</span>
 </p>
+</div>
 
 [paulradzkov]: http://paulradzkov.com
 [github]: https://github.com/paulradzkov/bettertext.css

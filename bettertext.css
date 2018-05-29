@@ -17,10 +17,11 @@ html {
   /* 2 */
 }
 /*
-    1. Font kerning information stored in the font must be applied.
-    2. The browser emphasizes legibility over rendering speed and geometric
+    1. Render fallback font immediately, wait for webfont to load infinitely.
+    2. Font kerning information stored in the font must be applied.
+    3. The browser emphasizes legibility over rendering speed and geometric
        precision. This enables kerning and optional ligatures.
-    3. OpenType features
+    4. OpenType features
        https://helpx.adobe.com/typekit/using/open-type-syntax.html
        "kern" — kerning
        "liga" — common ligatures
@@ -32,14 +33,15 @@ body {
   font-size: 1em;
   line-height: 1.5;
   font-display: swap;
-  font-kerning: normal;
   /* 1 */
-  text-rendering: optimizeLegibility;
+  font-kerning: normal;
   /* 2 */
+  text-rendering: optimizeLegibility;
+  /* 3 */
   font-variant-ligatures: common-ligatures contextual;
-  /* 3 */
+  /* 4 */
   font-feature-settings: "kern", "liga", "clig", "calt";
-  /* 3 */
+  /* 4 */
 }
 /*
     Add default spacing for structure tags without classnames
@@ -47,7 +49,7 @@ body {
 body:not(.default),
 article:not(.default),
 section:not(.default) {
-  margin: 40px calc(8px + 5vw);
+  margin: 40px;
   /*
         Reset nested margins
         */
@@ -69,8 +71,8 @@ p {
     minimum paragraph width when floating http://css-tricks.com/minimum-paragraph-widths/
     */
 p:before,
-ol:not([class]):before,
-ul:not([class]):before {
+ol:not(.default):before,
+ul:not(.default):before {
   content: '';
   display: block;
   width: 10em;
@@ -179,21 +181,21 @@ h5 + h6 {
 }
 /* lists */
 /* lists without classes */
-ul:not([class]),
-ol:not([class]) {
+ul:not(.default),
+ol:not(.default) {
   margin: 0 0 1.5em;
   max-width: calc(47.5rem);
   padding-left: 0;
   padding-right: 2.5em;
 }
-ul:not([class]) ul,
-ol:not([class]) ul,
-ul:not([class]) ol,
-ol:not([class]) ol {
+ul:not(.default) ul,
+ol:not(.default) ul,
+ul:not(.default) ol,
+ol:not(.default) ol {
   margin-bottom: 0;
 }
-ul:not([class]) li,
-ol:not([class]) li {
+ul:not(.default) li,
+ol:not(.default) li {
   transform: translateX(2.5em);
   animation: fixlists 1s;
 }
@@ -213,33 +215,33 @@ img {
 p img:not(:only-child) {
   vertical-align: baseline;
 }
-figure {
+figure:not(.default) {
   margin: 3em 0;
 }
-figure > p {
-  max-width: 37.5rem;
+figure:not(.default) > p {
+  max-width: 50rem;
   font-size: 0.75em;
   margin: 0.5em 0 0;
 }
-figcaption {
-  max-width: 37.5rem;
+figcaption:not(.default) {
+  max-width: 50rem;
   font-size: 0.75em;
   margin: 0.5em 0 3em;
 }
-figcaption > p {
+figcaption:not(.default) > p {
   margin: 0.5em 0 0;
 }
-blockquote {
+blockquote:not(.default) {
   box-sizing: border-box;
   max-width: calc(45rem);
   margin: 0 0 1.5em;
   padding: 1.5em 2.5em;
 }
-blockquote > p:last-child {
+blockquote:not(.default) > p:last-child {
   margin-bottom: 0;
 }
-blockquote > footer,
-blockquote > cite {
+blockquote:not(.default) > footer,
+blockquote:not(.default) > cite {
   display: block;
   font-size: 0.75em;
 }
@@ -253,7 +255,7 @@ blockquote > cite {
        "lnum" — lining figures (not oldstyle figures "onum")
        "tnum" — tabular figures (not proportional figures "pnum")
     */
-table:not([class]) {
+table:not(.default) {
   margin-top: 3em;
   margin-bottom: 3em;
   border-collapse: separate;
@@ -263,13 +265,13 @@ table:not([class]) {
   font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum", "frac";
   /* 1 */
 }
-table:not([class]) caption {
+table:not(.default) caption {
   text-align: left;
   font-size: 0.75em;
   margin-bottom: 0.625em;
 }
-table:not([class]) td,
-table:not([class]) th {
+table:not(.default) td,
+table:not(.default) th {
   padding: 0.5em 1em;
   text-align: left;
   vertical-align: top;
@@ -277,31 +279,31 @@ table:not([class]) th {
   border-color: rgba(128, 128, 128, 0.2);
   border-width: 0 0 1px;
 }
-table:not([class]) td:first-child,
-table:not([class]) th:first-child {
+table:not(.default) td:first-child,
+table:not(.default) th:first-child {
   padding-left: 0;
 }
-table:not([class]) td:last-child,
-table:not([class]) th:last-child {
+table:not(.default) td:last-child,
+table:not(.default) th:last-child {
   padding-right: 0;
 }
-table:not([class]) th {
+table:not(.default) th {
   font-weight: bolder;
 }
-table:not([class]) thead td,
-table:not([class]) thead th {
+table:not(.default) thead td,
+table:not(.default) thead th {
   vertical-align: bottom;
   border-bottom-width: 2px;
 }
 /* definition lists */
-dl:not([class]) {
+dl:not(.default) {
   max-width: 50rem;
   margin: 0 0 1.5em;
 }
-dl:not([class]) dt:not([class]) {
+dl:not(.default) dt:not([class]) {
   font-weight: bolder;
 }
-dl:not([class]) dd:not([class]) {
+dl:not(.default) dd:not([class]) {
   margin: 0 0 1.5em;
 }
 /*
@@ -316,7 +318,7 @@ hr {
   overflow: visible;
   /* 2 */
 }
-hr:not([class]) {
+hr:not(.default) {
   border: 0;
   border-bottom: 1px solid;
   margin-top: 1.5em;
@@ -468,25 +470,44 @@ kbd {
   border-radius: 0.25em;
   padding: 0.125em;
 }
-@media (min-width: 60rem) {
-  body:not(.default) > *,
-  article:not(.default) > *,
-  section:not(.default) > * {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 50rem;
-    min-width: 50rem;
-  }
-  body:not(.default) > figure,
-  article:not(.default) > figure,
-  section:not(.default) > figure,
-  body:not(.default) > pre,
-  article:not(.default) > pre,
-  section:not(.default) > pre {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: none;
-    min-width: 50rem;
-    width: fit-content;
-  }
+body:not(.default) > *:not(.default),
+article:not(.default) > *:not(.default),
+section:not(.default) > *:not(.default) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50rem;
+}
+body:not(.default) > ul:not(.default),
+article:not(.default) > ul:not(.default),
+section:not(.default) > ul:not(.default),
+body:not(.default) > ol:not(.default),
+article:not(.default) > ol:not(.default),
+section:not(.default) > ol:not(.default) {
+  max-width: calc(47.5rem);
+}
+body:not(.default) > blockquote:not(.default),
+article:not(.default) > blockquote:not(.default),
+section:not(.default) > blockquote:not(.default) {
+  max-width: calc(45rem);
+}
+body:not(.default) > pre:not(.default),
+article:not(.default) > pre:not(.default),
+section:not(.default) > pre:not(.default) {
+  max-width: calc(75%);
+  margin-left: auto;
+  margin-right: 0;
+}
+body:not(.default) > figure:not(.default),
+article:not(.default) > figure:not(.default),
+section:not(.default) > figure:not(.default) {
+  display: table;
+  max-width: none;
+  min-width: 50rem;
+}
+body:not(.default) > figure:not(.default) > *:not(img),
+article:not(.default) > figure:not(.default) > *:not(img),
+section:not(.default) > figure:not(.default) > *:not(img) {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50rem;
 }
