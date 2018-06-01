@@ -413,6 +413,7 @@
         border-spacing: 0;
         font-variant-numeric: lining-nums tabular-nums diagonal-fractions; /* 1 */
         font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum", "frac"; /* 1 */
+        width: 100%;
 
         caption {
             text-align: left;
@@ -579,7 +580,6 @@
        line-height.
     */
     p code,
-    p kbd,
     p samp {
         line-break: loose; /* 1 */
         overflow-wrap: break-word; /* 2 */
@@ -621,10 +621,19 @@
         font-size: @fz-small-ems;
     }
 
-    kbd {
+    /* 1 - width same as line-height for square buttons */
+    kbd:not(.default) {
+        box-sizing: content-box;
+        display: inline-block;
+        margin: 0.25em;
         border: 1px solid;
         border-radius: 0.25em;
-        padding: 0.125em;
+        padding: 0 0.25em;
+        font-family: @font-body;
+        font-size: 87.5%;
+        line-height: 1.5em;
+        min-width: 1em; /* 1 */
+        text-align: center;
     }
 
     // central layout experiment
@@ -644,10 +653,6 @@
                 max-width: calc(@linel - 2.5em);
             }
 
-            & > blockquote:not(.@{reset-classname}) {
-                max-width: calc(@linel - 5em);
-            }
-
             & > pre:not(.@{reset-classname}) {
                 max-width: calc(100% - (100% - @linel) / 2);
                 margin-left: auto;
@@ -656,13 +661,16 @@
 
             > figure:not(.@{reset-classname}) {
                 display: table;
-                max-width: none;
-                min-width: @linel;
+                max-width: 100%;
 
                 > *:not(img) {
                     margin-left: auto;
                     margin-right: auto;
                     max-width: @linel;
+                }
+
+                figcaption:not(default) {
+                    max-width: (@linel / 2);
                 }
             }
         }

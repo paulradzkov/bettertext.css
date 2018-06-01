@@ -264,6 +264,7 @@ table:not(.default) {
   /* 1 */
   font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum", "frac";
   /* 1 */
+  width: 100%;
 }
 table:not(.default) caption {
   text-align: left;
@@ -427,7 +428,6 @@ pre {
        line-height.
     */
 p code,
-p kbd,
 p samp {
   line-break: loose;
   /* 1 */
@@ -465,10 +465,20 @@ sup {
 small {
   font-size: 0.75em;
 }
-kbd {
+/* 1 - width same as line-height for square buttons */
+kbd:not(.default) {
+  box-sizing: content-box;
+  display: inline-block;
+  margin: 0.25em;
   border: 1px solid;
   border-radius: 0.25em;
-  padding: 0.125em;
+  padding: 0 0.25em;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  font-size: 87.5%;
+  line-height: 1.5em;
+  min-width: 1em;
+  /* 1 */
+  text-align: center;
 }
 body:not(.default) > *:not(.default),
 article:not(.default) > *:not(.default),
@@ -485,11 +495,6 @@ article:not(.default) > ol:not(.default),
 section:not(.default) > ol:not(.default) {
   max-width: calc(47.5rem);
 }
-body:not(.default) > blockquote:not(.default),
-article:not(.default) > blockquote:not(.default),
-section:not(.default) > blockquote:not(.default) {
-  max-width: calc(45rem);
-}
 body:not(.default) > pre:not(.default),
 article:not(.default) > pre:not(.default),
 section:not(.default) > pre:not(.default) {
@@ -501,8 +506,7 @@ body:not(.default) > figure:not(.default),
 article:not(.default) > figure:not(.default),
 section:not(.default) > figure:not(.default) {
   display: table;
-  max-width: none;
-  min-width: 50rem;
+  max-width: 100%;
 }
 body:not(.default) > figure:not(.default) > *:not(img),
 article:not(.default) > figure:not(.default) > *:not(img),
@@ -510,4 +514,9 @@ section:not(.default) > figure:not(.default) > *:not(img) {
   margin-left: auto;
   margin-right: auto;
   max-width: 50rem;
+}
+body:not(.default) > figure:not(.default) figcaption:not(default),
+article:not(.default) > figure:not(.default) figcaption:not(default),
+section:not(.default) > figure:not(.default) figcaption:not(default) {
+  max-width: 25rem;
 }

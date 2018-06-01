@@ -218,9 +218,19 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
 </table>
 
 <table>
+    <caption>Wide table demo</caption>
     <thead>
         <tr>
             <th class="words">Player</th>
+            <td>G</td>
+            <td>W</td>
+            <td>L</td>
+            <td>ERA</td>
+            <td>IP</td>
+            <td>H</td>
+            <td>R</td>
+            <td>ER</td>
+            <td>SO</td>
             <td>G</td>
             <td>W</td>
             <td>L</td>
@@ -244,9 +254,27 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>38</td>
             <td>36</td>
             <td>174</td>
+            <td>28</td>
+            <td>16</td>
+            <td>3</td>
+            <td>192<small class="fraction">2&#8203;/3</small></td>
+            <td>1.68</td>
+            <td>133</td>
+            <td>38</td>
+            <td>36</td>
+            <td>174</td>
         </tr>
         <tr>
             <td class="words">Arrieta, J</td>
+            <td>28</td>
+            <td>18</td>
+            <td>6</td>
+            <td>191</td>
+            <td>2.03</td>
+            <td>132</td>
+            <td>49</td>
+            <td>43</td>
+            <td>197</td>
             <td>28</td>
             <td>18</td>
             <td>6</td>
@@ -268,9 +296,27 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>55</td>
             <td>48</td>
             <td>259</td>
+            <td>28</td>
+            <td>13</td>
+            <td>6</td>
+            <td>201</td>
+            <td>2.15</td>
+            <td>144</td>
+            <td>55</td>
+            <td>48</td>
+            <td>259</td>
         </tr>
         <tr>
             <td class="words">Gray, S</td>
+            <td>28</td>
+            <td>13</td>
+            <td>7</td>
+            <td>193<small class="fraction">1/3</small></td>
+            <td>2.28</td>
+            <td>145</td>
+            <td>57</td>
+            <td>49</td>
+            <td>156</td>
             <td>28</td>
             <td>13</td>
             <td>7</td>
@@ -292,6 +338,15 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>52</td>
             <td>51</td>
             <td>185</td>
+            <td>28</td>
+            <td>17</td>
+            <td>6</td>
+            <td>200<small class="fraction">2/3</small></td>
+            <td>2.29</td>
+            <td>155</td>
+            <td>52</td>
+            <td>51</td>
+            <td>185</td>
         </tr>
         <tr>
             <td class="words">Martinez, C</td>
@@ -304,6 +359,224 @@ Paragraph. Then came the night of the first falling star. The face of the moon w
             <td>62</td>
             <td>57</td>
             <td>269</td>
+            <td>28</td>
+            <td>13</td>
+            <td>7</td>
+            <td>164<small class="fraction">2/3</small></td>
+            <td>3.12</td>
+            <td>159</td>
+            <td>62</td>
+            <td>57</td>
+            <td>269</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<table>
+    <thead>
+        <tr>
+        <th data-header="Features">
+            Features
+        </th>
+        <th data-header="Express*" style="text-align:right">
+            Express*
+        </th>
+        <th data-header="Personal PLUS" style="text-align:right" >
+            Personal PLUS
+        </th>
+        <th data-header="Personal MAX" style="text-align:right">
+            Personal MAX
+        </th>
+        <th data-header="Family" style="text-align:right">
+            Family
+        </th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Summary</th>
+            <td style="text-align:right">★★★</td>
+            <td style="text-align:right">★★★★</td>
+            <td style="text-align:right">★★★★★</td>
+            <td style="text-align:right">★★★</td>
+        </tr>
+    </tfoot>
+    <tbody>
+        <tr>
+        <td><strong>Main Features</strong></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        </tr>
+        <tr>
+        <td>Annual Load Limit</td>
+        <td style="text-align:right">£ 300</td>
+        <td style="text-align:right">£ 1,900</td>
+        <td style="text-align:right">£ 12,000</td>
+        <td style="text-align:right">£ 12,000</td>
+        </tr>
+        <tr>
+        <td>Maximum card balance</td>
+        <td style="text-align:right">£ 300</td>
+        <td style="text-align:right">£ 1,900</td>
+        <td style="text-align:right">£ 5,000</td>
+        <td style="text-align:right">£ 5,000</td>
+        </tr>
+        <tr>
+        <td>Reloadable</td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Available at Store</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Available online</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>UK ATM Access</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>International ATM Access</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Money share</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Shop anywhere</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Receive free International minutes</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Direct UK bank account loads</td>
+        <td style="text-align:right">✘</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td><strong>Pricing</strong></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        <td style="text-align:right"></td>
+        </tr>
+        <tr>
+        <td>NO transaction fee</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        <td style="text-align:right">✔</td>
+        </tr>
+        <tr>
+        <td>Additional card</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">£ 5.00</td>
+        <td style="text-align:right">£ 5.00</td>
+        </tr>
+        <tr>
+        <td>Card to card transfer</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">£ 1.00</td>
+        <td style="text-align:right">FREE</td>
+        </tr>
+        <tr>
+        <td>International ATM access</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">£ 1.50</td>
+        <td style="text-align:right">FREE</td>
+        </tr>
+        <tr>
+        <td>Foreign Exchange Charge</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">FREE</td>
+        </tr>
+        <tr>
+        <td>In-Store Card Purchase fee</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        </tr>
+        <tr>
+        <td>Monthly Cost</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 7.95</td>
+        </tr>
+        <tr>
+        <td>Card to card transfer</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">£ 1.00</td>
+        <td style="text-align:right">FREE</td>
+        </tr>
+        <tr>
+        <td>International ATM access</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">n/a</td>
+        <td style="text-align:right">£ 1.50</td>
+        <td style="text-align:right">FREE</td>
+        </tr>
+        <tr>
+        <td>Foreign Exchange Charge</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">£ 1.95</td>
+        <td style="text-align:right">£ 1.95</td>
+        </tr>
+        <tr>
+        <td>In-Store Card Purchase fee</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        <td style="text-align:right">£ 6.95</td>
+        </tr>
+        <tr>
+        <td>Monthly Cost</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 3.95</td>
+        <td style="text-align:right">£ 7.95</td>
         </tr>
     </tbody>
 </table>
@@ -349,6 +622,18 @@ Or with structure tags inside:
 		Sign inside figcaption
 	</figcaption>
 </figure>
+
+## `kbd` tags for keyboard input
+
+Some shortcuts:
+
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd> — Select node to inspect,  
+<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> — Search across all sources,  
+<kbd>F2</kbd> — Toggle edit as html,  
+<kbd>PageUp</kbd> or <kbd>Shift</kbd> + <kbd>↑</kbd> — Increment by 10,  
+<kbd>PageUp</kbd> or <kbd>Shift</kbd> + <kbd>↑</kbd> — Decrement by 10.
+
+To install package type <kbd><code>npm install bettertext.css --save-dev</code></kbd> in terminal.
 
 ## Other tags
 
